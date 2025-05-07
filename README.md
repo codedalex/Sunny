@@ -1,12 +1,13 @@
 # Sunny Payment Gateway
 
-A comprehensive, global payment processing solution designed to meet all modern payment needs.
+A comprehensive, global payment processing solution designed to meet all modern payment needs with enterprise-grade security and scalability.
 
-## ✅ Ideal Features of Sunny Payment Gateway
+## ✅ Key Features of Sunny Payment Gateway
 
 ### 1. Global Coverage
-- Accepts payments from any country in all major currencies
+- Accepts payments from any country in 135+ currencies
 - Supports local payment methods (e.g., M-Pesa, UPI, Alipay) alongside international options (Visa, MasterCard, Apple Pay, crypto)
+- Multi-region deployment with active-active configuration for global reliability
 
 ### 2. Low Fees, Transparent Pricing
 - Flat, low transaction fees
@@ -16,10 +17,12 @@ A comprehensive, global payment processing solution designed to meet all modern 
 ### 3. Instant Payouts
 - Funds settle immediately or within minutes to bank or mobile money accounts—even on weekends
 - Real-time settlement options for all supported payment methods
+- Cross-border efficiency with fast international settlements
 
-### 4. Top-Tier Security
-- PCI DSS Level 1 compliant
-- Built-in fraud detection, chargeback protection, and two-factor authentication
+### 4. Enterprise-Grade Security
+- PCI DSS Level 1 compliant with SOC 1 and SOC 2 Type II certifications
+- Hardware Security Module (HSM) integration for cryptographic operations
+- Advanced fraud detection using rules, behavioral biometrics, and network analysis
 - End-to-end encryption for all sensitive data
 
 ### 5. Excellent Developer Tools
@@ -52,18 +55,40 @@ A comprehensive, global payment processing solution designed to meet all modern 
 - Dedicated account managers for enterprise clients
 - Comprehensive knowledge base and community forums
 
+## Technical Architecture
+
+Sunny uses a polyglot architecture with the right technology for each component:
+
+- **Rust Core**: High-performance, memory-safe payment processing
+- **Go API Gateway**: Efficient, concurrent API handling
+- **TypeScript/React Admin Dashboard**: Modern, responsive admin interface
+
+The system is designed for multi-cloud deployment across AWS, GCP, and Azure with:
+
+- Kubernetes-based containerized deployment
+- Infrastructure as code with Terraform
+- Comprehensive monitoring and observability
+- Zero-downtime deployment capabilities
+
+For more details, see our [Technical Overview](./TECHNICAL_OVERVIEW.md) and [Business Overview](./BUSINESS_OVERVIEW.md).
+
 ## Project Structure
 
 ```
 sunny/
 ├── src/                      # Source code
-│   ├── api/                  # API implementation
-│   ├── core/                 # Core payment processing
+│   ├── api-gateway/          # Go API Gateway
+│   ├── core-rust/            # Rust core processing engine
+│   ├── admin-dashboard/      # React admin interface
 │   ├── security/             # Security implementations
+│   ├── fraud/                # Fraud detection system
 │   ├── localization/         # Localization support
 │   ├── analytics/            # Analytics and reporting
 │   ├── integrations/         # Third-party integrations
 │   └── ui/                   # UI components for checkout
+├── deployment/               # Deployment configurations
+│   ├── kubernetes/           # Kubernetes manifests
+│   └── terraform/            # Infrastructure as code
 ├── docs/                     # Documentation
 ├── examples/                 # Integration examples
 ├── sdk/                      # Client SDKs
@@ -77,12 +102,31 @@ sunny/
 
 ## Integration with CreditBoost
 
-Sunny Payment Gateway is designed to work seamlessly with the CreditBoost platform, providing all payment processing capabilities while maintaining the security and reliability expected by financial applications.
+Sunny Payment Gateway is designed to work seamlessly with the CreditBoost platform, providing all payment processing capabilities while maintaining the security and reliability expected by financial applications. The specialized CreditBoost integration includes:
+
+- Credit score-based pricing
+- Credit passport updates
+- Recommended payment methods based on credit profiles
+- Subscription management for credit monitoring services
 
 ## Getting Started
 
 See the [Developer Documentation](./docs/getting-started.md) for detailed integration instructions.
 
+## Security
+
+Sunny implements a defense-in-depth security strategy with multiple layers of protection:
+
+- Hardware Security Module (HSM) integration
+- End-to-end encryption with AES-256-GCM
+- Tokenization for PCI compliance
+- Advanced fraud detection with behavioral biometrics
+- Network analysis for fraud ring detection
+
+For more details, see our [Security Architecture](./security-architecture.md).
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+Last updated: $(date)
