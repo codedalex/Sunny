@@ -23,16 +23,6 @@ export function ThemeProvider({
   const [actualTheme, setActualTheme] = useState<'light' | 'dark'>('light');
   const [mounted, setMounted] = useState(false);
 
-  // Initial theme setup - run immediately to avoid flash
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    // Apply the default theme immediately to prevent flash
-    const root = document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add('light'); // Start with light mode by default
-  }, []);
-
   // Get system preference
   const getSystemTheme = useCallback((): 'light' | 'dark' => {
     if (typeof window === 'undefined') return 'light';
@@ -124,9 +114,10 @@ export function ThemeProvider({
       const savedTheme = localStorage.getItem(storageKey) as Theme;
       if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
         setThemeState(savedTheme);
+      } else if (enableSystem) {
+        setThemeState('system');
       } else {
-        // If no saved theme, use the defaultTheme instead of 'system'
-        setThemeState(defaultTheme);
+        setThemeState('light');
       }
     } catch (error) {
       console.error('Error reading theme from localStorage:', error);
@@ -198,6 +189,12 @@ export function useTheme(): ThemeContextType {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
+}
+
+// Safe theme hook that doesn't throw errors during SSR or when provider is missing
+export function useSafeTheme(): ThemeContextType | null {
+  const context = useContext(ThemeContext);
+  return context || null;
 }
 
 // Hook for accessing theme colors directly

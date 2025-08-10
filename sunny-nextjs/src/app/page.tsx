@@ -14,10 +14,9 @@ import {
   ShieldCheckIcon,
   BoltIcon
 } from '@heroicons/react/24/outline';
-import Layout from '@/components/layout/Layout';
+
 import { CheckoutForm } from '@/components/checkout/checkout-form';
 import { PaymentMethod, PaymentResult } from '@/lib/types/payment';
-import ThemeDebug from '@/components/debug/ThemeDebug';
 
 const features = [
   {
@@ -57,12 +56,11 @@ export default function HomePage() {
   };
 
   return (
-    <Layout>
-      <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
 
       {/* Hero Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
           <div className="text-center">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -106,7 +104,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section id="features" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Why Choose Sunny?
@@ -143,7 +141,7 @@ export default function HomePage() {
 
       {/* Payment Methods Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Accept Any Payment Method
@@ -177,7 +175,7 @@ export default function HomePage() {
 
       {/* Demo Section */}
       <section id="demo" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Try Our Payment Gateway
@@ -231,8 +229,6 @@ export default function HomePage() {
         </div>
       </section>
       
-      </div>
-      <ThemeDebug />
-    </Layout>
+    </div>
   );
 }

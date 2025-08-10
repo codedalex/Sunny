@@ -1,7 +1,6 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import { useTheme } from '@/lib/contexts/theme-context';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -20,10 +19,8 @@ export default function Layout({
   showFooter = true,
   className = '' 
 }: LayoutProps) {
-  const { actualTheme } = useTheme();
-
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${className}`}>
+    <div className={`min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 ${className}`}>
       {/* Header */}
       {showHeader && <Header />}
       
@@ -38,7 +35,7 @@ export default function Layout({
       {/* Minimal Footer for minimal variant */}
       {showFooter && variant === 'minimal' && (
         <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">

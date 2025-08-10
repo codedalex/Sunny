@@ -121,7 +121,7 @@ export default function Footer() {
     <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-300">
       {/* Newsletter Section */}
       <div className="border-b border-gray-800 dark:border-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-2">Stay updated</h3>
@@ -152,7 +152,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           
           {/* Company Info */}
@@ -269,7 +269,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800 dark:border-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             
             {/* Copyright */}

@@ -334,6 +334,3 @@ export default function ThemeDemoPage() {
     </Layout>
   );
 }
-
-
-

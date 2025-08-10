@@ -46,85 +46,40 @@
   --color-theme-border-accent: var(--color-border-accent);
 }
 
-/* Light mode explicit classes - high specificity */
-html.light,
-.light {
-  --color-background-primary: #ffffff !important;
-  --color-background-secondary: #f8fafc !important;
-  --color-background-tertiary: #f1f5f9 !important;
-  --color-background-elevated: #ffffff !important;
-  
-  --color-text-primary: #0f172a !important;
-  --color-text-secondary: #475569 !important;
-  --color-text-tertiary: #64748b !important;
-  --color-text-inverse: #ffffff !important;
-  
-  --color-border-primary: #e2e8f0 !important;
-  --color-border-secondary: #cbd5e1 !important;
-  --color-border-accent: #22c55e !important;
-  
-  /* Light mode gradients */
-  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%) !important;
-  --gradient-secondary: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
-  --gradient-accent: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
-}
-
-/* Force light mode body styles */
-html.light body,
-.light body {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-}
-
-/* Dark mode overrides when .dark class is applied - high specificity */
-html.dark,
+/* Dark mode overrides when .dark class is applied */
 .dark {
-  --color-background-primary: #0f172a !important;
-  --color-background-secondary: #1e293b !important;
-  --color-background-tertiary: #334155 !important;
-  --color-background-elevated: #1e293b !important;
+  --color-background-primary: #0f172a;
+  --color-background-secondary: #1e293b;
+  --color-background-tertiary: #334155;
+  --color-background-elevated: #1e293b;
   
-  --color-text-primary: #f8fafc !important;
-  --color-text-secondary: #cbd5e1 !important;
-  --color-text-tertiary: #94a3b8 !important;
-  --color-text-inverse: #0f172a !important;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-text-inverse: #0f172a;
   
-  --color-border-primary: #334155 !important;
-  --color-border-secondary: #475569 !important;
-  --color-border-accent: #22c55e !important;
+  --color-border-primary: #334155;
+  --color-border-secondary: #475569;
+  --color-border-accent: #22c55e;
   
   /* Dark mode gradients */
-  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%) !important;
-  --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-  --gradient-accent: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-accent: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-/* Force dark mode body styles */
-html.dark body,
-.dark body {
-  background-color: #0f172a !important;
-  color: #f8fafc !important;
-}
-
-/* System dark mode preference (fallback) - only when no theme class is applied */
+/* System dark mode preference (fallback) */
 @media (prefers-color-scheme: dark) {
-  html:not(.light):not(.dark) {
+  :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.light):not(.dark) {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-}
-
 /* Base body styles */
 body {
-  background: var(--color-background-primary);
-  color: var(--color-text-primary);
+  background: var(--background);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }

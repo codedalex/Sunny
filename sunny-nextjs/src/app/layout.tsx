@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/lib/contexts/theme-context';
+import Layout from '@/components/layout/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -49,15 +50,15 @@ export default function RootLayout({
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`${inter.className} h-full antialiased`}>
         <ThemeProvider
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           attribute="class"
           storageKey="sunny-theme"
           disableTransitionOnChange={false}
         >
-          <div className="min-h-full">
+          <Layout>
             {children}
-          </div>
+          </Layout>
         </ThemeProvider>
       </body>
     </html>

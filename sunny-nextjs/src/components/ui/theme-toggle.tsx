@@ -5,7 +5,7 @@
  * Provides an elegant way to switch between light/dark/system themes
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   SunIcon, 
@@ -57,8 +57,39 @@ export default function ThemeToggle({
   showLabel = false,
   className = '' 
 }: ThemeToggleProps) {
-  const { theme, setTheme, toggleTheme, actualTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Only access theme context after component is mounted on client
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Safe theme hook usage - only call after mounted
+  let themeContext;
+  try {
+    themeContext = useTheme();
+  } catch (error) {
+    // Theme provider not available yet
+    themeContext = {
+      theme: 'system' as Theme,
+      setTheme: () => {},
+      toggleTheme: () => {},
+      actualTheme: 'light' as Theme
+    };
+  }
+
+  const { theme, setTheme, toggleTheme, actualTheme } = themeContext;
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div className={`${variant === 'button' ? 'h-8 w-8' : 'h-10 w-10'} ${className}`}>
+        {/* Placeholder skeleton */}
+        <div className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded-lg w-full h-full" />
+      </div>
+    );
+  }
 
   const currentThemeOption = themeOptions.find(option => option.value === theme) || themeOptions[0];
   const CurrentIcon = currentThemeOption.icon;
@@ -281,6 +312,3 @@ export function LabeledThemeToggle({ className = '' }: { className?: string }) {
     />
   );
 }
-
-
-
