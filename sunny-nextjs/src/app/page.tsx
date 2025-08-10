@@ -14,8 +14,10 @@ import {
   ShieldCheckIcon,
   BoltIcon
 } from '@heroicons/react/24/outline';
+import Layout from '@/components/layout/Layout';
 import { CheckoutForm } from '@/components/checkout/checkout-form';
 import { PaymentMethod, PaymentResult } from '@/lib/types/payment';
+import ThemeDebug from '@/components/debug/ThemeDebug';
 
 const features = [
   {
@@ -55,33 +57,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <div className="w-8 h-8 bg-green-600 rounded-md flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <span className="ml-2 text-xl font-bold text-gray-900">Sunny Payments</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <a href="#features" className="text-gray-700 hover:text-green-600 transition-colors">
-                Features
-              </a>
-              <a href="#demo" className="text-gray-700 hover:text-green-600 transition-colors">
-                Demo
-              </a>
-              <button className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <Layout>
+      <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
 
       {/* Hero Section */}
       <section className="py-20">
@@ -91,17 +68,17 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             >
               Global Payment Processing
-              <span className="text-green-600 block">Made Simple</span>
+              <span className="text-green-600 dark:text-green-400 block">Made Simple</span>
             </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
             >
               Accept payments globally with enterprise-grade security, instant settlement, 
               and transparent pricing. Built for businesses of all sizes.
@@ -253,59 +230,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-green-600 rounded-md flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <span className="ml-2 text-xl font-bold">Sunny Payments</span>
-              </div>
-              <p className="text-gray-400">
-                Global payment processing made simple and secure.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Payment Gateway</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Checkout</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Subscriptions</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Marketplace</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Developers</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API Reference</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">SDKs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Webhooks</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Sunny Payments. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+      
+      </div>
+      <ThemeDebug />
+    </Layout>
   );
 }

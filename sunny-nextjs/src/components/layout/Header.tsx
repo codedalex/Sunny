@@ -22,6 +22,7 @@ import {
   ShieldCheckIcon,
   CurrencyDollarIcon
 } from '@heroicons/react/24/solid';
+import { CompactThemeToggle } from '@/components/ui/theme-toggle';
 
 // Types
 interface NavItem {
@@ -120,6 +121,11 @@ const navigation: NavItem[] = [
         name: 'Tools',
         href: '/tools',
         description: 'Testing and integration tools'
+      },
+      {
+        name: 'Theme Demo',
+        href: '/theme-demo',
+        description: 'Interactive theme system demonstration'
       }
     ]
   },
@@ -216,7 +222,7 @@ export default function Header() {
   
   const pathname = usePathname();
   const { scrollY } = useScroll();
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout>();
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Handle scroll behavior
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -279,16 +285,13 @@ export default function Header() {
       <motion.header
         initial={{ y: 0 }}
         animate={{ 
-          y: isVisible ? 0 : -100,
-          backgroundColor: isScrolled 
-            ? 'rgba(255, 255, 255, 0.95)' 
-            : 'rgba(255, 255, 255, 1)'
+          y: isVisible ? 0 : -100
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
           isScrolled 
-            ? 'border-gray-200/80 backdrop-blur-md shadow-sm' 
-            : 'border-transparent'
+            ? 'border-gray-200/80 dark:border-gray-700/80 backdrop-blur-md shadow-sm bg-white/95 dark:bg-gray-900/95' 
+            : 'border-transparent bg-white dark:bg-gray-900'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -330,10 +333,10 @@ export default function Header() {
                 </div>
                 
                 <div className="flex flex-col">
-                  <span className="text-xl lg:text-2xl font-bold text-gray-900 tracking-tight">
+                  <span className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
                     Sunny
                   </span>
-                  <span className="text-xs lg:text-sm text-gray-500 font-medium -mt-1">
+                  <span className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 font-medium -mt-1">
                     Payments
                   </span>
                 </div>
@@ -352,10 +355,10 @@ export default function Header() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-50 ${
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
                         pathname === item.href
-                          ? 'text-green-600 bg-green-50'
-                          : 'text-gray-700 hover:text-gray-900'
+                          ? 'text-green-600 bg-green-50 dark:bg-green-900/20 dark:text-green-400'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                       }`}
                     >
                       {item.name}
@@ -363,10 +366,10 @@ export default function Header() {
                   ) : (
                     <button
                       onClick={() => handleDropdownClick(item.name)}
-                      className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-50 ${
+                      className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800 ${
                         activeDropdown === item.name
-                          ? 'text-green-600 bg-green-50'
-                          : 'text-gray-700 hover:text-gray-900'
+                          ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                       }`}
                     >
                       {item.name}
@@ -390,11 +393,11 @@ export default function Header() {
                       >
                         {item.name === 'Products' ? (
                           // Mega menu for Products
-                          <div className="w-[600px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                          <div className="w-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-6">
                             <div className="grid grid-cols-2 gap-8">
                               {productMegaMenu.map((section) => (
                                 <div key={section.title}>
-                                  <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
                                     {section.title}
                                   </h3>
                                   <div className="space-y-1">
@@ -402,14 +405,14 @@ export default function Header() {
                                       <Link
                                         key={menuItem.name}
                                         href={menuItem.href!}
-                                        className="group flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                                        className="group flex items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                                       >
                                         {menuItem.icon && (
                                           <menuItem.icon className="h-6 w-6 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                                         )}
                                         <div className="flex-1 min-w-0">
                                           <div className="flex items-center gap-2">
-                                            <p className="text-sm font-medium text-gray-900 group-hover:text-green-600 transition-colors">
+                                            <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                                               {menuItem.name}
                                             </p>
                                             {menuItem.badge && (
@@ -418,7 +421,7 @@ export default function Header() {
                                               </span>
                                             )}
                                           </div>
-                                          <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors">
+                                          <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                                             {menuItem.description}
                                           </p>
                                         </div>
@@ -431,14 +434,14 @@ export default function Header() {
                             </div>
                             
                             {/* CTA Section */}
-                            <div className="mt-6 pt-6 border-t border-gray-100">
-                              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4">
+                            <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
+                              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-4">
                                 <div className="flex items-center justify-between">
                                   <div>
-                                    <h4 className="text-sm font-semibold text-gray-900">
+                                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
                                       Ready to get started?
                                     </h4>
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-sm text-gray-600 dark:text-gray-300">
                                       Try our interactive demo
                                     </p>
                                   </div>
@@ -455,20 +458,20 @@ export default function Header() {
                           </div>
                         ) : (
                           // Standard dropdown
-                          <div className="w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-4">
+                          <div className="w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-4">
                             <div className="space-y-1">
                               {item.children.map((menuItem) => (
                                 <Link
                                   key={menuItem.name}
                                   href={menuItem.href!}
-                                  className="group flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                                  className="group flex items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                                 >
                                   {menuItem.icon && (
                                     <menuItem.icon className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                                   )}
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2">
-                                      <p className="text-sm font-medium text-gray-900 group-hover:text-green-600 transition-colors">
+                                      <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                                         {menuItem.name}
                                       </p>
                                       {menuItem.badge && (
@@ -478,7 +481,7 @@ export default function Header() {
                                       )}
                                     </div>
                                     {menuItem.description && (
-                                      <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors">
+                                      <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                                         {menuItem.description}
                                       </p>
                                     )}
@@ -498,9 +501,11 @@ export default function Header() {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              {/* Language Selector - Desktop */}
-              <div className="hidden lg:flex items-center space-x-1">
-                <button className="flex items-center px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+              {/* Theme Toggle & Language Selector - Desktop */}
+              <div className="hidden lg:flex items-center space-x-3">
+                <CompactThemeToggle />
+                
+                <button className="flex items-center px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
                   <GlobeAltIcon className="h-4 w-4 mr-1" />
                   <span>EN</span>
                   <ChevronDownIcon className="h-3 w-3 ml-1" />
@@ -511,7 +516,7 @@ export default function Header() {
               <div className="hidden lg:flex items-center space-x-3">
                 <Link
                   href="/login"
-                  className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all duration-200"
+                  className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200"
                 >
                   <UserCircleIcon className="h-4 w-4 mr-2" />
                   Sign In
@@ -536,6 +541,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-200"
                 aria-label="Toggle mobile menu"
+                title="Toggle mobile menu"
               >
                 <motion.div
                   animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
@@ -572,19 +578,19 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl z-50 lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-gray-900 shadow-2xl z-50 lg:hidden overflow-y-auto"
             >
               {/* Mobile Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <div className="flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800">
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-sm">S</span>
                   </div>
-                  <span className="text-lg font-bold text-gray-900">Sunny</span>
+                  <span className="text-lg font-bold text-gray-900 dark:text-white">Sunny</span>
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+                  className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   <XMarkIcon className="h-6 w-6" />
                 </button>
@@ -604,7 +610,7 @@ export default function Header() {
                   
                   <Link
                     href="/login"
-                    className="flex items-center w-full px-4 py-3 border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                    className="flex items-center w-full px-4 py-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                   >
                     <UserCircleIcon className="h-5 w-5 mr-3" />
                     Sign In
@@ -618,11 +624,11 @@ export default function Header() {
                       {item.href ? (
                         <Link
                           href={item.href}
-                          className={`flex items-center w-full px-4 py-3 text-left font-medium rounded-xl transition-colors duration-200 ${
-                            pathname === item.href
-                              ? 'text-green-600 bg-green-50'
-                              : 'text-gray-700 hover:bg-gray-50'
-                          }`}
+                                                  className={`flex items-center w-full px-4 py-3 text-left font-medium rounded-xl transition-colors duration-200 ${
+                          pathname === item.href
+                            ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20'
+                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                        }`}
                         >
                           {item.name}
                         </Link>
@@ -632,8 +638,8 @@ export default function Header() {
                             onClick={() => handleDropdownClick(item.name)}
                             className={`flex items-center justify-between w-full px-4 py-3 text-left font-medium rounded-xl transition-colors duration-200 ${
                               activeDropdown === item.name
-                                ? 'text-green-600 bg-green-50'
-                                : 'text-gray-700 hover:bg-gray-50'
+                                ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20'
+                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                             }`}
                           >
                             {item.name}
@@ -658,14 +664,14 @@ export default function Header() {
                                     <Link
                                       key={child.name}
                                       href={child.href!}
-                                      className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group"
+                                      className="flex items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group"
                                     >
                                       {child.icon && (
                                         <child.icon className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
                                       )}
                                       <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                          <p className="text-sm font-medium text-gray-900 group-hover:text-green-600">
+                                          <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400">
                                             {child.name}
                                           </p>
                                           {child.badge && (
@@ -675,7 +681,7 @@ export default function Header() {
                                           )}
                                         </div>
                                         {child.description && (
-                                          <p className="text-xs text-gray-500 mt-1">
+                                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                                             {child.description}
                                           </p>
                                         )}
@@ -693,8 +699,8 @@ export default function Header() {
                 </nav>
 
                 {/* Language & Additional Options */}
-                <div className="pt-6 border-t border-gray-100 space-y-3">
-                  <button className="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors duration-200">
+                <div className="pt-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
+                  <button className="flex items-center w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors duration-200">
                     <GlobeAltIcon className="h-5 w-5 mr-3" />
                     Language: English
                     <ChevronDownIcon className="h-4 w-4 ml-auto" />
@@ -702,7 +708,7 @@ export default function Header() {
                   
                   <Link
                     href="/support"
-                    className="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl transition-colors duration-200"
+                    className="flex items-center w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors duration-200"
                   >
                     <PhoneIcon className="h-5 w-5 mr-3" />
                     Support

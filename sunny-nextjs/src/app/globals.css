@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+/* Base theme variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Theme system colors - Light mode defaults */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f8fafc;
+  --color-background-tertiary: #f1f5f9;
+  --color-background-elevated: #ffffff;
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-inverse: #ffffff;
+  
+  --color-border-primary: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-border-accent: #22c55e;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  --gradient-secondary: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  --gradient-accent: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
 }
 
 @theme inline {
@@ -10,17 +31,130 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Theme-aware color utilities */
+  --color-theme-bg-primary: var(--color-background-primary);
+  --color-theme-bg-secondary: var(--color-background-secondary);
+  --color-theme-bg-tertiary: var(--color-background-tertiary);
+  --color-theme-bg-elevated: var(--color-background-elevated);
+  --color-theme-text-primary: var(--color-text-primary);
+  --color-theme-text-secondary: var(--color-text-secondary);
+  --color-theme-text-tertiary: var(--color-text-tertiary);
+  --color-theme-text-inverse: var(--color-text-inverse);
+  --color-theme-border-primary: var(--color-border-primary);
+  --color-theme-border-secondary: var(--color-border-secondary);
+  --color-theme-border-accent: var(--color-border-accent);
 }
 
+/* Light mode explicit classes - high specificity */
+html.light,
+.light {
+  --color-background-primary: #ffffff !important;
+  --color-background-secondary: #f8fafc !important;
+  --color-background-tertiary: #f1f5f9 !important;
+  --color-background-elevated: #ffffff !important;
+  
+  --color-text-primary: #0f172a !important;
+  --color-text-secondary: #475569 !important;
+  --color-text-tertiary: #64748b !important;
+  --color-text-inverse: #ffffff !important;
+  
+  --color-border-primary: #e2e8f0 !important;
+  --color-border-secondary: #cbd5e1 !important;
+  --color-border-accent: #22c55e !important;
+  
+  /* Light mode gradients */
+  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%) !important;
+  --gradient-secondary: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+  --gradient-accent: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+}
+
+/* Force light mode body styles */
+html.light body,
+.light body {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Dark mode overrides when .dark class is applied - high specificity */
+html.dark,
+.dark {
+  --color-background-primary: #0f172a !important;
+  --color-background-secondary: #1e293b !important;
+  --color-background-tertiary: #334155 !important;
+  --color-background-elevated: #1e293b !important;
+  
+  --color-text-primary: #f8fafc !important;
+  --color-text-secondary: #cbd5e1 !important;
+  --color-text-tertiary: #94a3b8 !important;
+  --color-text-inverse: #0f172a !important;
+  
+  --color-border-primary: #334155 !important;
+  --color-border-secondary: #475569 !important;
+  --color-border-accent: #22c55e !important;
+  
+  /* Dark mode gradients */
+  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #10b981 100%) !important;
+  --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  --gradient-accent: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+}
+
+/* Force dark mode body styles */
+html.dark body,
+.dark body {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+/* System dark mode preference (fallback) - only when no theme class is applied */
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not(.light):not(.dark) {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
+@media (prefers-color-scheme: light) {
+  html:not(.light):not(.dark) {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+/* Base body styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Theme transition for all elements */
+* {
+  transition: background-color 0.2s ease-in-out, 
+              border-color 0.2s ease-in-out, 
+              color 0.2s ease-in-out;
+}
+
+/* Disable transitions temporarily during theme switch */
+.theme-transition-disabled * {
+  transition: none !important;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-border-secondary);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
 }
