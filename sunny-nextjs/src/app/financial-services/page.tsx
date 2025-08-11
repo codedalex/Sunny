@@ -2,29 +2,37 @@ import type { Metadata } from 'next';
 import FinancialHero from '@/components/financial/FinancialHero';
 import BankingIntegrations from '@/components/financial/BankingIntegrations';
 import WhiteLabelSolutions from '@/components/financial/WhiteLabelSolutions';
+import AIFraudDetectionSection from '@/components/financial/AIFraudDetectionSection';
+import TaxComplianceSection from '@/components/financial/TaxComplianceSection';
+import EnterpriseInfrastructureSection from '@/components/financial/EnterpriseInfrastructureSection';
 
 export const metadata: Metadata = {
   title: 'Financial Services Platform | Sunny Payment Gateway',
-  description: 'Enterprise financial services infrastructure with banking integrations, white-label solutions, and enterprise-grade security. Build the future of finance.',
+  description: 'Enterprise financial services infrastructure with AI fraud detection, tax compliance, banking integrations, white-label solutions, and enterprise-grade security. Build the future of finance.',
   keywords: [
     'financial services',
+    'ai fraud detection',
+    'tax compliance',
     'banking integrations',
     'white-label solutions',
     'fintech platform',
     'enterprise banking',
     'financial infrastructure',
     'banking APIs',
-    'financial compliance'
+    'financial compliance',
+    'enterprise infrastructure',
+    'load balancing',
+    'caching systems'
   ],
   openGraph: {
     title: 'Financial Services Platform | Sunny Payment Gateway',
-    description: 'Enterprise financial services infrastructure with banking integrations, white-label solutions, and enterprise-grade security.',
+    description: 'Enterprise financial services infrastructure with AI fraud detection, tax compliance, banking integrations, white-label solutions, and enterprise-grade security.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Financial Services Platform | Sunny Payment Gateway',
-    description: 'Enterprise financial services infrastructure with banking integrations, white-label solutions, and enterprise-grade security.',
+    description: 'Enterprise financial services infrastructure with AI fraud detection, tax compliance, banking integrations, white-label solutions, and enterprise-grade security.',
   },
 };
 
@@ -34,8 +42,17 @@ export default function FinancialServicesPage() {
       {/* Hero Section */}
       <FinancialHero />
       
+      {/* AI Fraud Detection */}
+      <AIFraudDetectionSection />
+      
       {/* Banking Integrations */}
       <BankingIntegrations />
+      
+      {/* Tax & Compliance */}
+      <TaxComplianceSection />
+      
+      {/* Enterprise Infrastructure */}
+      <EnterpriseInfrastructureSection />
       
       {/* White-Label Solutions */}
       <WhiteLabelSolutions />
@@ -48,7 +65,8 @@ export default function FinancialServicesPage() {
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Partner with enterprise financial institutions and launch innovative 
-            financial products with our comprehensive platform. Start building the future of finance.
+            financial products with our comprehensive AI-powered platform. Advanced fraud detection, 
+            automated tax compliance, and enterprise infrastructure at your fingertips.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-green-600 text-white rounded-lg font-semibold text-lg hover:from-blue-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
@@ -66,23 +84,23 @@ export default function FinancialServicesPage() {
             </p>
             <div className="flex items-center justify-center gap-8 text-gray-400 dark:text-gray-600">
               <div className="text-center">
-                <div className="font-semibold text-lg">2,500+</div>
-                <div className="text-sm">Bank Connections</div>
-              </div>
-              <div className="w-px h-6 bg-gray-300 dark:bg-gray-600" />
-              <div className="text-center">
-                <div className="font-semibold text-lg">99.99%</div>
-                <div className="text-sm">API Uptime</div>
-              </div>
-              <div className="w-px h-6 bg-gray-300 dark:bg-gray-600" />
-              <div className="text-center">
-                <div className="font-semibold text-lg">15+</div>
-                <div className="text-sm">Compliance Certs</div>
+                <div className="font-semibold text-lg">99.97%</div>
+                <div className="text-sm">AI Fraud Accuracy</div>
               </div>
               <div className="w-px h-6 bg-gray-300 dark:bg-gray-600" />
               <div className="text-center">
                 <div className="font-semibold text-lg">190+</div>
-                <div className="text-sm">Countries</div>
+                <div className="text-sm">Tax Jurisdictions</div>
+              </div>
+              <div className="w-px h-6 bg-gray-300 dark:bg-gray-600" />
+              <div className="text-center">
+                <div className="font-semibold text-lg">11+</div>
+                <div className="text-sm">AI Models</div>
+              </div>
+              <div className="w-px h-6 bg-gray-300 dark:bg-gray-600" />
+              <div className="text-center">
+                <div className="font-semibold text-lg">50ms</div>
+                <div className="text-sm">Response Time</div>
               </div>
             </div>
           </div>

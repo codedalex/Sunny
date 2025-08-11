@@ -20,30 +20,30 @@ const keyFeatures = [
   {
     icon: BuildingLibraryIcon,
     title: 'Banking Integrations',
-    description: 'Direct connections to 2,500+ banks globally'
+    description: 'Direct connections to 2,500+ banks with ISO8583 protocols'
   },
   {
     icon: ShieldCheckIcon,
-    title: 'Regulatory Compliance',
-    description: 'PCI DSS, SOX, GDPR, and local regulations'
+    title: 'AI-Powered Security',
+    description: 'ML fraud detection, AES-256 encryption, PCI DSS Level 1'
   },
   {
     icon: CogIcon,
-    title: 'White-Label Solutions',
-    description: 'Fully customizable financial products'
+    title: 'Enterprise Infrastructure',
+    description: 'Load balancing, caching systems, Go API Gateway'
   },
   {
     icon: GlobeAltIcon,
-    title: 'Global Coverage',
-    description: '190+ countries, 135+ currencies'
+    title: 'Global Fintech Stack',
+    description: '190+ countries, 20+ payment methods, instant settlement'
   }
 ];
 
 const stats = [
   { label: 'Bank Connections', value: '2,500+', trend: 'up' },
   { label: 'API Uptime', value: '99.99%', trend: 'neutral' },
-  { label: 'Countries Covered', value: '190+', trend: 'neutral' },
-  { label: 'Compliance Certifications', value: '15+', trend: 'neutral' }
+  { label: 'AI Models Active', value: '11+', trend: 'up' },
+  { label: 'Payment Methods', value: '20+', trend: 'up' }
 ];
 
 const financialProducts = [
@@ -55,9 +55,9 @@ const financialProducts = [
 
 const liveMetrics = [
   { label: 'Active Transactions', value: '$2.4M', change: '+12%' },
-  { label: 'Bank Connections', value: '2,547', change: '+8%' },
+  { label: 'AI Fraud Blocked', value: '1,247', change: '+23%' },
   { label: 'API Calls/min', value: '45,230', change: '+15%' },
-  { label: 'Compliance Score', value: '100%', change: '0%' }
+  { label: 'Tax Compliance', value: '99.8%', change: '+0.1%' }
 ];
 
 export default function FinancialHero() {
@@ -110,9 +110,9 @@ export default function FinancialHero() {
               transition={{ delay: 0.4 }}
               className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
             >
-              Complete financial services infrastructure with banking integrations, 
-              white-label solutions, and enterprise-grade security. 
-              Build the future of finance with our comprehensive platform.
+              Complete financial services infrastructure with AI-powered fraud detection, 
+              tax compliance automation, enterprise security, and global banking integrations. 
+              Build the future of finance with our comprehensive ecosystem.
             </motion.p>
 
             {/* Key Features */}

@@ -74,7 +74,7 @@ const navigation: NavItem[] = [
       {
         name: 'Financial Services',
         href: '/financial-services',
-        description: 'Banking integrations and fintech solutions',
+        description: 'AI fraud detection, tax compliance, banking integrations',
         icon: ShieldCheckIcon
       },
       {
@@ -107,7 +107,7 @@ const navigation: NavItem[] = [
       {
         name: 'Financial Services',
         href: '/solutions/financial-services',
-        description: 'Enterprise-grade fintech solutions'
+        description: 'AI-powered fintech ecosystem with comprehensive features'
       }
     ]
   },
@@ -249,7 +249,7 @@ const productMegaMenu: MegaMenuSection[] = [
       {
         name: 'Financial Services',
         href: '/financial-services',
-        description: 'Banking integrations, ISO8583 protocols',
+        description: 'AI fraud detection, tax compliance, banking APIs',
         icon: ShieldCheckIcon
       },
       {
@@ -272,22 +272,22 @@ const productMegaMenu: MegaMenuSection[] = [
     items: [
       {
         name: 'AI Fraud Detection',
-        href: '/ai-security',
-        description: 'ML-powered fraud prevention',
+        href: '/financial-services#ai-fraud',
+        description: '99.97% accuracy ML fraud prevention',
         icon: ShieldCheckIcon,
         badge: 'AI Powered'
       },
       {
-        name: 'Analytics Platform',
-        href: '/analytics',
-        description: 'Real-time insights and reporting',
-        icon: ChartBarIcon
+        name: 'Tax & Compliance Suite',
+        href: '/financial-services#tax-compliance',
+        description: '190+ countries automated compliance',
+        icon: DocumentTextIcon
       },
       {
-        name: 'Developer Tools',
-        href: '/developers',
-        description: 'CLI, API Gateway, 20+ SDKs',
-        icon: CodeBracketIcon
+        name: 'Enterprise Infrastructure',
+        href: '/financial-services#infrastructure',
+        description: 'Load balancing, caching, monitoring',
+        icon: ChartBarIcon
       }
     ]
   }
