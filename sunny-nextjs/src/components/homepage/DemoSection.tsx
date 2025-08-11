@@ -148,7 +148,7 @@ export default function DemoSection() {
   };
 
   return (
-    <section id="demo" className="py-20 lg:py-32 bg-gradient-to-br from-white via-purple-50/40 to-pink-50/40 dark:bg-gray-900">
+    <section id="demo" className="py-20 lg:py-32 bg-gradient-to-br from-white via-purple-50/40 to-pink-50/40 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800/60 dark:to-gray-900">
       <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
         <motion.div
@@ -180,7 +180,7 @@ export default function DemoSection() {
           {/* Demo Interface */}
           <div className="space-y-6">
             {/* Payment Method Selection */}
-            <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 backdrop-blur-sm shadow-xl shadow-purple-500/10">
+            <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl shadow-purple-500/10 dark:shadow-purple-400/20">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Choose Payment Method
               </h3>
@@ -218,7 +218,7 @@ export default function DemoSection() {
             </Card>
 
             {/* Demo Controls */}
-            <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 backdrop-blur-sm shadow-xl shadow-purple-500/10">
+            <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl shadow-purple-500/10 dark:shadow-purple-400/20">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Demo Controls

@@ -150,7 +150,7 @@ const itemVariants = {
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 lg:py-32 bg-gradient-to-b from-white via-blue-50/30 to-emerald-50/50 dark:bg-gray-900">
+    <section id="features" className="py-20 lg:py-32 bg-gradient-to-b from-white via-blue-50/30 to-emerald-50/50 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800/50 dark:to-gray-900">
       <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
         <motion.div
@@ -187,7 +187,7 @@ export default function FeaturesSection() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full p-8 bg-white/90 backdrop-blur-sm hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300 border-gray-200/50 dark:border-gray-700 group hover:border-green-300 dark:hover:border-green-600 hover:bg-white hover:-translate-y-1">
+              <Card className="h-full p-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm hover:shadow-2xl hover:shadow-green-500/10 dark:hover:shadow-green-400/20 transition-all duration-300 border-gray-200/50 dark:border-gray-700 group hover:border-green-300 dark:hover:border-green-600 hover:bg-white dark:hover:bg-gray-800 hover:-translate-y-1">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center group-hover:bg-green-200 dark:group-hover:bg-green-900/50 transition-colors">
                     <feature.icon className="w-6 h-6 text-green-600 dark:text-green-400" />

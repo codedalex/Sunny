@@ -161,7 +161,7 @@ export default function GettingStartedSection() {
   const [showCode, setShowCode] = useState(false);
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-white via-indigo-50/30 to-purple-50/40 dark:bg-gray-900">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-white via-indigo-50/30 to-purple-50/40 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800/40 dark:to-gray-900">
       <div className="max-w-[1920px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
         <motion.div
@@ -297,7 +297,7 @@ export default function GettingStartedSection() {
           className="grid lg:grid-cols-2 gap-8 mb-16 lg:mb-24"
         >
           {/* Step Content */}
-          <Card className="p-8 border-gray-200 dark:border-gray-700 bg-white/90 backdrop-blur-sm shadow-xl shadow-indigo-500/10">
+          <Card className="p-8 border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-xl shadow-indigo-500/10 dark:shadow-indigo-400/20">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center">
                 {React.createElement(steps[activeStep].icon, { className: "w-6 h-6 text-green-600 dark:text-green-400" })}
@@ -409,7 +409,7 @@ export default function GettingStartedSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 backdrop-blur-sm hover:border-green-300 dark:hover:border-green-600 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 group cursor-pointer h-full hover:-translate-y-1">
+                <Card className="p-6 border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:border-green-300 dark:hover:border-green-600 hover:shadow-xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-400/30 transition-all duration-300 group cursor-pointer h-full hover:-translate-y-1">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors">
                       <option.icon className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors" />
