@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="public/images/sunny-logo.svg" alt="Sunny Payment Gateway Logo" width="400"/>
+</div>
+
 # Sunny Payment Gateway
 
 A comprehensive, global payment processing solution designed to meet all modern payment needs.

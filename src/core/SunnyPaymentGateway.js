@@ -215,31 +215,73 @@ class SunnyPaymentGateway {
   // Only showing a few for brevity
 
   /**
-   * Process card payment
+   * Process card payment with SUNNY's direct bank processing
    * @private
    */
   async processCardPayment(paymentData, transactionId) {
-    // Encrypt sensitive card data
-    const encryptedCardData = encryptData({
-      cardNumber: paymentData.card.number,
-      cvv: paymentData.card.cvv
-    });
-
-    // In a real implementation, this would make an API call to a payment processor
-    // For this example, we'll simulate a successful payment
-    
-    // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-    
-    // Simulate successful payment
-    return {
-      success: true,
-      processorResponse: {
-        authorizationCode: crypto.randomBytes(6).toString('hex').toUpperCase(),
-        processorTransactionId: `CARD_${crypto.randomBytes(8).toString('hex')}`,
-        processorName: 'SunnyCardProcessor'
+    try {
+      // SUNNY DIRECT PROCESSING - We connect directly to banks!
+      const DirectCardProcessor = require('./processors/DirectCardProcessor');
+      const cardProcessor = new DirectCardProcessor({
+        merchantId: this.merchantId,
+        environment: this.environment
+      });
+      
+      // Validate card using Luhn algorithm and other checks
+      const cardValidation = await cardProcessor.validateCard(paymentData.card);
+      if (!cardValidation.isValid) {
+        return {
+          success: false,
+          error: 'INVALID_CARD',
+          message: cardValidation.error
+        };
       }
-    };
+
+      // Detect card network (Visa, Mastercard, Amex, etc.)
+      const cardNetwork = cardProcessor.detectCardNetwork(paymentData.card.number);
+      
+      // Process directly with acquiring bank
+      const processingResult = await cardProcessor.processWithBank({
+        card: paymentData.card,
+        amount: paymentData.amount,
+        currency: paymentData.currency,
+        transactionId,
+        merchantId: this.merchantId,
+        cardNetwork,
+        customer: paymentData.customer
+      });
+
+      if (processingResult.success) {
+        return {
+          success: true,
+          processorResponse: {
+            authorizationCode: processingResult.authCode,
+            processorTransactionId: processingResult.bankTransactionId,
+            processorName: 'SunnyDirect',
+            acquiringBank: processingResult.acquiringBank,
+            cardNetwork: cardNetwork.toUpperCase(),
+            amount: paymentData.amount,
+            currency: paymentData.currency.toUpperCase(),
+            last4: paymentData.card.number.slice(-4),
+            avs_result: processingResult.avsResult,
+            cvv_result: processingResult.cvvResult
+          }
+        };
+      } else {
+        return {
+          success: false,
+          error: processingResult.errorCode || 'PAYMENT_DECLINED',
+          message: processingResult.message || 'Payment was declined by the issuing bank'
+        };
+      }
+    } catch (error) {
+      console.error('Sunny payment processing error:', error);
+      return {
+        success: false,
+        error: 'PAYMENT_PROCESSOR_ERROR',
+        message: 'Unable to process payment at this time. Please try again.'
+      };
+    }
   }
 
   /**
