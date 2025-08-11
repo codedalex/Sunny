@@ -12,7 +12,11 @@ import {
   CurrencyDollarIcon,
   ChartBarIcon,
   ArrowTrendingUpIcon,
-  LockClosedIcon
+  LockClosedIcon,
+  CpuChipIcon,
+  DocumentTextIcon,
+  CommandLineIcon,
+  WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline';
 
 interface Feature {
@@ -31,33 +35,33 @@ const features: Feature[] = [
   {
     icon: GlobeAltIcon,
     title: 'Global Coverage',
-    description: 'Accept payments from customers worldwide with comprehensive geographic and currency support.',
+    description: 'Accept payments from customers worldwide with 20+ payment methods and multi-processor architecture.',
     badge: 'Global',
     stats: [
       { value: '190+', label: 'Countries' },
-      { value: '135+', label: 'Currencies' }
+      { value: '20+', label: 'Payment Methods' }
     ],
     benefits: [
-      'Local payment methods',
-      'Multi-currency processing',
-      'Regional compliance',
-      'Local acquiring'
+      'Voice & IoT payments',
+      'PIX, M-Pesa, UPI',
+      'Cryptocurrency & DeFi',
+      '11 specialized processors'
     ]
   },
   {
     icon: ShieldCheckIcon,
     title: 'Enterprise Security',
-    description: 'Bank-grade security with advanced fraud protection and comprehensive compliance coverage.',
+    description: 'Military-grade AES-256 encryption with AI fraud detection and comprehensive compliance.',
     badge: 'Security First',
     stats: [
       { value: '99.9%', label: 'Fraud Detection' },
-      { value: 'PCI L1', label: 'Compliance' }
+      { value: 'Level 1', label: 'PCI DSS' }
     ],
     benefits: [
-      'Advanced fraud detection',
-      'End-to-end encryption',
-      '3D Secure authentication',
-      'Comprehensive compliance'
+      'AI behavioral analysis',
+      'GDPR & PCI compliance',
+      'Key management system',
+      'Real-time monitoring'
     ]
   },
   {
@@ -78,18 +82,18 @@ const features: Feature[] = [
   },
   {
     icon: CodeBracketIcon,
-    title: 'Developer Friendly',
-    description: 'Modern APIs, comprehensive SDKs, and extensive documentation for rapid integration.',
-    badge: 'Dev Focused',
+    title: 'Developer Ecosystem',
+    description: 'Python CLI, Go API Gateway, 20+ SDKs, and AI-powered development tools.',
+    badge: 'AI Enhanced',
     stats: [
       { value: '99.9%', label: 'API Uptime' },
-      { value: '15+', label: 'SDKs' }
+      { value: '20+', label: 'SDKs' }
     ],
     benefits: [
-      'RESTful APIs',
-      'Comprehensive SDKs',
-      'Detailed documentation',
-      'Sandbox environment'
+      'Python CLI with AI chat',
+      'Go API Gateway',
+      'Interactive playground',
+      'Security monitoring'
     ]
   },
   {
@@ -122,6 +126,70 @@ const features: Feature[] = [
       'Custom reports',
       'Performance insights',
       'Revenue analytics'
+    ]
+  },
+  {
+    icon: CpuChipIcon,
+    title: 'AI-Powered Fraud Detection',
+    description: 'Machine learning algorithms and behavioral analysis for advanced fraud prevention.',
+    badge: 'AI Powered',
+    stats: [
+      { value: '99.9%', label: 'Detection Rate' },
+      { value: '<100ms', label: 'Analysis Time' }
+    ],
+    benefits: [
+      'Neural network analysis',
+      'Behavioral profiling',
+      'Risk scoring',
+      'Real-time monitoring'
+    ]
+  },
+  {
+    icon: DocumentTextIcon,
+    title: 'Tax & Compliance',
+    description: 'Automated global tax calculation and comprehensive regulatory compliance.',
+    badge: 'Global',
+    stats: [
+      { value: '190+', label: 'Countries' },
+      { value: 'GDPR', label: 'Compliant' }
+    ],
+    benefits: [
+      'Global tax calculation',
+      'Receipt generation',
+      'PCI DSS Level 1',
+      'Audit trails'
+    ]
+  },
+  {
+    icon: CommandLineIcon,
+    title: 'Developer Platform',
+    description: 'Comprehensive developer tools including CLI, API Gateway, and 20+ SDKs.',
+    badge: 'Developer',
+    stats: [
+      { value: '20+', label: 'SDKs' },
+      { value: 'Go', label: 'API Gateway' }
+    ],
+    benefits: [
+      'Python CLI with AI chat',
+      'Interactive API playground',
+      'Security monitoring tools',
+      'Database management'
+    ]
+  },
+  {
+    icon: WrenchScrewdriverIcon,
+    title: 'Enterprise Infrastructure',
+    description: 'Production-ready infrastructure with load balancing, caching, and monitoring.',
+    badge: 'Enterprise',
+    stats: [
+      { value: '99.99%', label: 'Uptime' },
+      { value: 'Multi-cloud', label: 'Deployment' }
+    ],
+    benefits: [
+      'Load balancing',
+      'Advanced caching',
+      'Health monitoring',
+      'Auto-scaling'
     ]
   }
 ];

@@ -13,7 +13,9 @@ import {
   CircleStackIcon,
   ShoppingBagIcon,
   GlobeAltIcon,
-  CheckCircleIcon
+  CheckCircleIcon,
+  MicrophoneIcon,
+  ComputerDesktopIcon
 } from '@heroicons/react/24/outline';
 
 interface PaymentMethod {
@@ -89,6 +91,26 @@ const paymentMethods: PaymentMethod[] = [
     methods: ['Klarna', 'Afterpay', 'Affirm', 'Zip', 'Sezzle', 'PayBright'],
     regions: ['US', 'Europe', 'Australia', 'Canada'],
     features: ['Flexible terms', 'Instant approval', 'Risk management', 'Higher conversions']
+  },
+  {
+    id: 'innovative',
+    category: 'Innovative Methods',
+    title: 'Next-Gen Payments',
+    description: 'Cutting-edge payment technologies for the future',
+    icon: MicrophoneIcon,
+    methods: ['Voice Payments', 'IoT Device Payments', 'Biometric Auth', 'QR Codes'],
+    regions: ['Global', 'Emerging Markets'],
+    features: ['Voice activation', 'IoT integration', 'Biometric security', 'Contactless']
+  },
+  {
+    id: 'pos',
+    category: 'Point of Sale',
+    title: 'POS Systems',
+    description: 'Complete point-of-sale solutions for physical locations',
+    icon: ComputerDesktopIcon,
+    methods: ['Kiosk POS', 'Tablet POS', 'Mobile Terminals', 'Self-Checkout'],
+    regions: ['Global'],
+    features: ['Offline capability', 'Multi-device sync', 'Inventory integration', 'Receipt printing']
   }
 ];
 
@@ -134,8 +156,8 @@ export default function PaymentMethodsSection() {
           </h2>
           
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Support all payment methods your customers prefer, from traditional cards 
-            to modern digital wallets and emerging crypto payments.
+            Support 20+ payment methods including Voice, IoT, and POS systems across 190+ countries 
+            with localized experiences and AI-optimized routing for maximum success rates.
           </p>
         </motion.div>
 

@@ -11,6 +11,8 @@ import React from 'react';
 import HeroSection from '@/components/homepage/HeroSection';
 import FeaturesSection from '@/components/homepage/FeaturesSection';
 import PaymentMethodsSection from '@/components/homepage/PaymentMethodsSection';
+import AIFeaturesSection from '@/components/homepage/AIFeaturesSection';
+import DeveloperToolsSection from '@/components/homepage/DeveloperToolsSection';
 import DemoSection from '@/components/homepage/DemoSection';
 import CustomerStoriesSection from '@/components/homepage/CustomerStoriesSection';
 import GettingStartedSection from '@/components/homepage/GettingStartedSection';
@@ -35,6 +37,16 @@ export default function HomePage() {
       <PaymentMethodsSection />
       
       <SectionDivider variant="wave" color="purple" />
+      
+      {/* AI & Advanced Features Section */}
+      <AIFeaturesSection />
+      
+      <SectionDivider variant="dots" color="emerald" />
+      
+      {/* Developer Tools Showcase */}
+      <DeveloperToolsSection />
+      
+      <SectionDivider variant="gradient" color="blue" />
       
       {/* Interactive Demo Section */}
       <DemoSection />

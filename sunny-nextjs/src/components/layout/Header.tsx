@@ -15,7 +15,8 @@ import {
   BuildingOfficeIcon,
   CodeBracketIcon,
   PhoneIcon,
-  DocumentTextIcon
+  DocumentTextIcon,
+  ChartBarIcon
 } from '@heroicons/react/24/outline';
 import { 
   BoltIcon,
@@ -69,6 +70,19 @@ const navigation: NavItem[] = [
         href: '/marketplace',
         description: 'Split payments for multi-party transactions',
         icon: BuildingOfficeIcon
+      },
+      {
+        name: 'Financial Services',
+        href: '/financial-services',
+        description: 'Banking integrations and fintech solutions',
+        icon: ShieldCheckIcon
+      },
+      {
+        name: 'Tax & Compliance',
+        href: '/tax-compliance',
+        description: 'Global tax calculation and regulatory compliance',
+        icon: DocumentTextIcon,
+        badge: 'New'
       }
     ]
   },
@@ -113,19 +127,60 @@ const navigation: NavItem[] = [
         icon: CodeBracketIcon
       },
       {
-        name: 'SDKs',
+        name: 'Sunny CLI',
+        href: '/cli',
+        description: 'Python command-line interface with AI chat',
+        icon: CodeBracketIcon,
+        badge: 'AI Powered'
+      },
+      {
+        name: 'SDKs & Libraries',
         href: '/docs/sdks',
-        description: 'Libraries for popular programming languages'
+        description: '20+ programming languages with icons and examples'
       },
       {
-        name: 'Tools',
-        href: '/tools',
-        description: 'Testing and integration tools'
+        name: 'API Playground',
+        href: '/tools/playground',
+        description: 'Interactive API testing environment'
       },
       {
-        name: 'Theme Demo',
-        href: '/theme-demo',
-        description: 'Interactive theme system demonstration'
+        name: 'Security Tools',
+        href: '/tools/security',
+        description: 'Real-time security monitoring and compliance'
+      },
+      {
+        name: 'Database Tools',
+        href: '/tools/database',
+        description: 'Migration and optimization utilities'
+      }
+    ]
+  },
+  {
+    name: 'Enterprise',
+    children: [
+      {
+        name: 'Admin Dashboard',
+        href: '/enterprise/dashboard',
+        description: 'TypeScript-based administrative interface',
+        icon: DocumentTextIcon
+      },
+      {
+        name: 'Analytics Platform',
+        href: '/enterprise/analytics',
+        description: 'Real-time analytics and reporting',
+        icon: ChartBarIcon
+      },
+      {
+        name: 'Go API Gateway',
+        href: '/enterprise/api-gateway',
+        description: 'High-performance scalable gateway',
+        icon: CodeBracketIcon,
+        badge: 'Enterprise'
+      },
+      {
+        name: 'Infrastructure',
+        href: '/enterprise/infrastructure',
+        description: 'Load balancing, caching, monitoring'
       }
     ]
   },
@@ -170,19 +225,19 @@ const productMegaMenu: MegaMenuSection[] = [
       {
         name: 'Payment Gateway',
         href: '/payment-gateway',
-        description: 'Accept payments from 190+ countries',
+        description: 'Accept payments from 190+ countries, 20+ methods',
         icon: CreditCardIcon
       },
       {
         name: 'Checkout',
         href: '/checkout',
-        description: 'Customizable, conversion-optimized checkout',
+        description: 'AI-optimized checkout with fraud detection',
         icon: BoltIcon
       },
       {
         name: 'Subscriptions',
         href: '/subscriptions',
-        description: 'Recurring billing made simple',
+        description: 'Recurring billing with tax management',
         icon: CurrencyDollarIcon,
         badge: 'Popular'
       }
@@ -192,22 +247,47 @@ const productMegaMenu: MegaMenuSection[] = [
     title: 'Advanced Features',
     items: [
       {
-        name: 'Marketplace',
-        href: '/marketplace',
-        description: 'Multi-party payment splitting',
-        icon: BuildingOfficeIcon
-      },
-      {
         name: 'Financial Services',
         href: '/financial-services',
-        description: 'Banking and fintech solutions',
+        description: 'Banking integrations, ISO8583 protocols',
         icon: ShieldCheckIcon
       },
       {
-        name: 'Analytics',
+        name: 'Tax & Compliance',
+        href: '/tax-compliance',
+        description: 'Global tax calculation, GDPR, PCI DSS',
+        icon: DocumentTextIcon,
+        badge: 'New'
+      },
+      {
+        name: 'Marketplace',
+        href: '/marketplace',
+        description: 'Multi-party payments with escrow',
+        icon: BuildingOfficeIcon
+      }
+    ]
+  },
+  {
+    title: 'AI & Enterprise',
+    items: [
+      {
+        name: 'AI Fraud Detection',
+        href: '/ai-security',
+        description: 'ML-powered fraud prevention',
+        icon: ShieldCheckIcon,
+        badge: 'AI Powered'
+      },
+      {
+        name: 'Analytics Platform',
         href: '/analytics',
-        description: 'Advanced payment insights',
-        icon: DocumentTextIcon
+        description: 'Real-time insights and reporting',
+        icon: ChartBarIcon
+      },
+      {
+        name: 'Developer Tools',
+        href: '/developers',
+        description: 'CLI, API Gateway, 20+ SDKs',
+        icon: CodeBracketIcon
       }
     ]
   }
@@ -393,8 +473,8 @@ export default function Header() {
                       >
                         {item.name === 'Products' ? (
                           // Mega menu for Products
-                          <div className="w-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-6">
-                            <div className="grid grid-cols-2 gap-8">
+                          <div className="w-[800px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-6">
+                            <div className="grid grid-cols-3 gap-6">
                               {productMegaMenu.map((section) => (
                                 <div key={section.title}>
                                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
