@@ -670,3 +670,4 @@ export default function EnterpriseInfrastructureSection() {
     </section>
   );
 }
+
