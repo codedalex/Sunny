@@ -16,6 +16,7 @@ import {
   ChartBarIcon,
   DocumentTextIcon
 } from '@heroicons/react/24/outline';
+import { formatDateTime, formatDate } from '@/utils/date-utils';
 
 interface AuditTrail {
   id: string;
@@ -282,6 +283,7 @@ export default function AuditManagementTools() {
                 <select
                   value={riskFilter}
                   onChange={(e) => setRiskFilter(e.target.value)}
+                  title="Filter by risk level"
                   className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-orange-500"
                 >
                   <option value="all">All Risk Levels</option>
@@ -325,12 +327,15 @@ export default function AuditManagementTools() {
                       <div>
                         <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Time</div>
                         <div className="font-medium text-gray-900 dark:text-white text-sm">
-                          {new Date(trail.timestamp).toLocaleString()}
+                          {formatDateTime(trail.timestamp)}
                         </div>
                       </div>
                       
                       <div className="text-center">
-                        <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+                        <button 
+                          title="View audit trail details"
+                          className="p-2 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                        >
                           <EyeIcon className="w-5 h-5" />
                         </button>
                       </div>
@@ -397,13 +402,19 @@ export default function AuditManagementTools() {
 
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600 dark:text-gray-400">
-                          Last Updated: {new Date(report.lastUpdate).toLocaleDateString()}
+                          Last Updated: {formatDate(report.lastUpdate)}
                         </span>
                         <div className="flex gap-2">
-                          <button className="p-1 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400">
+                          <button 
+                            title="View report details"
+                            className="p-1 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400"
+                          >
                             <EyeIcon className="w-4 h-4" />
                           </button>
-                          <button className="p-1 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400">
+                          <button 
+                            title="Download report"
+                            className="p-1 text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400"
+                          >
                             <ArrowDownTrayIcon className="w-4 h-4" />
                           </button>
                         </div>

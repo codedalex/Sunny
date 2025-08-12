@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import TaxComplianceHero from '@/components/tax-compliance/TaxComplianceHero';
+import KenyaTaxComplianceSection from '@/components/tax-compliance/KenyaTaxComplianceSection';
 import TaxCalculatorSection from '@/components/tax-compliance/TaxCalculatorSection';
 import RegulatoryReportingDashboard from '@/components/tax-compliance/RegulatoryReportingDashboard';
 import ReceiptGenerationShowcase from '@/components/tax-compliance/ReceiptGenerationShowcase';
@@ -8,39 +9,39 @@ import GlobalComplianceSection from '@/components/tax-compliance/GlobalComplianc
 import TaxAutomationWorkflow from '@/components/tax-compliance/TaxAutomationWorkflow';
 
 export const metadata: Metadata = {
-  title: 'Tax & Compliance Platform | Sunny Payment Gateway',
-  description: 'Automated tax calculation and compliance for 190+ countries. Real-time tax computation, regulatory reporting, receipt generation, and comprehensive audit management.',
+  title: 'Kenya Tax Compliance & Global Tax Platform | Sunny Payment Gateway',
+  description: 'Leading Kenya tax compliance platform with full KRA integration, eTIMS support, and M-Pesa tax automation. Expanding across East Africa with 190+ countries coverage.',
   keywords: [
-    'tax compliance',
+    'Kenya tax compliance',
+    'KRA integration',
+    'eTIMS integration',
+    'M-Pesa tax automation',
+    'Kenya VAT calculation',
+    'withholding tax Kenya',
+    'digital service tax Kenya',
     'automated tax calculation',
-    'global tax management',
+    'East Africa tax compliance',
     'regulatory reporting',
     'receipt generation',
     'audit management',
     'tax automation',
-    'GDPR compliance',
-    'PCI DSS validation',
-    'international tax',
-    'VAT calculation',
-    'sales tax automation',
-    'tax documentation',
-    'compliance monitoring',
-    'regulatory compliance',
-    'tax reporting',
-    'multi-jurisdiction tax',
-    'tax API',
-    'real-time tax',
-    'tax receipts'
+    'iTax portal integration',
+    'PIN validation Kenya',
+    'Kenya Revenue Authority',
+    'excise duty calculation',
+    'mobile money tax',
+    'real-time tax Kenya',
+    'tax receipts Kenya'
   ],
   openGraph: {
-    title: 'Tax & Compliance Platform | Sunny Payment Gateway',
-    description: 'Automated tax calculation and compliance for 190+ countries with real-time processing, regulatory reporting, and comprehensive audit management.',
+    title: 'Kenya Tax Compliance & Global Tax Platform | Sunny Payment Gateway',
+    description: 'Leading Kenya tax compliance platform with full KRA integration, eTIMS support, and M-Pesa tax automation. Expanding across East Africa.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tax & Compliance Platform | Sunny Payment Gateway',
-    description: 'Automated tax calculation and compliance for 190+ countries with real-time processing, regulatory reporting, and comprehensive audit management.',
+    title: 'Kenya Tax Compliance & Global Tax Platform | Sunny Payment Gateway',
+    description: 'Leading Kenya tax compliance platform with full KRA integration, eTIMS support, and M-Pesa tax automation. Expanding across East Africa.',
   },
 };
 
@@ -49,6 +50,9 @@ export default function TaxCompliancePage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <TaxComplianceHero />
+      
+      {/* Kenya Tax Compliance - Priority Section */}
+      <KenyaTaxComplianceSection />
       
       {/* Tax Calculator Interactive Demo */}
       <TaxCalculatorSection />

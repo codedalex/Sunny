@@ -80,16 +80,16 @@ const complianceRegions: ComplianceRegion[] = [
   },
   {
     id: 'africa',
-    name: 'Africa',
+    name: 'Africa 🏠',
     countries: 54,
     flag: '🌍',
     compliance: 97.2,
     color: 'bg-orange-500',
-    taxTypes: ['VAT', 'Withholding Tax', 'Excise Duty', 'Customs Duty'],
-    authorities: ['KRA', 'SARS', 'ETA', 'DGI'],
+    taxTypes: ['VAT', 'Withholding Tax', 'Excise Duty', 'Customs Duty', 'Digital Service Tax'],
+    authorities: ['KRA (Kenya - HQ)', 'SARS', 'ETA', 'DGI'],
     coverage: '75% of region GDP',
     lastUpdate: '2024-01-12',
-    highlights: ['Mobile money integration', 'AfCFTA compliance', 'Digital transformation']
+    highlights: ['Kenya HQ advantage', 'Mobile money integration', 'AfCFTA compliance', 'Digital transformation']
   },
   {
     id: 'south-america',
@@ -150,7 +150,7 @@ const complianceMetrics: ComplianceMetric[] = [
 ];
 
 export default function GlobalComplianceSection() {
-  const [selectedRegion, setSelectedRegion] = useState<string>('europe');
+  const [selectedRegion, setSelectedRegion] = useState<string>('africa'); // Default to Africa (Kenya HQ)
   const [viewMode, setViewMode] = useState<'overview' | 'detailed'>('overview');
 
   const currentRegion = complianceRegions.find(r => r.id === selectedRegion) || complianceRegions[1];

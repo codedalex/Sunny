@@ -14,6 +14,12 @@ import {
   ArrowDownTrayIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline';
+import { getDemoDate, getDemoTime } from '@/utils/date-utils';
+
+// Static values to prevent hydration mismatches
+const DEMO_RECEIPT_ID = 'RCP-2024-001247';
+const DEMO_DATE = '12/08/2024';
+const DEMO_TIME = '10:30';
 
 interface ReceiptTemplate {
   id: string;
@@ -238,15 +244,15 @@ export default function ReceiptGenerationShowcase() {
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600 dark:text-gray-400">Receipt #:</span>
-                    <span className="font-mono text-gray-900 dark:text-white">RCP-2024-001247</span>
+                    <span className="font-mono text-gray-900 dark:text-white">{DEMO_RECEIPT_ID}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600 dark:text-gray-400">Date:</span>
-                    <span className="text-gray-900 dark:text-white">{new Date().toLocaleDateString()}</span>
+                    <span className="text-gray-900 dark:text-white">{DEMO_DATE}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600 dark:text-gray-400">Time:</span>
-                    <span className="text-gray-900 dark:text-white">{new Date().toLocaleTimeString()}</span>
+                    <span className="text-gray-900 dark:text-white">{DEMO_TIME}</span>
                   </div>
                 </div>
 

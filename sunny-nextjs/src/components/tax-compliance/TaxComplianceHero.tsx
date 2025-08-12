@@ -132,8 +132,8 @@ const globalRegions: GlobalRegion[] = [
     countries: 54,
     compliance: 97.2,
     color: 'bg-orange-500',
-    flag: '🌍',
-    taxTypes: ['VAT', 'Withholding Tax', 'Excise Duty']
+    flag: '🇰🇪',
+    taxTypes: ['Kenya VAT', 'M-Pesa Tax', 'KRA Integration']
   },
   {
     name: 'South America',
@@ -154,7 +154,7 @@ const liveTransactions = [
 ];
 
 export default function TaxComplianceHero() {
-  const [selectedRegion, setSelectedRegion] = useState<string>('europe');
+  const [selectedRegion, setSelectedRegion] = useState<string>('africa'); // Default to Africa (Kenya HQ)
   const [activeDemo, setActiveDemo] = useState<boolean>(false);
 
   const currentRegion = globalRegions.find(r => r.name.toLowerCase().replace(' ', '') === selectedRegion) || globalRegions[1];
@@ -184,8 +184,8 @@ export default function TaxComplianceHero() {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-full text-emerald-600 dark:text-emerald-400 text-sm font-medium mb-6"
             >
-              <DocumentTextIcon className="w-4 h-4 mr-2" />
-              Global Tax & Compliance Platform
+              <span className="text-lg mr-2">🇰🇪</span>
+              Built in Kenya, Trusted Globally
             </motion.div>
 
             {/* Headline */}
@@ -208,9 +208,9 @@ export default function TaxComplianceHero() {
               transition={{ delay: 0.4 }}
               className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
             >
-              Real-time tax calculation for 190+ countries. Automated regulatory reporting, 
-              receipt generation, and comprehensive audit management. 
-              Stay compliant globally with AI-powered tax automation.
+              Full KRA integration with eTIMS support and M-Pesa tax automation. 
+              Real-time tax calculation for Kenya and 190+ countries. 
+              From Nairobi to the world - stay compliant with AI-powered tax automation.
             </motion.p>
 
             {/* Key Features */}

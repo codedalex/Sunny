@@ -12,6 +12,7 @@ import {
   BuildingOfficeIcon,
   GlobeAltIcon
 } from '@heroicons/react/24/outline';
+import { formatDate } from '@/utils/date-utils';
 
 interface Report {
   id: string;
@@ -197,6 +198,7 @@ export default function RegulatoryReportingDashboard() {
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
+                title="Filter reports by status"
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500"
               >
                 <option value="all">All Reports</option>
@@ -249,7 +251,7 @@ export default function RegulatoryReportingDashboard() {
                     <div className="text-center">
                       <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Due Date</div>
                       <div className="font-medium text-gray-900 dark:text-white">
-                        {new Date(report.dueDate).toLocaleDateString()}
+                        {formatDate(report.dueDate)}
                       </div>
                     </div>
 
@@ -264,10 +266,16 @@ export default function RegulatoryReportingDashboard() {
                     {/* Actions */}
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <button 
+                          title="Download report"
+                          className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        >
                           <ArrowDownTrayIcon className="w-5 h-5" />
                         </button>
-                        <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        <button 
+                          title="Schedule report"
+                          className="p-2 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        >
                           <CalendarIcon className="w-5 h-5" />
                         </button>
                       </div>
@@ -282,7 +290,7 @@ export default function RegulatoryReportingDashboard() {
                     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600 dark:text-gray-400">
-                          Submitted: {new Date(report.submissionDate).toLocaleDateString()}
+                          Submitted: {formatDate(report.submissionDate)}
                         </span>
                         <div className="flex items-center text-green-600 dark:text-green-400">
                           <CheckCircleIcon className="w-4 h-4 mr-1" />

@@ -44,6 +44,14 @@ interface Country {
 
 const countries: Country[] = [
   {
+    code: 'KE',
+    name: 'Kenya 🏠',
+    flag: '🇰🇪',
+    currency: 'KES',
+    taxTypes: ['VAT', 'Withholding Tax', 'Digital Service Tax'],
+    rates: { 'VAT': 16, 'Withholding Tax': 5, 'Digital Service Tax': 1.5 }
+  },
+  {
     code: 'US',
     name: 'United States',
     flag: '🇺🇸',
@@ -66,14 +74,6 @@ const countries: Country[] = [
     currency: 'EUR',
     taxTypes: ['VAT', 'Corporate Tax'],
     rates: { 'VAT': 19, 'Corporate Tax': 30 }
-  },
-  {
-    code: 'KE',
-    name: 'Kenya',
-    flag: '🇰🇪',
-    currency: 'KES',
-    taxTypes: ['VAT', 'Withholding Tax'],
-    rates: { 'VAT': 16, 'Withholding Tax': 5 }
   },
   {
     code: 'CA',
@@ -120,8 +120,10 @@ const productTypes = [
 
 export default function TaxCalculatorSection() {
   const [amount, setAmount] = useState<string>('1000');
-  const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
-  const [selectedTaxType, setSelectedTaxType] = useState<string>(countries[0].taxTypes[0]);
+  // Default to Kenya as our home market
+  const kenyaCountry = countries.find(c => c.code === 'KE') || countries[0];
+  const [selectedCountry, setSelectedCountry] = useState<Country>(kenyaCountry);
+  const [selectedTaxType, setSelectedTaxType] = useState<string>(kenyaCountry.taxTypes[0]);
   const [selectedProduct, setSelectedProduct] = useState<string>('Physical Goods');
   const [isCalculating, setIsCalculating] = useState<boolean>(false);
   const [showBreakdown, setShowBreakdown] = useState<boolean>(true);
@@ -304,6 +306,7 @@ export default function TaxCalculatorSection() {
                 <select
                   value={selectedTaxType}
                   onChange={(e) => setSelectedTaxType(e.target.value)}
+                  title="Select tax type for calculation"
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 >
                   {selectedCountry.taxTypes.map((taxType) => (
