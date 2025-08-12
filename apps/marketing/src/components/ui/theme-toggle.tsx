@@ -13,7 +13,7 @@ import {
   ComputerDesktopIcon,
   ChevronDownIcon 
 } from '@heroicons/react/24/outline';
-import { useTheme } from '@/lib/contexts/theme-context';
+import { useTheme, useSafeTheme } from '@/lib/contexts/theme-context';
 import { Theme } from '@/lib/types/theme';
 
 interface ThemeOption {
@@ -65,13 +65,11 @@ export default function ThemeToggle({
     setMounted(true);
   }, []);
 
-  // Always call useTheme hook
-  const themeContext = useTheme();
+  // Use safe theme hook to prevent errors during SSR
+  const themeContext = useSafeTheme();
 
-  const { theme, setTheme, toggleTheme, actualTheme } = themeContext;
-
-  // Don't render until mounted to prevent hydration mismatch
-  if (!mounted) {
+  // Don't render until mounted and context is available to prevent hydration mismatch
+  if (!mounted || !themeContext) {
     return (
       <div className={`${variant === 'button' ? 'h-8 w-8' : 'h-10 w-10'} ${className}`}>
         {/* Placeholder skeleton */}
@@ -79,6 +77,8 @@ export default function ThemeToggle({
       </div>
     );
   }
+
+  const { theme, setTheme, toggleTheme, actualTheme } = themeContext;
 
   const currentThemeOption = themeOptions.find(option => option.value === theme) || themeOptions[0];
   const CurrentIcon = currentThemeOption.icon;

@@ -23,7 +23,7 @@ import {
   ShieldCheckIcon,
   CurrencyDollarIcon
 } from '@heroicons/react/24/solid';
-import { CompactThemeToggle } from '@/components/ui/theme-toggle';
+import { CompactThemeToggle } from '@/components/ui/theme-toggle-safe';
 
 // Types
 interface NavItem {
@@ -671,6 +671,7 @@ export default function Header() {
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  aria-label="Close mobile menu"
                 >
                   <XMarkIcon className="h-6 w-6" />
                 </button>

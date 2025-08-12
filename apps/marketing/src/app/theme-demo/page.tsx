@@ -3,8 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Layout from '@/components/layout/Layout';
-import { useTheme, useIsDarkMode, useThemeColors } from '@/lib/contexts/theme-context';
-import { LabeledThemeToggle, CompactThemeToggle } from '@/components/ui/theme-toggle';
+import { useTheme, useIsDarkMode, useThemeColors, useSafeTheme } from '@/lib/contexts/theme-context';
+import { LabeledThemeToggle, CompactThemeToggle } from '@/components/ui/theme-toggle-safe';
 import { 
   SunIcon, 
   MoonIcon, 
@@ -15,7 +15,23 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function ThemeDemoPage() {
-  const { theme, actualTheme, themeConfig } = useTheme();
+  const themeContext = useSafeTheme();
+  
+  // Fallback if theme context is not available
+  if (!themeContext) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">Loading theme system...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+  
+  const { theme, actualTheme, themeConfig } = themeContext;
   const isDarkMode = useIsDarkMode();
   const colors = useThemeColors();
 
