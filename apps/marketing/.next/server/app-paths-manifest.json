@@ -1,0 +1,17 @@
+{
+  "/api/payments/route": "app/api/payments/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/subscriptions/route": "app/api/subscriptions/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/demo/page": "app/demo/page.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/theme-demo/page": "app/theme-demo/page.js",
+  "/payment-gateway/page": "app/payment-gateway/page.js",
+  "/tax-compliance/page": "app/tax-compliance/page.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/checkout/success/page": "app/checkout/success/page.js",
+  "/marketplace/page": "app/marketplace/page.js",
+  "/financial-services/page": "app/financial-services/page.js",
+  "/subscriptions/page": "app/subscriptions/page.js"
+}

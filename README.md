@@ -1,133 +1,198 @@
-<div align="center">
-  <img src="public/images/sunny-logo.svg" alt="Sunny Payment Gateway Logo" width="400"/>
-</div>
+# Sunny Payment Gateway Platform
 
-# Sunny Payment Gateway
-A comprehensive, global payment processing solution by CREDVAULT LIMITED designed to meet all modern payment needs with enterprise-grade security and scalability.
+> 🇰🇪 **Built in Kenya, Trusted Globally** - The complete fintech platform with Kenya-first approach
 
-## Key Features
-- Global coverage, multi-currency, and local payment support
-- Instant payouts and real-time settlements
-- PCI DSS Level 1, HSM integration, advanced fraud detection
-- Developer-friendly APIs, SDKs, and documentation
-- Responsive admin dashboard and analytics
-- Support for subscriptions, marketplaces, and more
+A comprehensive payment processing platform offering global coverage with specialized focus on Kenya and East African markets.
 
-## Technical Architecture
-- **Rust Core**: High-performance payment processing
-- **Go API Gateway**: Efficient API handling
-- **TypeScript/React Admin Dashboard**: Modern UI
-- Multi-cloud, Kubernetes, Terraform, zero-downtime deployments
+## 🏗️ Platform Architecture
 
-## Project Structure
-See the workspace for detailed folder layout and code organization.
-
-## DeepSeek Models Integration
-
-### Setup
-1. Run the setup script to download DeepSeek Coder models:
-   ```bash
-   bash scripts/setup-deepseek-coder.sh
-   ```
-2. Run the setup script to download DeepSeek R1 and Companion models:
-   ```bash
-   bash scripts/download-deepseek-r1.sh
-   ```
-3. Verify models are stored in both `src/ai/deepseek-coder/models` and `src/ai/deepseek-companion/models`.
-   - Both directories must be present and populated for full migration or advanced features.
-   - Ensure folder structure matches what the scripts expect.
-
-### Usage
-To load a model locally:
-```javascript
-await modelManager.loadLocalModel('deepseek-coder-33b-instruct');
-await modelManager.loadLocalModel('deepseek-coder-6.7b-instruct');
-await modelManager.loadLocalModel('deepseek-coder-33b-base');
-// For DeepSeek R1/Companion, see src/ai/deepseek-companion/README.md for usage examples.
+```
+sunny-platform/
+├── apps/                           # Applications
+│   ├── marketing/                  # sunnypayments.com
+│   ├── user-dashboard/             # app.sunnypayments.com
+│   ├── business-dashboard/         # business.sunnypayments.com
+│   ├── institutions-portal/        # institutions.sunnypayments.com
+│   ├── admin-dashboard/            # admin.sunnypayments.com
+│   └── developer-portal/           # developers.sunnypayments.com
+├── packages/                       # Shared packages
+│   ├── ui/                        # Shared UI components
+│   ├── kenya-tax/                 # Kenya tax compliance
+│   ├── shared-types/              # TypeScript types
+│   ├── api-client/                # API integration
+│   ├── auth/                      # Authentication
+│   └── utils/                     # Common utilities
+└── tools/                         # Development tools
 ```
 
-### Notes
-- Models are stored locally for full control.
-- **GPU requirements:** Large models (e.g., 33B, 70B, 671B) require significant GPU memory (e.g., 33B needs ~45GB, 70B/671B much more).
-- Fine-tuning: Use `setupTrainingEnvironment` in `ModelManager.js`.
-- If you encounter issues, check that all model directories exist and are populated as expected.
+## 🌍 Domains & Applications
 
-### Security Reminder
-- After migration or adding new models/services, run the security test script:
-  ```bash
-  node scripts/run-security-test.js
-  ```
-- Review and update your security configuration as needed. See `docs/SECURITY_CHECKLIST.md` for best practices.
+| Domain | Application | Purpose | Port |
+|--------|-------------|---------|------|
+| `sunnypayments.com` | Marketing | Main website + integrated services | 3000 |
+| `app.sunnypayments.com` | User Dashboard | Individual user portal | 3001 |
+| `business.sunnypayments.com` | Business Dashboard | Business & merchant portal | 3002 |
+| `institutions.sunnypayments.com` | Institutions Portal | Banks, SACCOs, MFIs portal | 3003 |
+| `admin.sunnypayments.com` | Admin Dashboard | Platform administration | 3004 |
+| `developers.sunnypayments.com` | Developer Portal | API docs & developer tools | 3005 |
 
-## Getting Started
+## 🇰🇪 Kenya-First Features
 
-### For Developers
-1. Clone the repository:
+### **Tax Compliance**
+- **KRA Integration**: Direct eTIMS connection and iTax reporting
+- **VAT Automation**: Automated VAT calculations and submissions
+- **Digital Service Tax**: Automated DST for digital services
+- **M-Pesa Tax**: Automated tax calculations for mobile money transactions
+
+### **Local Payment Methods**
+- **M-Pesa**: Full Safaricom M-Pesa integration
+- **Airtel Money**: Airtel mobile money support
+- **Bank Transfers**: Local bank integration (KCB, Equity, Co-op, etc.)
+- **PesaLink**: Real-time bank transfers
+
+### **Regulatory Compliance**
+- **CBK Compliance**: Central Bank of Kenya requirements
+- **KBA Standards**: Kenya Bankers Association standards
+- **Data Protection**: Kenya Data Protection Act compliance
+- **AML/CFT**: Anti-money laundering and counter-terrorism financing
+
+## 🚀 Quick Start
+
+### **Prerequisites**
+- Node.js 18+ 
+- PNPM 8+
+- Git
+
+### **Installation**
    ```bash
-   git clone https://github.com/yourusername/sunny.git
-   cd sunny
-   ```
-2. Install dependencies:
+# Clone the repository
+git clone https://github.com/sunny/sunny-platform.git
+cd sunny-platform
+
+# Install dependencies
+pnpm install
+
+# Start development servers
+pnpm dev
+```
+
+### **Development Commands**
    ```bash
-   npm install
-   ```
-3. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-5. Access the dashboard at http://localhost:3000
+# Start specific applications
+pnpm dev:marketing      # Marketing website
+pnpm dev:user          # User dashboard  
+pnpm dev:business      # Business dashboard
+pnpm dev:institutions  # Institutions portal
+pnpm dev:admin         # Admin dashboard
+pnpm dev:developer     # Developer portal
 
-### For Users
-1. Sign up at [dashboard.sunnypayments.com](https://dashboard.sunnypayments.com)
-2. Get your API keys from the dashboard
-3. Install the SDK:
-   ```bash
-   npm install sunny-payment-gateway
-   ```
-4. Initialize the SDK in your app:
-   ```javascript
-   import SunnySDK from 'sunny-payment-gateway';
-   const sunny = new SunnySDK({ apiKey: 'your_api_key', environment: 'sandbox' });
-   ```
-5. Process a payment (see docs for details)
+# Build applications
+pnpm build             # Build all
+pnpm build:marketing   # Build marketing site
+pnpm build:dashboards  # Build all dashboards
 
-## 🚀 Local Production Preview
+# Testing & Quality
+pnpm test              # Run all tests
+pnpm lint              # Lint all code
+pnpm type-check        # TypeScript checking
+pnpm format            # Format code
+```
 
-You can run the Sunny Payment Gateway in a real production environment on your local machine for safe preview and testing.
+## 📦 Shared Packages
 
-### Steps:
+### **@sunny/ui**
+Shared UI component library with consistent design system.
 
-1. **Install dependencies:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
+### **@sunny/kenya-tax**
+Kenya-specific tax compliance components and utilities.
+- KRA PIN validation
+- Tax calculations (VAT, WHT, DST)
+- eTIMS integration
+- Receipt generation
 
-2. **Run the production build locally:**
-   ```bash
-   ENV_FILE=.env.local-production node scripts/deploy-production.js --local-production
-   ```
-   - This uses `.env.local-production` for all environment variables.
-   - The app will be available at [http://localhost:3000](http://localhost:3000)
+### **@sunny/shared-types**
+TypeScript type definitions shared across all applications.
 
-3. **Stop the app:**
-   ```bash
-   docker-compose -f docker/production/docker-compose.yml down
-   ```
+### **@sunny/api-client**
+Unified API client with React hooks for all Sunny APIs.
 
-> You can edit `.env.local-production` to test different settings. For real production, use `.env.production` and your live domain.
+### **@sunny/auth**
+Authentication and authorization utilities.
 
-## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+### **@sunny/utils**
+Common utility functions for dates, currency, validation, etc.
 
-## License
-MIT License. See [LICENSE](LICENSE).
+## 🛠️ Technology Stack
 
-## Support
-- Check the [documentation](./docs/)
-- Open an issue on GitHub
-- Contact support at support@sunnypayments.com
+### **Frontend**
+- **Next.js 15**: React framework with App Router
+- **React 19**: UI library
+- **TypeScript**: Type safety
+- **Tailwind CSS**: Styling system
+- **Framer Motion**: Animations
+
+### **Development**
+- **Turborepo**: Monorepo build system
+- **PNPM**: Package manager
+- **ESLint**: Code linting
+- **Prettier**: Code formatting
+- **Jest**: Testing framework
+
+### **Deployment**
+- **Vercel**: Frontend deployment
+- **Docker**: Containerization
+- **Kubernetes**: Orchestration
+- **Terraform**: Infrastructure as code
+
+## 🌍 Global Coverage
+
+- **190+ Countries**: Worldwide payment processing
+- **135+ Currencies**: Multi-currency support
+- **20+ Payment Methods**: Cards, mobile money, crypto, bank transfers
+- **Sub-minute Settlement**: Instant settlement capabilities
+- **PCI DSS Level 1**: Enterprise-grade security
+
+## 🔒 Security & Compliance
+
+- **PCI DSS Level 1**: Payment card industry compliance
+- **SOC 2 Type II**: Security and availability
+- **ISO 27001**: Information security management
+- **GDPR**: EU data protection compliance
+- **Kenya DPA**: Kenya Data Protection Act compliance
+
+## 📊 Business Focus
+
+### **Target Markets**
+1. **Kenya** (Primary) - Home market with full regulatory compliance
+2. **East Africa** (Secondary) - Tanzania, Uganda, Rwanda expansion
+3. **Global** (Tertiary) - Worldwide coverage for diaspora and international businesses
+
+### **Customer Segments**
+- **Individuals**: Personal payments and remittances
+- **SMEs**: Small and medium enterprises
+- **Large Enterprises**: Corporate payment solutions
+- **Financial Institutions**: Banks, SACCOs, MFIs
+- **Government**: Public sector payment solutions
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary software. All rights reserved.
+
+## 📞 Contact
+
+- **Website**: [sunnypayments.com](https://sunnypayments.com)
+- **Email**: hello@sunnypayments.com
+- **Phone**: +254 (0) 700 000 000
+- **Address**: Nairobi, Kenya
+
+---
+
+**Built with ❤️ in Kenya 🇰🇪 for the world 🌍**
