@@ -7,10 +7,7 @@ import {
   SparklesIcon,
   RocketLaunchIcon,
   GlobeAltIcon,
-  TrophyIcon,
   UserGroupIcon,
-  BanknotesIcon,
-  ShieldCheckIcon,
   ChartBarIcon
 } from '@heroicons/react/24/outline';
 
@@ -36,157 +33,91 @@ export function CompanyTimeline() {
 
   const timelineEvents = [
     {
-      year: '2019',
-      quarter: 'Q1',
-      title: 'The Spark',
+      year: '2024',
+      quarter: 'Q4',
+      title: 'The Vision',
       subtitle: 'Company Founded',
-      description: 'Sarah Chen and Michael Rodriguez founded Sunny Payments with a mission to simplify global commerce. Started with a small team of 5 engineers in a San Francisco garage.',
+      description: 'Sunny Payments founded in late 2024 with a mission to simplify global commerce. Founding team assembled with expertise in fintech, technology, operations, and security.',
       icon: SparklesIcon,
       color: 'blue',
       gradient: 'from-blue-500 to-cyan-600',
       achievements: [
-        'Incorporated the company',
-        'Raised $2M seed funding',
-        'Built MVP payment gateway',
-        'Hired first 5 engineers'
+        'Company incorporated',
+        'Founding team assembled',
+        'Vision and mission defined',
+        'Market research completed'
       ],
       metrics: {
-        team: '5 people',
-        funding: '$2M',
-        countries: '1',
-        volume: '$0'
+        team: '3 founders',
+        funding: 'Bootstrap',
+        countries: 'Global vision',
+        volume: 'Pre-launch'
       }
     },
     {
-      year: '2020',
-      quarter: 'Q2',
-      title: 'First Launch',
-      subtitle: 'Beta Platform Live',
-      description: 'Launched beta platform with 10 pilot merchants. Processed first $1M in transactions and achieved 99.9% uptime. Added support for major credit cards and bank transfers.',
+      year: '2025',
+      quarter: 'Q1',
+      title: 'Platform Architecture',
+      subtitle: 'Technical Foundation',
+      description: 'Designed comprehensive payment platform architecture with global reach, enterprise security, and regulatory compliance built-in from day one.',
       icon: RocketLaunchIcon,
       color: 'green',
       gradient: 'from-green-500 to-emerald-600',
       achievements: [
-        'Beta platform launched',
-        'First $1M processed',
-        'Onboarded 10 merchants',
-        'Achieved 99.9% uptime'
+        'Platform architecture designed',
+        'Security framework planned',
+        'Compliance strategy developed',
+        'Technology stack selected'
       ],
       metrics: {
-        team: '15 people',
-        funding: '$2M',
-        countries: '3',
-        volume: '$1M'
+        team: '3 founders',
+        funding: 'Bootstrap',
+        countries: '190+ planned',
+        volume: 'Architecture ready'
       }
     },
     {
-      year: '2021',
-      quarter: 'Q3',
-      title: 'Rapid Growth',
-      subtitle: 'Series A & Expansion',
-      description: 'Raised $15M Series A led by Sequoia Capital. Expanded to 25 countries and processed $100M in transactions. Launched mobile SDKs and added fraud detection.',
+      year: '2025',
+      quarter: 'Q2',
+      title: 'Development Phase',
+      subtitle: 'Building the Future',
+      description: 'Core development phase focusing on payment processing engine, security infrastructure, and regulatory compliance systems.',
       icon: ChartBarIcon,
       color: 'purple',
       gradient: 'from-purple-500 to-indigo-600',
       achievements: [
-        'Raised $15M Series A',
-        'Expanded to 25 countries',
-        'Processed $100M volume',
-        'Launched mobile SDKs'
+        'Core engine development',
+        'Security implementation',
+        'API design completed',
+        'Testing framework built'
       ],
       metrics: {
-        team: '50 people',
-        funding: '$17M',
-        countries: '25',
-        volume: '$100M'
+        team: '3 founders',
+        funding: 'Bootstrap',
+        countries: '190+ ready',
+        volume: 'Development phase'
       }
     },
     {
-      year: '2022',
-      quarter: 'Q1',
-      title: 'Global Reach',
-      subtitle: 'International Expansion',
-      description: 'Expanded to 100+ countries with local payment methods. Launched cryptocurrency support and achieved $1B in transaction volume. Opened offices in London and Singapore.',
+      year: '2025',
+      quarter: 'Q3',
+      title: 'Launch Preparation',
+      subtitle: 'Ready for Market',
+      description: 'Final preparations for market launch including platform testing, compliance verification, and go-to-market strategy implementation.',
       icon: GlobeAltIcon,
       color: 'orange',
       gradient: 'from-orange-500 to-red-600',
       achievements: [
-        'Expanded to 100+ countries',
-        'Added crypto payments',
-        'Reached $1B volume',
-        'Opened global offices'
+        'Platform testing completed',
+        'Compliance verification',
+        'Go-to-market strategy',
+        'Launch preparations'
       ],
       metrics: {
-        team: '120 people',
-        funding: '$17M',
-        countries: '100+',
-        volume: '$1B'
-      }
-    },
-    {
-      year: '2023',
-      quarter: 'Q2',
-      title: 'Enterprise Focus',
-      subtitle: 'Series B & Enterprise',
-      description: 'Raised $50M Series B from Andreessen Horowitz. Launched enterprise solutions and achieved PCI DSS Level 1 certification. Processed $5B+ in annual volume.',
-      icon: BanknotesIcon,
-      color: 'emerald',
-      gradient: 'from-emerald-500 to-green-600',
-      achievements: [
-        'Raised $50M Series B',
-        'PCI DSS Level 1 certified',
-        'Enterprise solutions launched',
-        'Processed $5B+ annually'
-      ],
-      metrics: {
-        team: '200 people',
-        funding: '$67M',
-        countries: '150+',
-        volume: '$5B'
-      }
-    },
-    {
-      year: '2024',
-      quarter: 'Q1',
-      title: 'AI Innovation',
-      subtitle: 'Next-Gen Features',
-      description: 'Launched AI-powered fraud detection and voice payments. Expanded to 190+ countries with instant settlement. Named "Best Payment Innovation" at FinTech Awards.',
-      icon: ShieldCheckIcon,
-      color: 'indigo',
-      gradient: 'from-indigo-500 to-purple-600',
-      achievements: [
-        'AI fraud detection launched',
-        'Voice payments introduced',
-        'Instant settlement live',
-        'Won FinTech Innovation Award'
-      ],
-      metrics: {
-        team: '300 people',
-        funding: '$67M',
-        countries: '190+',
-        volume: '$10B'
-      }
-    },
-    {
-      year: '2024',
-      quarter: 'Q4',
-      title: 'Market Leader',
-      subtitle: 'Industry Recognition',
-      description: 'Achieved market leadership position with 10,000+ merchants. Launched financial services platform and expanded into embedded finance. Planning IPO for 2025.',
-      icon: TrophyIcon,
-      color: 'yellow',
-      gradient: 'from-yellow-500 to-orange-600',
-      achievements: [
-        '10,000+ merchants onboarded',
-        'Financial services launched',
-        'Embedded finance platform',
-        'IPO preparation started'
-      ],
-      metrics: {
-        team: '400 people',
-        funding: '$67M',
-        countries: '190+',
-        volume: '$15B'
+        team: '3 founders',
+        funding: 'Bootstrap',
+        countries: '190+ ready',
+        volume: 'Launch ready'
       }
     }
   ];
@@ -379,9 +310,9 @@ export function CompanyTimeline() {
                   What's Next?
                 </h3>
                 <p className="text-xl opacity-90 max-w-3xl mx-auto mb-8">
-                  Our journey is just beginning. We're working on revolutionary features 
-                  that will reshape how the world thinks about payments, commerce, and 
-                  financial inclusion.
+                  Our journey is just beginning. We're building revolutionary payment 
+                  infrastructure that will reshape how the world thinks about payments, 
+                  commerce, and financial inclusion.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -389,22 +320,22 @@ export function CompanyTimeline() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">2025</div>
-                    <div className="opacity-90">IPO Launch</div>
+                    <div className="text-3xl font-bold mb-2">Q4 2025</div>
+                    <div className="opacity-90">Market Launch</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">$100B</div>
-                    <div className="opacity-90">Annual Volume Target</div>
+                    <div className="text-3xl font-bold mb-2">190+</div>
+                    <div className="opacity-90">Countries Ready</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">1M+</div>
-                    <div className="opacity-90">Merchants Goal</div>
+                    <div className="text-3xl font-bold mb-2">Global</div>
+                    <div className="opacity-90">Impact Vision</div>
                   </motion.div>
                 </div>
               </motion.div>

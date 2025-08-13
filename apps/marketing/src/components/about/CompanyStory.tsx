@@ -49,39 +49,39 @@ export function CompanyStory() {
   const milestones = [
     {
       icon: SparklesIcon,
-      year: '2019',
-      title: 'The Beginning',
+      year: 'Late 2024',
+      title: 'The Vision',
       description: 'Founded with a vision to simplify global payments for businesses of all sizes.',
       color: 'blue'
     },
     {
       icon: RocketLaunchIcon,
-      year: '2021',
-      title: 'Rapid Growth',
-      description: 'Reached 1,000+ merchants and processed our first $100M in transactions.',
+      year: 'Q4 2024',
+      title: 'Team Formation',
+      description: 'Assembled core founding team with expertise in fintech, technology, and operations.',
       color: 'green'
     },
     {
       icon: GlobeAltIcon,
-      year: '2023',
-      title: 'Global Expansion',
-      description: 'Expanded to 190+ countries with advanced fraud detection and AI-powered features.',
+      year: 'Q1 2025',
+      title: 'Platform Development',
+      description: 'Building advanced payment infrastructure with global reach and enterprise security.',
       color: 'purple'
     },
     {
       icon: TrophyIcon,
-      year: '2024',
-      title: 'Industry Recognition',
-      description: 'Named "Best Payment Innovation" and achieved PCI DSS Level 1 certification.',
+      year: 'Q3 2025',
+      title: 'Launch Preparation',
+      description: 'Finalizing platform development and preparing for market launch.',
       color: 'orange'
     }
   ];
 
   const stats = [
-    { number: '50M+', label: 'Transactions Processed', description: 'Secure payments worldwide' },
-    { number: '190+', label: 'Countries Supported', description: 'Global reach and coverage' },
-    { number: '99.9%', label: 'Uptime Guarantee', description: 'Reliable service always' },
-    { number: '<2min', label: 'Settlement Time', description: 'Instant payment processing' }
+    { number: '3', label: 'Founding Team Members', description: 'Expert leadership team' },
+    { number: '190+', label: 'Target Countries', description: 'Global reach planned' },
+    { number: '2025', label: 'Launch Year', description: 'Ready to transform payments' },
+    { number: '<2min', label: 'Settlement Goal', description: 'Instant processing target' }
   ];
 
   return (
@@ -118,22 +118,23 @@ export function CompanyStory() {
               
               <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p className="text-lg leading-relaxed">
-                  In 2019, our founders experienced firsthand the frustration of 
-                  complex payment systems while trying to scale their own business 
-                  globally. Existing solutions were either too expensive, too 
-                  complicated, or simply didn't work in many countries.
+                  Our founding team experienced firsthand the frustration of 
+                  complex payment systems while working in fintech and trying to 
+                  scale businesses globally. Existing solutions were either too 
+                  expensive, too complicated, or simply didn't work in many countries.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  They envisioned a world where any business, regardless of size 
+                  We envisioned a world where any business, regardless of size 
                   or location, could accept payments from anywhere in the world 
                   with just a few lines of code. This vision became Sunny Payments.
                 </p>
                 
                 <p className="text-lg leading-relaxed">
-                  Today, we're proud to serve thousands of businesses across 190+ 
-                  countries, processing millions of transactions and helping 
-                  entrepreneurs turn their dreams into reality.
+                  As a pre-launch startup, we're building the infrastructure that 
+                  will serve businesses across 190+ countries, with the goal of 
+                  processing millions of transactions and helping entrepreneurs 
+                  turn their dreams into reality.
                 </p>
               </div>
 

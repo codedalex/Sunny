@@ -32,18 +32,23 @@ export default function AboutPage() {
             name: 'Sunny Payments',
             url: 'https://sunnypayments.com',
             logo: 'https://sunnypayments.com/logo.png',
-            description: 'Global payment infrastructure company democratizing finance through innovative payment solutions across 190+ countries.',
-            foundingDate: '2019',
+            description: 'Pre-launch fintech startup building global payment infrastructure to democratize finance through innovative payment solutions across 190+ countries.',
+            foundingDate: '2024-12',
             founders: [
               {
                 '@type': 'Person',
-                name: 'Sarah Chen',
-                jobTitle: 'Chief Executive Officer'
+                name: 'Samuel Mbugua',
+                jobTitle: 'Chairperson, CTO & CFO'
               },
               {
                 '@type': 'Person',
-                name: 'Michael Rodriguez',
-                jobTitle: 'Chief Technology Officer'
+                name: 'Alex',
+                jobTitle: 'Head of Operations & Compliance'
+              },
+              {
+                '@type': 'Person',
+                name: 'Alan',
+                jobTitle: 'Systems Security Engineer'
               }
             ],
             address: {
@@ -67,12 +72,12 @@ export default function AboutPage() {
             ],
             numberOfEmployees: {
               '@type': 'QuantitativeValue',
-              value: 400
+              value: 3
             },
             award: [
-              'Best Payment Innovation 2024',
-              'FinTech Company of the Year 2023',
-              'PCI DSS Level 1 Certification'
+              'Pre-Launch Fintech Startup 2024',
+              'Innovative Payment Platform Design',
+              'Security-First Architecture'
             ],
             knowsAbout: [
               'Payment Processing',

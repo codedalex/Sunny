@@ -26,22 +26,16 @@ export function AboutHero() {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
+  const floatingAnimation = {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: [0.42, 0, 0.58, 1]
     }
   };
 
@@ -76,20 +70,38 @@ export function AboutHero() {
       {/* Floating Background Shapes */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-800 rounded-full opacity-20"
-        variants={floatingVariants}
-        animate="animate"
+        animate={{
+          y: [-10, 10, -10]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
       <motion.div
         className="absolute top-40 right-20 w-16 h-16 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20"
-        variants={floatingVariants}
-        animate="animate"
-        transition={{ delay: 1 }}
+        animate={{
+          y: [-10, 10, -10]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
       />
       <motion.div
         className="absolute bottom-20 left-1/4 w-12 h-12 bg-green-200 dark:bg-green-800 rounded-full opacity-20"
-        variants={floatingVariants}
-        animate="animate"
-        transition={{ delay: 2 }}
+        animate={{
+          y: [-10, 10, -10]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
       />
 
       <div className="container mx-auto px-6 relative">
@@ -124,9 +136,9 @@ export function AboutHero() {
               variants={itemVariants}
             >
               We're on a mission to democratize global finance by making payments 
-              simple, secure, and accessible for everyone, everywhere. From small 
-              businesses to Fortune 500 companies, we're powering the next generation 
-              of commerce.
+              simple, secure, and accessible for everyone, everywhere. As a pre-launch 
+              fintech startup, we're building the next generation of payment infrastructure 
+              from the ground up.
             </motion.p>
             
             <motion.div
@@ -235,9 +247,9 @@ export function AboutHero() {
                   Our Vision for 2030
                 </h2>
                 <p className="text-xl opacity-90 max-w-3xl mx-auto mb-8">
-                  To be the world's most trusted payment infrastructure, processing 
-                  over $1 trillion annually and serving 10 million businesses across 
-                  every corner of the globe.
+                  To be the world's most trusted payment infrastructure, connecting 
+                  businesses globally with seamless, secure, and innovative payment 
+                  solutions that remove barriers to international commerce.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -245,22 +257,22 @@ export function AboutHero() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">$1T+</div>
-                    <div className="opacity-90">Annual Volume</div>
+                    <div className="text-3xl font-bold mb-2">2025</div>
+                    <div className="opacity-90">Launch Year</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">10M+</div>
-                    <div className="opacity-90">Global Businesses</div>
+                    <div className="text-3xl font-bold mb-2">190+</div>
+                    <div className="opacity-90">Target Countries</div>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-3xl font-bold mb-2">195</div>
-                    <div className="opacity-90">Countries Served</div>
+                    <div className="text-3xl font-bold mb-2">24/7</div>
+                    <div className="opacity-90">Global Support</div>
                   </motion.div>
                 </div>
               </motion.div>

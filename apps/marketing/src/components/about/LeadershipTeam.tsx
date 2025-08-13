@@ -56,85 +56,55 @@ export function LeadershipTeam() {
 
   const leadership = [
     {
-      name: 'Sarah Chen',
-      role: 'Chief Executive Officer',
-      bio: 'Former VP of Payments at Stripe, led global expansion to 40+ countries. Stanford MBA with 15+ years in fintech.',
-      image: '/images/team/sarah-chen.jpg',
-      education: 'Stanford MBA, UC Berkeley CS',
-      previousRoles: ['VP Payments @ Stripe', 'Director @ PayPal', 'Senior PM @ Square'],
-      achievements: ['Built $2B+ payment volume', 'Led 200+ person team', 'Launched in 40+ countries'],
-      expertise: ['Global Payments', 'Team Leadership', 'Product Strategy']
+      name: 'Samuel Mbugua',
+      role: 'Chairperson, CTO & CFO',
+      bio: 'Visionary leader serving as Chairperson overseeing strategic decision-making, business development, and investor relations. Also serves as CTO managing technological innovation and CFO handling financial planning.',
+      image: '/images/team/samuel-mbugua.jpg',
+      education: 'Computer Science & Finance',
+      previousRoles: ['Fintech Leadership', 'Technology Innovation', 'Financial Management'],
+      achievements: ['Strategic Vision Leadership', 'Multi-role Executive Experience', 'Fintech Expertise'],
+      expertise: ['Strategic Leadership', 'Technology Innovation', 'Financial Management', 'Business Development', 'Investor Relations']
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Chief Technology Officer',
-      bio: 'Ex-Principal Engineer at Google Pay, architect of large-scale payment systems. MIT graduate specializing in distributed systems.',
-      image: '/images/team/michael-rodriguez.jpg',
-      education: 'MIT Computer Science, PhD',
-      previousRoles: ['Principal Engineer @ Google Pay', 'Staff Engineer @ Uber', 'Senior SDE @ Amazon'],
-      achievements: ['Built systems processing 1M+ TPS', 'Led 50+ engineers', 'Filed 12 patents'],
-      expertise: ['Distributed Systems', 'Payment Infrastructure', 'Engineering Leadership']
+      name: 'Alex Mutonga',
+      role: 'Head of Operations & Compliance',
+      bio: 'Systems Architectural Engineer and Head of Operations responsible for implementation of internal processes, legal/regulatory compliance, and operational support. Chief Engineer at Tufund Africa and Quick Quick Cash.',
+      image: '/images/team/alex.jpg',
+      education: 'Computer Science, Business Strategist',
+      previousRoles: ['Chief Engineer @ Tufund Africa', 'Chief Engineer @ Quick Quick Cash', 'Systems Architect'],
+      achievements: ['Multi-industry Engineering Leadership', 'Compliance Expertise', 'Systems Architecture'],
+      expertise: ['Operations Management', 'Regulatory Compliance', 'Systems Architecture', 'Process Implementation', 'Multi-industry Experience']
     },
     {
-      name: 'David Kim',
-      role: 'Chief Financial Officer',
-      bio: 'Former CFO at several high-growth fintech startups. Expert in scaling financial operations and regulatory compliance.',
-      image: '/images/team/david-kim.jpg',
-      education: 'Harvard MBA, CPA',
-      previousRoles: ['CFO @ Affirm', 'VP Finance @ Robinhood', 'Director @ Goldman Sachs'],
-      achievements: ['Raised $500M+ in funding', 'Led 3 successful exits', 'Built finance teams 0-100'],
-      expertise: ['Financial Strategy', 'Fundraising', 'Regulatory Compliance']
-    },
-    {
-      name: 'Priya Patel',
-      role: 'Chief Product Officer',
-      bio: 'Product leader with deep expertise in payments UX and global markets. Previously built payment products at Shopify.',
-      image: '/images/team/priya-patel.jpg',
-      education: 'IIT Delhi, Stanford MS',
-      previousRoles: ['VP Product @ Shopify', 'Senior PM @ Meta', 'Product Lead @ Razorpay'],
-      achievements: ['Launched products in 50+ countries', '10M+ active users', 'Led product teams of 30+'],
-      expertise: ['Product Strategy', 'Global Markets', 'User Experience']
-    },
-    {
-      name: 'James Thompson',
-      role: 'Chief Security Officer',
-      bio: 'Cybersecurity expert with 20+ years experience. Former CISO at major financial institutions, specialized in payment security.',
-      image: '/images/team/james-thompson.jpg',
-      education: 'Carnegie Mellon MS, CISSP',
-      previousRoles: ['CISO @ JPMorgan Chase', 'Security Director @ Visa', 'Principal @ Deloitte'],
-      achievements: ['Achieved PCI DSS Level 1', 'Zero security breaches', 'Built security teams 50+'],
-      expertise: ['Payment Security', 'Compliance', 'Risk Management']
-    },
-    {
-      name: 'Lisa Wang',
-      role: 'Chief Marketing Officer',
-      bio: 'Growth marketing expert who scaled multiple B2B SaaS companies from startup to IPO. Expert in fintech marketing.',
-      image: '/images/team/lisa-wang.jpg',
-      education: 'Wharton MBA, Northwestern',
-      previousRoles: ['VP Marketing @ Plaid', 'Growth Lead @ Twilio', 'Director @ HubSpot'],
-      achievements: ['Scaled ARR 0-$100M+', 'Built marketing teams 40+', 'Led 3 rebrands'],
-      expertise: ['Growth Marketing', 'Brand Strategy', 'Developer Marketing']
+      name: 'Alan',
+      role: 'Systems Security Engineer',
+      bio: 'Systems Security Engineer focused on building robust security infrastructure for the payment platform. Specializes in cybersecurity and secure systems design.',
+      image: '/images/team/alan.jpg',
+      education: 'Cybersecurity & Systems Engineering',
+      previousRoles: ['Security Engineering', 'Systems Security', 'Infrastructure Security'],
+      achievements: ['Security Systems Design', 'Infrastructure Protection', 'Security Engineering'],
+      expertise: ['Systems Security', 'Cybersecurity', 'Infrastructure Security', 'Secure Systems Design', 'Risk Management']
     }
   ];
 
   const advisors = [
     {
-      name: 'John Collison',
-      role: 'Advisor',
-      company: 'Co-founder, Stripe',
-      expertise: 'Global Payments Strategy'
+      name: 'Industry Expert',
+      role: 'Technical Advisor',
+      company: 'Fintech Industry',
+      expertise: 'Payment Systems Architecture'
     },
     {
-      name: 'Reid Hoffman',
-      role: 'Advisor',
-      company: 'Co-founder, LinkedIn',
-      expertise: 'Scaling Technology Companies'
+      name: 'Regulatory Expert',
+      role: 'Compliance Advisor',
+      company: 'Financial Services',
+      expertise: 'Global Regulatory Compliance'
     },
     {
-      name: 'Melanie Perkins',
-      role: 'Advisor',
-      company: 'Co-founder, Canva',
-      expertise: 'Product-Led Growth'
+      name: 'Business Mentor',
+      role: 'Strategic Advisor',
+      company: 'Startup Ecosystem',
+      expertise: 'Business Development & Growth'
     }
   ];
 
@@ -160,8 +130,8 @@ export function LeadershipTeam() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Experienced executives from top fintech companies, united by a shared 
-              vision to democratize global payments
+              Founding team with diverse expertise in fintech, technology, operations, 
+              and security, united by a shared vision to democratize global payments
             </p>
           </motion.div>
 
@@ -335,8 +305,8 @@ export function LeadershipTeam() {
                   transition={{ duration: 0.2 }}
                 >
                   <UserGroupIcon className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                  <div className="text-3xl font-bold mb-1">150+</div>
-                  <div className="opacity-90">Team Members</div>
+                  <div className="text-3xl font-bold mb-1">3</div>
+                  <div className="opacity-90">Founding Members</div>
                 </motion.div>
                 
                 <motion.div
@@ -344,8 +314,8 @@ export function LeadershipTeam() {
                   transition={{ duration: 0.2 }}
                 >
                   <BuildingOfficeIcon className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                  <div className="text-3xl font-bold mb-1">15+</div>
-                  <div className="opacity-90">Countries</div>
+                  <div className="text-3xl font-bold mb-1">3</div>
+                  <div className="opacity-90">Core Disciplines</div>
                 </motion.div>
                 
                 <motion.div
@@ -353,8 +323,8 @@ export function LeadershipTeam() {
                   transition={{ duration: 0.2 }}
                 >
                   <AcademicCapIcon className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                  <div className="text-3xl font-bold mb-1">50+</div>
-                  <div className="opacity-90">Top Universities</div>
+                  <div className="text-3xl font-bold mb-1">Multi</div>
+                  <div className="opacity-90">Industry Experience</div>
                 </motion.div>
                 
                 <motion.div
@@ -362,8 +332,8 @@ export function LeadershipTeam() {
                   transition={{ duration: 0.2 }}
                 >
                   <TrophyIcon className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                  <div className="text-3xl font-bold mb-1">25+</div>
-                  <div className="opacity-90">Years Avg Experience</div>
+                  <div className="text-3xl font-bold mb-1">2025</div>
+                  <div className="opacity-90">Launch Ready</div>
                 </motion.div>
               </div>
             </div>

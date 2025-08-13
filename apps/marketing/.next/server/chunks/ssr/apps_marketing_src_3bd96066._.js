@@ -153,25 +153,24 @@ function AboutHero() {
         },
         visible: {
             opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
+            y: 0
         }
     };
-    const floatingVariants = {
-        animate: {
-            y: [
-                -10,
-                10,
-                -10
-            ],
-            transition: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }
+    const floatingAnimation = {
+        y: [
+            -10,
+            10,
+            -10
+        ],
+        transition: {
+            duration: 4,
+            repeat: Infinity,
+            ease: [
+                0.42,
+                0,
+                0.58,
+                1
+            ]
         }
     };
     const values = [
@@ -203,23 +202,41 @@ function AboutHero() {
                 className: "absolute inset-0 bg-grid-pattern opacity-5"
             }, void 0, false, {
                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                lineNumber: 74,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "absolute top-20 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-800 rounded-full opacity-20",
-                variants: floatingVariants,
-                animate: "animate"
+                animate: {
+                    y: [
+                        -10,
+                        10,
+                        -10
+                    ]
+                },
+                transition: {
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }
             }, void 0, false, {
                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                lineNumber: 77,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "absolute top-40 right-20 w-16 h-16 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20",
-                variants: floatingVariants,
-                animate: "animate",
+                animate: {
+                    y: [
+                        -10,
+                        10,
+                        -10
+                    ]
+                },
                 transition: {
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                     delay: 1
                 }
             }, void 0, false, {
@@ -229,14 +246,22 @@ function AboutHero() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "absolute bottom-20 left-1/4 w-12 h-12 bg-green-200 dark:bg-green-800 rounded-full opacity-20",
-                variants: floatingVariants,
-                animate: "animate",
+                animate: {
+                    y: [
+                        -10,
+                        10,
+                        -10
+                    ]
+                },
                 transition: {
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                     delay: 2
                 }
             }, void 0, false, {
                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                lineNumber: 88,
+                lineNumber: 94,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -257,12 +282,12 @@ function AboutHero() {
                                         children: "About Sunny Payments"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -276,28 +301,28 @@ function AboutHero() {
                                             children: "Future"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 127,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 130,
                                             columnNumber: 15
                                         }, this),
                                         "of Global Payments"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
                                     className: "text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8",
                                     variants: itemVariants,
-                                    children: "We're on a mission to democratize global finance by making payments simple, secure, and accessible for everyone, everywhere. From small businesses to Fortune 500 companies, we're powering the next generation of commerce."
+                                    children: "We're on a mission to democratize global finance by making payments simple, secure, and accessible for everyone, everywhere. As a pre-launch fintech startup, we're building the next generation of payment infrastructure from the ground up."
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -310,7 +335,7 @@ function AboutHero() {
                                             children: "Join Our Mission"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 148,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$marketing$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -320,19 +345,19 @@ function AboutHero() {
                                             children: "Meet the Team"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 151,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                            lineNumber: 103,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -354,7 +379,7 @@ function AboutHero() {
                                             children: "Our Mission"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 168,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -362,23 +387,23 @@ function AboutHero() {
                                             children: '"To create a world where financial barriers don\'t exist, where every business can accept payments from anywhere, and where innovation drives financial inclusion for all."'
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 171,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 163,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                lineNumber: 150,
+                                lineNumber: 162,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                            lineNumber: 146,
+                            lineNumber: 158,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -392,7 +417,7 @@ function AboutHero() {
                                             children: "Our Core Values"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 183,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -400,13 +425,13 @@ function AboutHero() {
                                             children: "These principles guide everything we do, from product development to customer relationships"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 186,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 182,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -447,12 +472,12 @@ function AboutHero() {
                                                         className: "w-8 h-8 text-white"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 217,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 200,
+                                                    lineNumber: 212,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -460,7 +485,7 @@ function AboutHero() {
                                                     children: value.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 208,
+                                                    lineNumber: 220,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -468,25 +493,25 @@ function AboutHero() {
                                                     children: value.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 224,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 197,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 192,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                            lineNumber: 169,
+                            lineNumber: 181,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -524,15 +549,15 @@ function AboutHero() {
                                             children: "Our Vision for 2030"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 246,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xl opacity-90 max-w-3xl mx-auto mb-8",
-                                            children: "To be the world's most trusted payment infrastructure, processing over $1 trillion annually and serving 10 million businesses across every corner of the globe."
+                                            children: "To be the world's most trusted payment infrastructure, connecting businesses globally with seamless, secure, and innovative payment solutions that remove barriers to international commerce."
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 237,
+                                            lineNumber: 249,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -548,24 +573,24 @@ function AboutHero() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-3xl font-bold mb-2",
-                                                            children: "$1T+"
+                                                            children: "2025"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 248,
+                                                            lineNumber: 260,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "opacity-90",
-                                                            children: "Annual Volume"
+                                                            children: "Launch Year"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 249,
+                                                            lineNumber: 261,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 244,
+                                                    lineNumber: 256,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -578,24 +603,24 @@ function AboutHero() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-3xl font-bold mb-2",
-                                                            children: "10M+"
+                                                            children: "190+"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 255,
+                                                            lineNumber: 267,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "opacity-90",
-                                                            children: "Global Businesses"
+                                                            children: "Target Countries"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 256,
+                                                            lineNumber: 268,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 251,
+                                                    lineNumber: 263,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -608,63 +633,63 @@ function AboutHero() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-3xl font-bold mb-2",
-                                                            children: "195"
+                                                            children: "24/7"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 262,
+                                                            lineNumber: 274,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "opacity-90",
-                                                            children: "Countries Served"
+                                                            children: "Global Support"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                            lineNumber: 263,
+                                                            lineNumber: 275,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                                    lineNumber: 258,
+                                                    lineNumber: 270,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 255,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 241,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                                lineNumber: 228,
+                                lineNumber: 240,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                            lineNumber: 222,
+                            lineNumber: 234,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                    lineNumber: 96,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-                lineNumber: 95,
+                lineNumber: 107,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/marketing/src/components/about/AboutHero.tsx",
-        lineNumber: 72,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
@@ -826,53 +851,53 @@ function CompanyStory() {
     const milestones = [
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$SparklesIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SparklesIcon$3e$__["SparklesIcon"],
-            year: '2019',
-            title: 'The Beginning',
+            year: 'Late 2024',
+            title: 'The Vision',
             description: 'Founded with a vision to simplify global payments for businesses of all sizes.',
             color: 'blue'
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$RocketLaunchIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RocketLaunchIcon$3e$__["RocketLaunchIcon"],
-            year: '2021',
-            title: 'Rapid Growth',
-            description: 'Reached 1,000+ merchants and processed our first $100M in transactions.',
+            year: 'Q4 2024',
+            title: 'Team Formation',
+            description: 'Assembled core founding team with expertise in fintech, technology, and operations.',
             color: 'green'
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$GlobeAltIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GlobeAltIcon$3e$__["GlobeAltIcon"],
-            year: '2023',
-            title: 'Global Expansion',
-            description: 'Expanded to 190+ countries with advanced fraud detection and AI-powered features.',
+            year: 'Q1 2025',
+            title: 'Platform Development',
+            description: 'Building advanced payment infrastructure with global reach and enterprise security.',
             color: 'purple'
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$TrophyIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TrophyIcon$3e$__["TrophyIcon"],
-            year: '2024',
-            title: 'Industry Recognition',
-            description: 'Named "Best Payment Innovation" and achieved PCI DSS Level 1 certification.',
+            year: 'Q3 2025',
+            title: 'Launch Preparation',
+            description: 'Finalizing platform development and preparing for market launch.',
             color: 'orange'
         }
     ];
     const stats = [
         {
-            number: '50M+',
-            label: 'Transactions Processed',
-            description: 'Secure payments worldwide'
+            number: '3',
+            label: 'Founding Team Members',
+            description: 'Expert leadership team'
         },
         {
             number: '190+',
-            label: 'Countries Supported',
-            description: 'Global reach and coverage'
+            label: 'Target Countries',
+            description: 'Global reach planned'
         },
         {
-            number: '99.9%',
-            label: 'Uptime Guarantee',
-            description: 'Reliable service always'
+            number: '2025',
+            label: 'Launch Year',
+            description: 'Ready to transform payments'
         },
         {
             number: '<2min',
-            label: 'Settlement Time',
-            description: 'Instant payment processing'
+            label: 'Settlement Goal',
+            description: 'Instant processing target'
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -946,7 +971,7 @@ function CompanyStory() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-lg leading-relaxed",
-                                                children: "In 2019, our founders experienced firsthand the frustration of complex payment systems while trying to scale their own business globally. Existing solutions were either too expensive, too complicated, or simply didn't work in many countries."
+                                                children: "Our founding team experienced firsthand the frustration of complex payment systems while working in fintech and trying to scale businesses globally. Existing solutions were either too expensive, too complicated, or simply didn't work in many countries."
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
                                                 lineNumber: 120,
@@ -954,7 +979,7 @@ function CompanyStory() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-lg leading-relaxed",
-                                                children: "They envisioned a world where any business, regardless of size or location, could accept payments from anywhere in the world with just a few lines of code. This vision became Sunny Payments."
+                                                children: "We envisioned a world where any business, regardless of size or location, could accept payments from anywhere in the world with just a few lines of code. This vision became Sunny Payments."
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
                                                 lineNumber: 127,
@@ -962,7 +987,7 @@ function CompanyStory() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-lg leading-relaxed",
-                                                children: "Today, we're proud to serve thousands of businesses across 190+ countries, processing millions of transactions and helping entrepreneurs turn their dreams into reality."
+                                                children: "As a pre-launch startup, we're building the infrastructure that will serve businesses across 190+ countries, with the goal of processing millions of transactions and helping entrepreneurs turn their dreams into reality."
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
                                                 lineNumber: 133,
@@ -989,12 +1014,12 @@ function CompanyStory() {
                                                     className: "w-6 h-6 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 147,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 146,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1004,7 +1029,7 @@ function CompanyStory() {
                                                         children: "Our Mission Continues"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                        lineNumber: 149,
+                                                        lineNumber: 150,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1012,19 +1037,19 @@ function CompanyStory() {
                                                         children: "Every day, we work to make payments simpler and more accessible"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                        lineNumber: 152,
+                                                        lineNumber: 153,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                lineNumber: 148,
+                                                lineNumber: 149,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 141,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -1059,7 +1084,7 @@ function CompanyStory() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 163,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1076,12 +1101,12 @@ function CompanyStory() {
                                                                 children: "S"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                                lineNumber: 179,
+                                                                lineNumber: 180,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 179,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1089,7 +1114,7 @@ function CompanyStory() {
                                                             children: "Sunny Payments"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                            lineNumber: 181,
+                                                            lineNumber: 182,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1097,34 +1122,34 @@ function CompanyStory() {
                                                             children: "Powering Global Commerce"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                            lineNumber: 184,
+                                                            lineNumber: 185,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 178,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 177,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 175,
+                                            lineNumber: 176,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 162,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                lineNumber: 160,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -1145,7 +1170,7 @@ function CompanyStory() {
                                         children: "Our Journey"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 198,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1153,13 +1178,13 @@ function CompanyStory() {
                                         children: "Key milestones that shaped our growth and impact in the fintech industry"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 201,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                lineNumber: 196,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,17 +1230,17 @@ function CompanyStory() {
                                                             className: "w-6 h-6 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                            lineNumber: 233,
+                                                            lineNumber: 234,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                        lineNumber: 232,
+                                                        lineNumber: 233,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 228,
+                                                    lineNumber: 229,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1223,7 +1248,7 @@ function CompanyStory() {
                                                     children: milestone.year
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 237,
+                                                    lineNumber: 238,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1231,7 +1256,7 @@ function CompanyStory() {
                                                     children: milestone.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 242,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1239,30 +1264,30 @@ function CompanyStory() {
                                                     children: milestone.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 245,
+                                                    lineNumber: 246,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 228,
                                             columnNumber: 21
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 217,
                                         columnNumber: 19
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                lineNumber: 205,
+                                lineNumber: 206,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                        lineNumber: 195,
+                        lineNumber: 196,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1278,7 +1303,7 @@ function CompanyStory() {
                                             children: "By the Numbers"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 259,
+                                            lineNumber: 260,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1286,13 +1311,13 @@ function CompanyStory() {
                                             children: "Our impact in the global payments ecosystem"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 263,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                    lineNumber: 258,
+                                    lineNumber: 259,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1337,7 +1362,7 @@ function CompanyStory() {
                                                     children: stat.number
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 282,
+                                                    lineNumber: 283,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1345,7 +1370,7 @@ function CompanyStory() {
                                                     children: stat.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 292,
+                                                    lineNumber: 293,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1353,29 +1378,29 @@ function CompanyStory() {
                                                     children: stat.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 297,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 270,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                                    lineNumber: 267,
+                                    lineNumber: 268,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                            lineNumber: 257,
+                            lineNumber: 258,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/marketing/src/components/about/CompanyStory.tsx",
-                        lineNumber: 256,
+                        lineNumber: 257,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1467,156 +1492,96 @@ function LeadershipTeam() {
     };
     const leadership = [
         {
-            name: 'Sarah Chen',
-            role: 'Chief Executive Officer',
-            bio: 'Former VP of Payments at Stripe, led global expansion to 40+ countries. Stanford MBA with 15+ years in fintech.',
-            image: '/images/team/sarah-chen.jpg',
-            education: 'Stanford MBA, UC Berkeley CS',
+            name: 'Samuel Mbugua',
+            role: 'Chairperson, CTO & CFO',
+            bio: 'Visionary leader serving as Chairperson overseeing strategic decision-making, business development, and investor relations. Also serves as CTO managing technological innovation and CFO handling financial planning.',
+            image: '/images/team/samuel-mbugua.jpg',
+            education: 'Computer Science & Finance',
             previousRoles: [
-                'VP Payments @ Stripe',
-                'Director @ PayPal',
-                'Senior PM @ Square'
+                'Fintech Leadership',
+                'Technology Innovation',
+                'Financial Management'
             ],
             achievements: [
-                'Built $2B+ payment volume',
-                'Led 200+ person team',
-                'Launched in 40+ countries'
+                'Strategic Vision Leadership',
+                'Multi-role Executive Experience',
+                'Fintech Expertise'
             ],
             expertise: [
-                'Global Payments',
-                'Team Leadership',
-                'Product Strategy'
+                'Strategic Leadership',
+                'Technology Innovation',
+                'Financial Management',
+                'Business Development',
+                'Investor Relations'
             ]
         },
         {
-            name: 'Michael Rodriguez',
-            role: 'Chief Technology Officer',
-            bio: 'Ex-Principal Engineer at Google Pay, architect of large-scale payment systems. MIT graduate specializing in distributed systems.',
-            image: '/images/team/michael-rodriguez.jpg',
-            education: 'MIT Computer Science, PhD',
+            name: 'Alex Mutonga',
+            role: 'Head of Operations & Compliance',
+            bio: 'Systems Architectural Engineer and Head of Operations responsible for implementation of internal processes, legal/regulatory compliance, and operational support. Chief Engineer at Tufund Africa and Quick Quick Cash.',
+            image: '/images/team/alex.jpg',
+            education: 'Computer Science, Business Strategist',
             previousRoles: [
-                'Principal Engineer @ Google Pay',
-                'Staff Engineer @ Uber',
-                'Senior SDE @ Amazon'
+                'Chief Engineer @ Tufund Africa',
+                'Chief Engineer @ Quick Quick Cash',
+                'Systems Architect'
             ],
             achievements: [
-                'Built systems processing 1M+ TPS',
-                'Led 50+ engineers',
-                'Filed 12 patents'
+                'Multi-industry Engineering Leadership',
+                'Compliance Expertise',
+                'Systems Architecture'
             ],
             expertise: [
-                'Distributed Systems',
-                'Payment Infrastructure',
-                'Engineering Leadership'
+                'Operations Management',
+                'Regulatory Compliance',
+                'Systems Architecture',
+                'Process Implementation',
+                'Multi-industry Experience'
             ]
         },
         {
-            name: 'David Kim',
-            role: 'Chief Financial Officer',
-            bio: 'Former CFO at several high-growth fintech startups. Expert in scaling financial operations and regulatory compliance.',
-            image: '/images/team/david-kim.jpg',
-            education: 'Harvard MBA, CPA',
+            name: 'Alan',
+            role: 'Systems Security Engineer',
+            bio: 'Systems Security Engineer focused on building robust security infrastructure for the payment platform. Specializes in cybersecurity and secure systems design.',
+            image: '/images/team/alan.jpg',
+            education: 'Cybersecurity & Systems Engineering',
             previousRoles: [
-                'CFO @ Affirm',
-                'VP Finance @ Robinhood',
-                'Director @ Goldman Sachs'
+                'Security Engineering',
+                'Systems Security',
+                'Infrastructure Security'
             ],
             achievements: [
-                'Raised $500M+ in funding',
-                'Led 3 successful exits',
-                'Built finance teams 0-100'
+                'Security Systems Design',
+                'Infrastructure Protection',
+                'Security Engineering'
             ],
             expertise: [
-                'Financial Strategy',
-                'Fundraising',
-                'Regulatory Compliance'
-            ]
-        },
-        {
-            name: 'Priya Patel',
-            role: 'Chief Product Officer',
-            bio: 'Product leader with deep expertise in payments UX and global markets. Previously built payment products at Shopify.',
-            image: '/images/team/priya-patel.jpg',
-            education: 'IIT Delhi, Stanford MS',
-            previousRoles: [
-                'VP Product @ Shopify',
-                'Senior PM @ Meta',
-                'Product Lead @ Razorpay'
-            ],
-            achievements: [
-                'Launched products in 50+ countries',
-                '10M+ active users',
-                'Led product teams of 30+'
-            ],
-            expertise: [
-                'Product Strategy',
-                'Global Markets',
-                'User Experience'
-            ]
-        },
-        {
-            name: 'James Thompson',
-            role: 'Chief Security Officer',
-            bio: 'Cybersecurity expert with 20+ years experience. Former CISO at major financial institutions, specialized in payment security.',
-            image: '/images/team/james-thompson.jpg',
-            education: 'Carnegie Mellon MS, CISSP',
-            previousRoles: [
-                'CISO @ JPMorgan Chase',
-                'Security Director @ Visa',
-                'Principal @ Deloitte'
-            ],
-            achievements: [
-                'Achieved PCI DSS Level 1',
-                'Zero security breaches',
-                'Built security teams 50+'
-            ],
-            expertise: [
-                'Payment Security',
-                'Compliance',
+                'Systems Security',
+                'Cybersecurity',
+                'Infrastructure Security',
+                'Secure Systems Design',
                 'Risk Management'
-            ]
-        },
-        {
-            name: 'Lisa Wang',
-            role: 'Chief Marketing Officer',
-            bio: 'Growth marketing expert who scaled multiple B2B SaaS companies from startup to IPO. Expert in fintech marketing.',
-            image: '/images/team/lisa-wang.jpg',
-            education: 'Wharton MBA, Northwestern',
-            previousRoles: [
-                'VP Marketing @ Plaid',
-                'Growth Lead @ Twilio',
-                'Director @ HubSpot'
-            ],
-            achievements: [
-                'Scaled ARR 0-$100M+',
-                'Built marketing teams 40+',
-                'Led 3 rebrands'
-            ],
-            expertise: [
-                'Growth Marketing',
-                'Brand Strategy',
-                'Developer Marketing'
             ]
         }
     ];
     const advisors = [
         {
-            name: 'John Collison',
-            role: 'Advisor',
-            company: 'Co-founder, Stripe',
-            expertise: 'Global Payments Strategy'
+            name: 'Industry Expert',
+            role: 'Technical Advisor',
+            company: 'Fintech Industry',
+            expertise: 'Payment Systems Architecture'
         },
         {
-            name: 'Reid Hoffman',
-            role: 'Advisor',
-            company: 'Co-founder, LinkedIn',
-            expertise: 'Scaling Technology Companies'
+            name: 'Regulatory Expert',
+            role: 'Compliance Advisor',
+            company: 'Financial Services',
+            expertise: 'Global Regulatory Compliance'
         },
         {
-            name: 'Melanie Perkins',
-            role: 'Advisor',
-            company: 'Co-founder, Canva',
-            expertise: 'Product-Led Growth'
+            name: 'Business Mentor',
+            role: 'Strategic Advisor',
+            company: 'Startup Ecosystem',
+            expertise: 'Business Development & Growth'
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1642,7 +1607,7 @@ function LeadershipTeam() {
                                 children: "Leadership Team"
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 153,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1655,27 +1620,27 @@ function LeadershipTeam() {
                                         children: "Leaders"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 128,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 156,
+                                lineNumber: 126,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto",
-                                children: "Experienced executives from top fintech companies, united by a shared vision to democratize global payments"
+                                children: "Founding team with diverse expertise in fintech, technology, operations, and security, united by a shared vision to democratize global payments"
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 162,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                        lineNumber: 152,
+                        lineNumber: 122,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1712,17 +1677,17 @@ function LeadershipTeam() {
                                                         children: leader.name.split(' ').map((n)=>n[0]).join('')
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 159,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 184,
+                                                    lineNumber: 154,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 153,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1733,7 +1698,7 @@ function LeadershipTeam() {
                                                         children: leader.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 197,
+                                                        lineNumber: 167,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1741,7 +1706,7 @@ function LeadershipTeam() {
                                                         children: leader.role
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 200,
+                                                        lineNumber: 170,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1749,13 +1714,13 @@ function LeadershipTeam() {
                                                         children: leader.bio
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 203,
+                                                        lineNumber: 173,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 166,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1771,7 +1736,7 @@ function LeadershipTeam() {
                                                         className: "w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 214,
+                                                        lineNumber: 184,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1779,13 +1744,13 @@ function LeadershipTeam() {
                                                         children: leader.education
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 215,
+                                                        lineNumber: 185,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 179,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1797,7 +1762,7 @@ function LeadershipTeam() {
                                                                 className: "w-4 h-4 text-purple-600 dark:text-purple-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 223,
+                                                                lineNumber: 193,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1805,13 +1770,13 @@ function LeadershipTeam() {
                                                                 children: "Previous Roles"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 224,
+                                                                lineNumber: 194,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 192,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1824,18 +1789,18 @@ function LeadershipTeam() {
                                                                 ]
                                                             }, roleIndex, true, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 230,
+                                                                lineNumber: 200,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 198,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 221,
+                                                lineNumber: 191,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1847,7 +1812,7 @@ function LeadershipTeam() {
                                                                 className: "w-4 h-4 text-orange-600 dark:text-orange-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 240,
+                                                                lineNumber: 210,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1855,13 +1820,13 @@ function LeadershipTeam() {
                                                                 children: "Key Achievements"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 241,
+                                                                lineNumber: 211,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 209,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1874,18 +1839,18 @@ function LeadershipTeam() {
                                                                 ]
                                                             }, achIndex, true, {
                                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                                lineNumber: 247,
+                                                                lineNumber: 217,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 245,
+                                                        lineNumber: 215,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 208,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1901,33 +1866,33 @@ function LeadershipTeam() {
                                                         children: skill
                                                     }, skillIndex, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 257,
+                                                        lineNumber: 227,
                                                         columnNumber: 25
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                lineNumber: 255,
+                                                lineNumber: 225,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 151,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 150,
                                     columnNumber: 17
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 171,
+                                lineNumber: 141,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                        lineNumber: 169,
+                        lineNumber: 139,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1941,7 +1906,7 @@ function LeadershipTeam() {
                                         children: "Advisory Board"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                        lineNumber: 276,
+                                        lineNumber: 246,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1949,13 +1914,13 @@ function LeadershipTeam() {
                                         children: "World-class advisors who guide our strategic vision and growth"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                        lineNumber: 279,
+                                        lineNumber: 249,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 275,
+                                lineNumber: 245,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1995,12 +1960,12 @@ function LeadershipTeam() {
                                                         children: advisor.name.split(' ').map((n)=>n[0]).join('')
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                        lineNumber: 300,
+                                                        lineNumber: 270,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 295,
+                                                    lineNumber: 265,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -2008,7 +1973,7 @@ function LeadershipTeam() {
                                                     children: advisor.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 305,
+                                                    lineNumber: 275,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2016,7 +1981,7 @@ function LeadershipTeam() {
                                                     children: advisor.company
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 279,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2024,29 +1989,29 @@ function LeadershipTeam() {
                                                     children: advisor.expertise
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 313,
+                                                    lineNumber: 283,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                            lineNumber: 294,
+                                            lineNumber: 264,
                                             columnNumber: 19
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                        lineNumber: 286,
+                                        lineNumber: 256,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                lineNumber: 284,
+                                lineNumber: 254,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                        lineNumber: 274,
+                        lineNumber: 244,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2060,7 +2025,7 @@ function LeadershipTeam() {
                                     children: "Our Growing Team"
                                 }, void 0, false, {
                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                    lineNumber: 328,
+                                    lineNumber: 298,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2078,29 +2043,29 @@ function LeadershipTeam() {
                                                     className: "w-8 h-8 mx-auto mb-2 opacity-90"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 307,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-3xl font-bold mb-1",
-                                                    children: "150+"
+                                                    children: "3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 338,
+                                                    lineNumber: 308,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "opacity-90",
-                                                    children: "Team Members"
+                                                    children: "Founding Members"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 339,
+                                                    lineNumber: 309,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                            lineNumber: 333,
+                                            lineNumber: 303,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2115,29 +2080,29 @@ function LeadershipTeam() {
                                                     className: "w-8 h-8 mx-auto mb-2 opacity-90"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 316,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-3xl font-bold mb-1",
-                                                    children: "15+"
+                                                    children: "3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 347,
+                                                    lineNumber: 317,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "opacity-90",
-                                                    children: "Countries"
+                                                    children: "Core Disciplines"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 348,
+                                                    lineNumber: 318,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                            lineNumber: 342,
+                                            lineNumber: 312,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2152,29 +2117,29 @@ function LeadershipTeam() {
                                                     className: "w-8 h-8 mx-auto mb-2 opacity-90"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 355,
+                                                    lineNumber: 325,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-3xl font-bold mb-1",
-                                                    children: "50+"
+                                                    children: "Multi"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 326,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "opacity-90",
-                                                    children: "Top Universities"
+                                                    children: "Industry Experience"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 357,
+                                                    lineNumber: 327,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                            lineNumber: 351,
+                                            lineNumber: 321,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2189,62 +2154,62 @@ function LeadershipTeam() {
                                                     className: "w-8 h-8 mx-auto mb-2 opacity-90"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 364,
+                                                    lineNumber: 334,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-3xl font-bold mb-1",
-                                                    children: "25+"
+                                                    children: "2025"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 365,
+                                                    lineNumber: 335,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "opacity-90",
-                                                    children: "Years Avg Experience"
+                                                    children: "Launch Ready"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                                    lineNumber: 366,
+                                                    lineNumber: 336,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                            lineNumber: 360,
+                                            lineNumber: 330,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                                    lineNumber: 332,
+                                    lineNumber: 302,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                            lineNumber: 327,
+                            lineNumber: 297,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                        lineNumber: 323,
+                        lineNumber: 293,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-                lineNumber: 144,
+                lineNumber: 114,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-            lineNumber: 143,
+            lineNumber: 113,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/apps/marketing/src/components/about/LeadershipTeam.tsx",
-        lineNumber: 142,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }
@@ -2943,10 +2908,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$marketing$2f$src$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$SparklesIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SparklesIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/SparklesIcon.js [app-ssr] (ecmascript) <export default as SparklesIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$RocketLaunchIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RocketLaunchIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/RocketLaunchIcon.js [app-ssr] (ecmascript) <export default as RocketLaunchIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$GlobeAltIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GlobeAltIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/GlobeAltIcon.js [app-ssr] (ecmascript) <export default as GlobeAltIcon>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$TrophyIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TrophyIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/TrophyIcon.js [app-ssr] (ecmascript) <export default as TrophyIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$UserGroupIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserGroupIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/UserGroupIcon.js [app-ssr] (ecmascript) <export default as UserGroupIcon>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$BanknotesIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BanknotesIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/BanknotesIcon.js [app-ssr] (ecmascript) <export default as BanknotesIcon>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$ShieldCheckIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheckIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/ShieldCheckIcon.js [app-ssr] (ecmascript) <export default as ShieldCheckIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$ChartBarIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChartBarIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/@heroicons+react@2.2.0_react@19.1.0/node_modules/@heroicons/react/24/outline/esm/ChartBarIcon.js [app-ssr] (ecmascript) <export default as ChartBarIcon>");
 'use client';
 ;
@@ -2979,157 +2941,91 @@ function CompanyTimeline() {
     };
     const timelineEvents = [
         {
-            year: '2019',
-            quarter: 'Q1',
-            title: 'The Spark',
+            year: '2024',
+            quarter: 'Q4',
+            title: 'The Vision',
             subtitle: 'Company Founded',
-            description: 'Sarah Chen and Michael Rodriguez founded Sunny Payments with a mission to simplify global commerce. Started with a small team of 5 engineers in a San Francisco garage.',
+            description: 'Sunny Payments founded in late 2024 with a mission to simplify global commerce. Founding team assembled with expertise in fintech, technology, operations, and security.',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$SparklesIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__SparklesIcon$3e$__["SparklesIcon"],
             color: 'blue',
             gradient: 'from-blue-500 to-cyan-600',
             achievements: [
-                'Incorporated the company',
-                'Raised $2M seed funding',
-                'Built MVP payment gateway',
-                'Hired first 5 engineers'
+                'Company incorporated',
+                'Founding team assembled',
+                'Vision and mission defined',
+                'Market research completed'
             ],
             metrics: {
-                team: '5 people',
-                funding: '$2M',
-                countries: '1',
-                volume: '$0'
+                team: '3 founders',
+                funding: 'Bootstrap',
+                countries: 'Global vision',
+                volume: 'Pre-launch'
             }
         },
         {
-            year: '2020',
-            quarter: 'Q2',
-            title: 'First Launch',
-            subtitle: 'Beta Platform Live',
-            description: 'Launched beta platform with 10 pilot merchants. Processed first $1M in transactions and achieved 99.9% uptime. Added support for major credit cards and bank transfers.',
+            year: '2025',
+            quarter: 'Q1',
+            title: 'Platform Architecture',
+            subtitle: 'Technical Foundation',
+            description: 'Designed comprehensive payment platform architecture with global reach, enterprise security, and regulatory compliance built-in from day one.',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$RocketLaunchIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__RocketLaunchIcon$3e$__["RocketLaunchIcon"],
             color: 'green',
             gradient: 'from-green-500 to-emerald-600',
             achievements: [
-                'Beta platform launched',
-                'First $1M processed',
-                'Onboarded 10 merchants',
-                'Achieved 99.9% uptime'
+                'Platform architecture designed',
+                'Security framework planned',
+                'Compliance strategy developed',
+                'Technology stack selected'
             ],
             metrics: {
-                team: '15 people',
-                funding: '$2M',
-                countries: '3',
-                volume: '$1M'
+                team: '3 founders',
+                funding: 'Bootstrap',
+                countries: '190+ planned',
+                volume: 'Architecture ready'
             }
         },
         {
-            year: '2021',
-            quarter: 'Q3',
-            title: 'Rapid Growth',
-            subtitle: 'Series A & Expansion',
-            description: 'Raised $15M Series A led by Sequoia Capital. Expanded to 25 countries and processed $100M in transactions. Launched mobile SDKs and added fraud detection.',
+            year: '2025',
+            quarter: 'Q2',
+            title: 'Development Phase',
+            subtitle: 'Building the Future',
+            description: 'Core development phase focusing on payment processing engine, security infrastructure, and regulatory compliance systems.',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$ChartBarIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChartBarIcon$3e$__["ChartBarIcon"],
             color: 'purple',
             gradient: 'from-purple-500 to-indigo-600',
             achievements: [
-                'Raised $15M Series A',
-                'Expanded to 25 countries',
-                'Processed $100M volume',
-                'Launched mobile SDKs'
+                'Core engine development',
+                'Security implementation',
+                'API design completed',
+                'Testing framework built'
             ],
             metrics: {
-                team: '50 people',
-                funding: '$17M',
-                countries: '25',
-                volume: '$100M'
+                team: '3 founders',
+                funding: 'Bootstrap',
+                countries: '190+ ready',
+                volume: 'Development phase'
             }
         },
         {
-            year: '2022',
-            quarter: 'Q1',
-            title: 'Global Reach',
-            subtitle: 'International Expansion',
-            description: 'Expanded to 100+ countries with local payment methods. Launched cryptocurrency support and achieved $1B in transaction volume. Opened offices in London and Singapore.',
+            year: '2025',
+            quarter: 'Q3',
+            title: 'Launch Preparation',
+            subtitle: 'Ready for Market',
+            description: 'Final preparations for market launch including platform testing, compliance verification, and go-to-market strategy implementation.',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$GlobeAltIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GlobeAltIcon$3e$__["GlobeAltIcon"],
             color: 'orange',
             gradient: 'from-orange-500 to-red-600',
             achievements: [
-                'Expanded to 100+ countries',
-                'Added crypto payments',
-                'Reached $1B volume',
-                'Opened global offices'
+                'Platform testing completed',
+                'Compliance verification',
+                'Go-to-market strategy',
+                'Launch preparations'
             ],
             metrics: {
-                team: '120 people',
-                funding: '$17M',
-                countries: '100+',
-                volume: '$1B'
-            }
-        },
-        {
-            year: '2023',
-            quarter: 'Q2',
-            title: 'Enterprise Focus',
-            subtitle: 'Series B & Enterprise',
-            description: 'Raised $50M Series B from Andreessen Horowitz. Launched enterprise solutions and achieved PCI DSS Level 1 certification. Processed $5B+ in annual volume.',
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$BanknotesIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BanknotesIcon$3e$__["BanknotesIcon"],
-            color: 'emerald',
-            gradient: 'from-emerald-500 to-green-600',
-            achievements: [
-                'Raised $50M Series B',
-                'PCI DSS Level 1 certified',
-                'Enterprise solutions launched',
-                'Processed $5B+ annually'
-            ],
-            metrics: {
-                team: '200 people',
-                funding: '$67M',
-                countries: '150+',
-                volume: '$5B'
-            }
-        },
-        {
-            year: '2024',
-            quarter: 'Q1',
-            title: 'AI Innovation',
-            subtitle: 'Next-Gen Features',
-            description: 'Launched AI-powered fraud detection and voice payments. Expanded to 190+ countries with instant settlement. Named "Best Payment Innovation" at FinTech Awards.',
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$ShieldCheckIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheckIcon$3e$__["ShieldCheckIcon"],
-            color: 'indigo',
-            gradient: 'from-indigo-500 to-purple-600',
-            achievements: [
-                'AI fraud detection launched',
-                'Voice payments introduced',
-                'Instant settlement live',
-                'Won FinTech Innovation Award'
-            ],
-            metrics: {
-                team: '300 people',
-                funding: '$67M',
-                countries: '190+',
-                volume: '$10B'
-            }
-        },
-        {
-            year: '2024',
-            quarter: 'Q4',
-            title: 'Market Leader',
-            subtitle: 'Industry Recognition',
-            description: 'Achieved market leadership position with 10,000+ merchants. Launched financial services platform and expanded into embedded finance. Planning IPO for 2025.',
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$heroicons$2b$react$40$2$2e$2$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$TrophyIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__TrophyIcon$3e$__["TrophyIcon"],
-            color: 'yellow',
-            gradient: 'from-yellow-500 to-orange-600',
-            achievements: [
-                '10,000+ merchants onboarded',
-                'Financial services launched',
-                'Embedded finance platform',
-                'IPO preparation started'
-            ],
-            metrics: {
-                team: '400 people',
-                funding: '$67M',
-                countries: '190+',
-                volume: '$15B'
+                team: '3 founders',
+                funding: 'Bootstrap',
+                countries: '190+ ready',
+                volume: 'Launch ready'
             }
         }
     ];
@@ -3156,7 +3052,7 @@ function CompanyTimeline() {
                                 children: "Our Journey"
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 206,
+                                lineNumber: 137,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3169,13 +3065,13 @@ function CompanyTimeline() {
                                         children: "Timeline"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 142,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 209,
+                                lineNumber: 140,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3183,13 +3079,13 @@ function CompanyTimeline() {
                                 children: "From startup to global leader - the key milestones that shaped our journey to democratize global payments"
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 215,
+                                lineNumber: 146,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                        lineNumber: 205,
+                        lineNumber: 136,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3217,7 +3113,7 @@ function CompanyTimeline() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 224,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3259,7 +3155,7 @@ function CompanyTimeline() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                lineNumber: 254,
+                                                lineNumber: 185,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3293,12 +3189,12 @@ function CompanyTimeline() {
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                        lineNumber: 274,
+                                                                                        lineNumber: 205,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 273,
+                                                                                    lineNumber: 204,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3306,7 +3202,7 @@ function CompanyTimeline() {
                                                                                     children: event.title
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 278,
+                                                                                    lineNumber: 209,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3314,13 +3210,13 @@ function CompanyTimeline() {
                                                                                     children: event.subtitle
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 281,
+                                                                                    lineNumber: 212,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 272,
+                                                                            lineNumber: 203,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3335,18 +3231,18 @@ function CompanyTimeline() {
                                                                                 className: "w-6 h-6 text-white"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                lineNumber: 291,
+                                                                                lineNumber: 222,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 286,
+                                                                            lineNumber: 217,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                    lineNumber: 271,
+                                                                    lineNumber: 202,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3354,7 +3250,7 @@ function CompanyTimeline() {
                                                                     children: event.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                    lineNumber: 296,
+                                                                    lineNumber: 227,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3364,7 +3260,7 @@ function CompanyTimeline() {
                                                                             children: "Key Achievements"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 302,
+                                                                            lineNumber: 233,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3391,31 +3287,31 @@ function CompanyTimeline() {
                                                                                             className: "w-1.5 h-1.5 bg-blue-600 rounded-full"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                            lineNumber: 318,
+                                                                                            lineNumber: 249,
                                                                                             columnNumber: 37
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: achievement
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                            lineNumber: 319,
+                                                                                            lineNumber: 250,
                                                                                             columnNumber: 37
                                                                                         }, this)
                                                                                     ]
                                                                                 }, achIndex, true, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 307,
+                                                                                    lineNumber: 238,
                                                                                     columnNumber: 35
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 305,
+                                                                            lineNumber: 236,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                    lineNumber: 301,
+                                                                    lineNumber: 232,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3429,7 +3325,7 @@ function CompanyTimeline() {
                                                                                     children: event.metrics.team
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 328,
+                                                                                    lineNumber: 259,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3437,13 +3333,13 @@ function CompanyTimeline() {
                                                                                     children: "Team"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 331,
+                                                                                    lineNumber: 262,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 327,
+                                                                            lineNumber: 258,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3454,7 +3350,7 @@ function CompanyTimeline() {
                                                                                     children: event.metrics.funding
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 334,
+                                                                                    lineNumber: 265,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3462,13 +3358,13 @@ function CompanyTimeline() {
                                                                                     children: "Funding"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 337,
+                                                                                    lineNumber: 268,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 333,
+                                                                            lineNumber: 264,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3479,7 +3375,7 @@ function CompanyTimeline() {
                                                                                     children: event.metrics.countries
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 340,
+                                                                                    lineNumber: 271,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3487,13 +3383,13 @@ function CompanyTimeline() {
                                                                                     children: "Countries"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 343,
+                                                                                    lineNumber: 274,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 339,
+                                                                            lineNumber: 270,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3504,7 +3400,7 @@ function CompanyTimeline() {
                                                                                     children: event.metrics.volume
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 346,
+                                                                                    lineNumber: 277,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3512,58 +3408,58 @@ function CompanyTimeline() {
                                                                                     children: "Volume"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                                    lineNumber: 349,
+                                                                                    lineNumber: 280,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                            lineNumber: 345,
+                                                                            lineNumber: 276,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                                    lineNumber: 326,
+                                                                    lineNumber: 257,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                            lineNumber: 269,
+                                                            lineNumber: 200,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 268,
+                                                        lineNumber: 199,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                    lineNumber: 264,
+                                                    lineNumber: 195,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                lineNumber: 261,
+                                                lineNumber: 192,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 170,
                                         columnNumber: 19
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 233,
+                                lineNumber: 164,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                        lineNumber: 222,
+                        lineNumber: 153,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3604,7 +3500,7 @@ function CompanyTimeline() {
                                         className: "w-16 h-16 mx-auto mb-6 opacity-90"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 377,
+                                        lineNumber: 308,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3612,15 +3508,15 @@ function CompanyTimeline() {
                                         children: "What's Next?"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 378,
+                                        lineNumber: 309,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-xl opacity-90 max-w-3xl mx-auto mb-8",
-                                        children: "Our journey is just beginning. We're working on revolutionary features that will reshape how the world thinks about payments, commerce, and financial inclusion."
+                                        children: "Our journey is just beginning. We're building revolutionary payment infrastructure that will reshape how the world thinks about payments, commerce, and financial inclusion."
                                     }, void 0, false, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 381,
+                                        lineNumber: 312,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3636,24 +3532,24 @@ function CompanyTimeline() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-3xl font-bold mb-2",
-                                                        children: "2025"
+                                                        children: "Q4 2025"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 392,
+                                                        lineNumber: 323,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "opacity-90",
-                                                        children: "IPO Launch"
+                                                        children: "Market Launch"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 393,
+                                                        lineNumber: 324,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                lineNumber: 388,
+                                                lineNumber: 319,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3666,24 +3562,24 @@ function CompanyTimeline() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-3xl font-bold mb-2",
-                                                        children: "$100B"
+                                                        children: "190+"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 399,
+                                                        lineNumber: 330,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "opacity-90",
-                                                        children: "Annual Volume Target"
+                                                        children: "Countries Ready"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 400,
+                                                        lineNumber: 331,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                lineNumber: 395,
+                                                lineNumber: 326,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3696,62 +3592,62 @@ function CompanyTimeline() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "text-3xl font-bold mb-2",
-                                                        children: "1M+"
+                                                        children: "Global"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 406,
+                                                        lineNumber: 337,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "opacity-90",
-                                                        children: "Merchants Goal"
+                                                        children: "Impact Vision"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                        lineNumber: 407,
+                                                        lineNumber: 338,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                                lineNumber: 402,
+                                                lineNumber: 333,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                        lineNumber: 387,
+                                        lineNumber: 318,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                                lineNumber: 371,
+                                lineNumber: 302,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                            lineNumber: 370,
+                            lineNumber: 301,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                        lineNumber: 363,
+                        lineNumber: 294,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-                lineNumber: 197,
+                lineNumber: 128,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-            lineNumber: 196,
+            lineNumber: 127,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/apps/marketing/src/components/about/CompanyTimeline.tsx",
-        lineNumber: 195,
+        lineNumber: 126,
         columnNumber: 5
     }, this);
 }
