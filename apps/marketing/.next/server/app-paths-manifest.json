@@ -2,5 +2,7 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
-  "/solutions/ecommerce/page": "app/solutions/ecommerce/page.js"
+  "/solutions/ecommerce/page": "app/solutions/ecommerce/page.js",
+  "/solutions/marketplaces/page": "app/solutions/marketplaces/page.js",
+  "/solutions/saas/page": "app/solutions/saas/page.js"
 }
