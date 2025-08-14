@@ -1,132 +1,141 @@
+<div align="center">
+  <img src="public/images/sunny-logo.svg" alt="Sunny Payment Gateway Logo" width="400"/>
+</div>
+
 # Sunny Payment Gateway
+A comprehensive, global payment processing solution by CREDVAULT LIMITED designed to meet all modern payment needs with enterprise-grade security and scalability.
 
-A comprehensive, global payment processing solution designed to meet all modern payment needs with enterprise-grade security and scalability.
-
-## ✅ Key Features of Sunny Payment Gateway
-
-### 1. Global Coverage
-- Accepts payments from any country in 135+ currencies
-- Supports local payment methods (e.g., M-Pesa, UPI, Alipay) alongside international options (Visa, MasterCard, Apple Pay, crypto)
-- Multi-region deployment with active-active configuration for global reliability
-
-### 2. Low Fees, Transparent Pricing
-- Flat, low transaction fees
-- No hidden charges for currency conversion, settlement, or refunds
-- Clear pricing dashboard for merchants
-
-### 3. Instant Payouts
-- Funds settle immediately or within minutes to bank or mobile money accounts—even on weekends
-- Real-time settlement options for all supported payment methods
-- Cross-border efficiency with fast international settlements
-
-### 4. Enterprise-Grade Security
-- PCI DSS Level 1 compliant with SOC 1 and SOC 2 Type II certifications
-- Hardware Security Module (HSM) integration for cryptographic operations
-- Advanced fraud detection using rules, behavioral biometrics, and network analysis
-- End-to-end encryption for all sensitive data
-
-### 5. Excellent Developer Tools
-- Clean, powerful APIs and SDKs for easy integration into websites, mobile apps, and marketplaces
-- Sandbox mode, testing tools, and real-time logs
-- Comprehensive documentation and code examples
-
-### 6. Best-in-Class UX
-- Seamless checkout experience (including one-click payments, STK push, QR codes)
-- Localized languages and UI based on the customer's region
-- Adaptive design for all devices
-
-### 7. Support for All Business Models
-- One-time payments, subscriptions, installments, donations, invoicing
-- Marketplace support (splitting payments between vendors)
-- Flexible payment flows for various business needs
-
-### 8. Accessible to Everyone
-- Easy sign-up, even for small or informal businesses
-- Operates in both developed and developing countries without legal or banking barriers
-- Low barrier to entry with simple onboarding
-
-### 9. Robust Analytics & Dashboard
-- Real-time reports, customer insights, and easy reconciliation tools
-- Customizable dashboards for different business needs
-- Export capabilities and API access to analytics data
-
-### 10. Excellent Customer Support
-- 24/7 multilingual human support via chat, phone, and email
-- Dedicated account managers for enterprise clients
-- Comprehensive knowledge base and community forums
+## Key Features
+- Global coverage, multi-currency, and local payment support
+- Instant payouts and real-time settlements
+- PCI DSS Level 1, HSM integration, advanced fraud detection
+- Developer-friendly APIs, SDKs, and documentation
+- Responsive admin dashboard and analytics
+- Support for subscriptions, marketplaces, and more
 
 ## Technical Architecture
-
-Sunny uses a polyglot architecture with the right technology for each component:
-
-- **Rust Core**: High-performance, memory-safe payment processing
-- **Go API Gateway**: Efficient, concurrent API handling
-- **TypeScript/React Admin Dashboard**: Modern, responsive admin interface
-
-The system is designed for multi-cloud deployment across AWS, GCP, and Azure with:
-
-- Kubernetes-based containerized deployment
-- Infrastructure as code with Terraform
-- Comprehensive monitoring and observability
-- Zero-downtime deployment capabilities
-
-For more details, see our [Technical Overview](./TECHNICAL_OVERVIEW.md) and [Business Overview](./BUSINESS_OVERVIEW.md).
+- **Rust Core**: High-performance payment processing
+- **Go API Gateway**: Efficient API handling
+- **TypeScript/React Admin Dashboard**: Modern UI
+- Multi-cloud, Kubernetes, Terraform, zero-downtime deployments
 
 ## Project Structure
+See the workspace for detailed folder layout and code organization.
 
+## DeepSeek Models Integration
+
+### Setup
+1. Run the setup script to download DeepSeek Coder models:
+   ```bash
+   bash scripts/setup-deepseek-coder.sh
+   ```
+2. Run the setup script to download DeepSeek R1 and Companion models:
+   ```bash
+   bash scripts/download-deepseek-r1.sh
+   ```
+3. Verify models are stored in both `src/ai/deepseek-coder/models` and `src/ai/deepseek-companion/models`.
+   - Both directories must be present and populated for full migration or advanced features.
+   - Ensure folder structure matches what the scripts expect.
+
+### Usage
+To load a model locally:
+```javascript
+await modelManager.loadLocalModel('deepseek-coder-33b-instruct');
+await modelManager.loadLocalModel('deepseek-coder-6.7b-instruct');
+await modelManager.loadLocalModel('deepseek-coder-33b-base');
+// For DeepSeek R1/Companion, see src/ai/deepseek-companion/README.md for usage examples.
 ```
-sunny/
-├── src/                      # Source code
-│   ├── api-gateway/          # Go API Gateway
-│   ├── core-rust/            # Rust core processing engine
-│   ├── admin-dashboard/      # React admin interface
-│   ├── security/             # Security implementations
-│   ├── fraud/                # Fraud detection system
-│   ├── localization/         # Localization support
-│   ├── analytics/            # Analytics and reporting
-│   ├── integrations/         # Third-party integrations
-│   └── ui/                   # UI components for checkout
-├── deployment/               # Deployment configurations
-│   ├── kubernetes/           # Kubernetes manifests
-│   └── terraform/            # Infrastructure as code
-├── docs/                     # Documentation
-├── examples/                 # Integration examples
-├── sdk/                      # Client SDKs
-│   ├── javascript/           # JavaScript SDK
-│   ├── python/               # Python SDK
-│   ├── php/                  # PHP SDK
-│   ├── java/                 # Java SDK
-│   └── mobile/               # Mobile SDKs (iOS/Android)
-└── tests/                    # Test suite
-```
 
-## Integration with CreditBoost
+### Notes
+- Models are stored locally for full control.
+- **GPU requirements:** Large models (e.g., 33B, 70B, 671B) require significant GPU memory (e.g., 33B needs ~45GB, 70B/671B much more).
+- Fine-tuning: Use `setupTrainingEnvironment` in `ModelManager.js`.
+- If you encounter issues, check that all model directories exist and are populated as expected.
 
-Sunny Payment Gateway is designed to work seamlessly with the CreditBoost platform, providing all payment processing capabilities while maintaining the security and reliability expected by financial applications. The specialized CreditBoost integration includes:
-
-- Credit score-based pricing
-- Credit passport updates
-- Recommended payment methods based on credit profiles
-- Subscription management for credit monitoring services
+### Security Reminder
+- After migration or adding new models/services, run the security test script:
+  ```bash
+  node scripts/run-security-test.js
+  ```
+- Review and update your security configuration as needed. See `docs/SECURITY_CHECKLIST.md` for best practices.
 
 ## Getting Started
 
-See the [Developer Documentation](./docs/getting-started.md) for detailed integration instructions.
+### For Developers
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/sunny.git
+   cd sunny
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Access the dashboard at http://localhost:3000
 
-## Security
+### For Users
+1. Sign up at [dashboard.sunnypayments.com](https://dashboard.sunnypayments.com)
+2. Get your API keys from the dashboard
+3. Install the SDK:
+   ```bash
+   npm install sunny-payment-gateway
+   ```
+4. Initialize the SDK in your app:
+   ```javascript
+   import SunnySDK from 'sunny-payment-gateway';
+   const sunny = new SunnySDK({ apiKey: 'your_api_key', environment: 'sandbox' });
+   ```
+5. Process a payment (see docs for details)
 
-Sunny implements a defense-in-depth security strategy with multiple layers of protection:
+## 🚀 Local Production Preview
 
-- Hardware Security Module (HSM) integration
-- End-to-end encryption with AES-256-GCM
-- Tokenization for PCI compliance
-- Advanced fraud detection with behavioral biometrics
-- Network analysis for fraud ring detection
+You can run the Sunny Payment Gateway in a real production environment on your local machine for safe preview and testing.
 
-For more details, see our [Security Architecture](./security-architecture.md).
+### Steps:
+
+1. **Install dependencies:**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+2. **Run the production build locally:**
+   ```bash
+   ENV_FILE=.env.local-production node scripts/deploy-production.js --local-production
+   ```
+   - This uses `.env.local-production` for all environment variables.
+   - The app will be available at [http://localhost:3000](http://localhost:3000)
+
+3. **Stop the app:**
+   ```bash
+   docker-compose -f docker/production/docker-compose.yml down
+   ```
+
+> You can edit `.env.local-production` to test different settings. For real production, use `.env.production` and your live domain.
+
+## Contributing
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
+MIT License. See [LICENSE](LICENSE).
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is proprietary software. All rights reserved.
 
-Last updated: $(date)
+## 📞 Contact
+
+- **Website**: [sunnypayments.com](https://sunnypayments.com)
+- **Email**: hello@sunnypayments.com
+- **Phone**: +254 (0) 700 000 000
+- **Address**: Nairobi, Kenya
+
+---
+
+**Built with ❤️ in Kenya 🇰🇪 for the world 🌍**
