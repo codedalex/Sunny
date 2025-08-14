@@ -148,7 +148,6 @@ function AuthLayout({
 import { useState } from "react";
 import { motion as motion2, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -167,7 +166,7 @@ import {
   BanknotesIcon
 } from "@heroicons/react/24/solid";
 import Link2 from "next/link";
-import { SignInSchema, UserAccountType, MFAType } from "@sunny/shared-types";
+import { UserAccountType, MFAType } from "@sunny/shared-types";
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 function SignInForm({
   onSubmit,
@@ -190,7 +189,6 @@ function SignInForm({
     setValue,
     setError
   } = useForm({
-    resolver: zodResolver(SignInSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -260,10 +258,14 @@ function SignInForm({
     try {
       setIsLoading(true);
       setAuthError(null);
-      if (requiresMFA && selectedMFAMethod && mfaCode) {
-        data.mfaCode = mfaCode;
-      }
-      const response = await onSubmit(data);
+      const signInData = {
+        email: data.email,
+        password: data.password,
+        accountType: data.accountType,
+        rememberMe: data.rememberMe || false,
+        mfaCode: requiresMFA && selectedMFAMethod && mfaCode ? mfaCode : void 0
+      };
+      const response = await onSubmit(signInData);
       if (response.success) {
         if (response.redirectUrl) {
           window.location.href = response.redirectUrl;
@@ -290,10 +292,7 @@ function SignInForm({
   const handleMFASubmit = async () => {
     if (!mfaCode || !selectedMFAMethod) return;
     const currentFormData = watch();
-    await handleFormSubmit({
-      ...currentFormData,
-      mfaCode
-    });
+    await handleFormSubmit(currentFormData);
   };
   const resetMFA = () => {
     setRequiresMFA(false);
@@ -311,7 +310,7 @@ function SignInForm({
         animate: { opacity: 1, x: 0 },
         exit: { opacity: 0, x: -20 },
         transition: { duration: 0.3 },
-        onSubmit: handleSubmit((data) => handleFormSubmit(data)),
+        onSubmit: handleSubmit(handleFormSubmit),
         className: "space-y-6",
         children: [
           !defaultAccountType && /* @__PURE__ */ jsxs2("div", { className: "space-y-3", children: [
@@ -574,7 +573,6 @@ function SignInForm({
 import { useState as useState2, useEffect as useEffect2 } from "react";
 import { motion as motion3, AnimatePresence as AnimatePresence2 } from "framer-motion";
 import { useForm as useForm2 } from "react-hook-form";
-import { zodResolver as zodResolver2 } from "@hookform/resolvers/zod";
 import {
   EyeIcon as EyeIcon2,
   EyeSlashIcon as EyeSlashIcon2,
@@ -592,7 +590,6 @@ import {
 } from "@heroicons/react/24/solid";
 import Link3 from "next/link";
 import {
-  SignUpSchema,
   UserAccountType as UserAccountType2,
   BusinessType,
   InstitutionType
@@ -620,7 +617,6 @@ function SignUpForm({
     setError,
     trigger
   } = useForm2({
-    resolver: zodResolver2(SignUpSchema),
     defaultValues: {
       accountType: defaultAccountType || UserAccountType2.INDIVIDUAL,
       agreeToTerms: false,
@@ -709,7 +705,25 @@ function SignUpForm({
     try {
       setIsLoading(true);
       setAuthError(null);
-      const response = await onSubmit(data);
+      const signUpData = {
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        accountType: data.accountType,
+        agreeToTerms: data.agreeToTerms,
+        agreeToPrivacy: data.agreeToPrivacy,
+        marketingConsent: data.marketingConsent,
+        businessName: data.businessName,
+        businessType: data.businessType,
+        institutionName: data.institutionName,
+        institutionType: data.institutionType,
+        company: data.company,
+        phone: data.phone,
+        referralCode: data.referralCode
+      };
+      const response = await onSubmit(signUpData);
       if (response.success) {
         if (response.redirectUrl) {
           window.location.href = response.redirectUrl;

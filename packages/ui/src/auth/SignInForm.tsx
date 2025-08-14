@@ -52,8 +52,13 @@ export default function SignInForm({
     watch,
     setValue,
     setError
-  } = useForm<SignInRequest>({
-    resolver: zodResolver(SignInSchema),
+  } = useForm<{
+    email: string;
+    password: string;
+    accountType?: UserAccountType;
+    rememberMe: boolean;
+    mfaCode?: string;
+  }>({
     defaultValues: {
       email: '',
       password: '',
@@ -124,17 +129,21 @@ export default function SignInForm({
     }
   ];
 
-  const handleFormSubmit = async (data: SignInRequest) => {
+  const handleFormSubmit = async (data: any) => {
     try {
       setIsLoading(true);
       setAuthError(null);
 
-      // Include MFA code if in MFA step
-      if (requiresMFA && selectedMFAMethod && mfaCode) {
-        data.mfaCode = mfaCode;
-      }
+      // Create SignInRequest from form data
+      const signInData: SignInRequest = {
+        email: data.email,
+        password: data.password,
+        accountType: data.accountType,
+        rememberMe: data.rememberMe || false,
+        mfaCode: requiresMFA && selectedMFAMethod && mfaCode ? mfaCode : undefined
+      };
 
-      const response = await onSubmit(data);
+      const response = await onSubmit(signInData);
 
       if (response.success) {
         // Handle successful authentication - redirect will be handled by parent
@@ -166,10 +175,7 @@ export default function SignInForm({
     if (!mfaCode || !selectedMFAMethod) return;
     
     const currentFormData = watch();
-    await handleFormSubmit({
-      ...currentFormData,
-      mfaCode
-    });
+    await handleFormSubmit(currentFormData);
   };
 
   const resetMFA = () => {
@@ -191,7 +197,7 @@ export default function SignInForm({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            onSubmit={handleSubmit((data) => handleFormSubmit(data as SignInRequest))}
+            onSubmit={handleSubmit(handleFormSubmit)}
             className="space-y-6"
           >
             {/* Account Type Selection */}

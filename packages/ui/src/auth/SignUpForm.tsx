@@ -60,8 +60,24 @@ export default function SignUpForm({
     setValue,
     setError,
     trigger
-  } = useForm<SignUpRequest>({
-    resolver: zodResolver(SignUpSchema),
+  } = useForm<{
+    email: string;
+    password: string;
+    confirmPassword: string;
+    firstName: string;
+    lastName: string;
+    accountType: UserAccountType;
+    agreeToTerms: boolean;
+    agreeToPrivacy: boolean;
+    marketingConsent?: boolean;
+    businessName?: string;
+    businessType?: BusinessType;
+    institutionName?: string;
+    institutionType?: InstitutionType;
+    company?: string;
+    phone?: string;
+    referralCode?: string;
+  }>({
     defaultValues: {
       accountType: defaultAccountType || UserAccountType.INDIVIDUAL,
       agreeToTerms: false,
@@ -158,12 +174,32 @@ export default function SignUpForm({
     return 'Strong';
   };
 
-  const handleFormSubmit = async (data: SignUpRequest) => {
+  const handleFormSubmit = async (data: any) => {
     try {
       setIsLoading(true);
       setAuthError(null);
 
-      const response = await onSubmit(data);
+      // Create SignUpRequest from form data
+      const signUpData: SignUpRequest = {
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        accountType: data.accountType,
+        agreeToTerms: data.agreeToTerms,
+        agreeToPrivacy: data.agreeToPrivacy,
+        marketingConsent: data.marketingConsent,
+        businessName: data.businessName,
+        businessType: data.businessType,
+        institutionName: data.institutionName,
+        institutionType: data.institutionType,
+        company: data.company,
+        phone: data.phone,
+        referralCode: data.referralCode
+      };
+
+      const response = await onSubmit(signUpData);
 
       if (response.success) {
         // Handle successful registration - redirect will be handled by parent

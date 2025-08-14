@@ -187,7 +187,6 @@ function AuthLayout({
 var import_react = require("react");
 var import_framer_motion2 = require("framer-motion");
 var import_react_hook_form = require("react-hook-form");
-var import_zod = require("@hookform/resolvers/zod");
 var import_outline2 = require("@heroicons/react/24/outline");
 var import_solid = require("@heroicons/react/24/solid");
 var import_link2 = __toESM(require("next/link"));
@@ -214,7 +213,6 @@ function SignInForm({
     setValue,
     setError
   } = (0, import_react_hook_form.useForm)({
-    resolver: (0, import_zod.zodResolver)(import_shared_types.SignInSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -284,10 +282,14 @@ function SignInForm({
     try {
       setIsLoading(true);
       setAuthError(null);
-      if (requiresMFA && selectedMFAMethod && mfaCode) {
-        data.mfaCode = mfaCode;
-      }
-      const response = await onSubmit(data);
+      const signInData = {
+        email: data.email,
+        password: data.password,
+        accountType: data.accountType,
+        rememberMe: data.rememberMe || false,
+        mfaCode: requiresMFA && selectedMFAMethod && mfaCode ? mfaCode : void 0
+      };
+      const response = await onSubmit(signInData);
       if (response.success) {
         if (response.redirectUrl) {
           window.location.href = response.redirectUrl;
@@ -314,10 +316,7 @@ function SignInForm({
   const handleMFASubmit = async () => {
     if (!mfaCode || !selectedMFAMethod) return;
     const currentFormData = watch();
-    await handleFormSubmit({
-      ...currentFormData,
-      mfaCode
-    });
+    await handleFormSubmit(currentFormData);
   };
   const resetMFA = () => {
     setRequiresMFA(false);
@@ -335,7 +334,7 @@ function SignInForm({
         animate: { opacity: 1, x: 0 },
         exit: { opacity: 0, x: -20 },
         transition: { duration: 0.3 },
-        onSubmit: handleSubmit((data) => handleFormSubmit(data)),
+        onSubmit: handleSubmit(handleFormSubmit),
         className: "space-y-6",
         children: [
           !defaultAccountType && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "space-y-3", children: [
@@ -598,7 +597,6 @@ function SignInForm({
 var import_react2 = require("react");
 var import_framer_motion3 = require("framer-motion");
 var import_react_hook_form2 = require("react-hook-form");
-var import_zod2 = require("@hookform/resolvers/zod");
 var import_outline3 = require("@heroicons/react/24/outline");
 var import_solid2 = require("@heroicons/react/24/solid");
 var import_link3 = __toESM(require("next/link"));
@@ -626,7 +624,6 @@ function SignUpForm({
     setError,
     trigger
   } = (0, import_react_hook_form2.useForm)({
-    resolver: (0, import_zod2.zodResolver)(import_shared_types2.SignUpSchema),
     defaultValues: {
       accountType: defaultAccountType || import_shared_types2.UserAccountType.INDIVIDUAL,
       agreeToTerms: false,
@@ -715,7 +712,25 @@ function SignUpForm({
     try {
       setIsLoading(true);
       setAuthError(null);
-      const response = await onSubmit(data);
+      const signUpData = {
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        accountType: data.accountType,
+        agreeToTerms: data.agreeToTerms,
+        agreeToPrivacy: data.agreeToPrivacy,
+        marketingConsent: data.marketingConsent,
+        businessName: data.businessName,
+        businessType: data.businessType,
+        institutionName: data.institutionName,
+        institutionType: data.institutionType,
+        company: data.company,
+        phone: data.phone,
+        referralCode: data.referralCode
+      };
+      const response = await onSubmit(signUpData);
       if (response.success) {
         if (response.redirectUrl) {
           window.location.href = response.redirectUrl;

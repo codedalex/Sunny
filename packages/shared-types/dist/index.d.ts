@@ -224,7 +224,7 @@ declare const SignInSchema: z.ZodObject<{
     email: z.ZodString;
     password: z.ZodString;
     accountType: z.ZodOptional<z.ZodEnum<typeof UserAccountType>>;
-    rememberMe: z.ZodDefault<z.ZodBoolean>;
+    rememberMe: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     mfaCode: z.ZodOptional<z.ZodString>;
 }, z.core.$strip>;
 declare const SignUpSchema: z.ZodObject<{
