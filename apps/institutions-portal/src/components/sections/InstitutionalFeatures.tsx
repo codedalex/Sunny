@@ -219,9 +219,9 @@ export default function InstitutionalFeatures() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA */}
         <div className="text-center mt-12">
@@ -234,5 +234,4 @@ export default function InstitutionalFeatures() {
         </div>
       </div>
     </section>
-  );
-}
+  
