@@ -1,4 +1,349 @@
-# 🔄 Sunny Platform - Shared Dashboard Components & Architecture\n\n## 📋 **Table of Contents**\n\n- [Overview](#overview)\n- [Shared Component Architecture](#shared-component-architecture)\n- [Cross-Dashboard Data Models](#cross-dashboard-data-models)\n- [Common UI Components](#common-ui-components)\n- [Shared Services & Utilities](#shared-services--utilities)\n- [Dashboard Comparison Matrix](#dashboard-comparison-matrix)\n- [Component Reusability Guidelines](#component-reusability-guidelines)\n- [Shared State Management](#shared-state-management)\n\n---\n\n## 🎯 **Overview**\n\n### **Shared Component Philosophy**\nThe Sunny platform consists of multiple dashboards (User, Business, Institution, Admin, Developer) that share common functionality while maintaining distinct user experiences. This document outlines the shared components, data structures, and architectural patterns used across all dashboards.\n\n### **Dashboard Ecosystem**\n```\n🌟 Sunny Platform Ecosystem\n┌─────────────────────────────────────────────────────────────┐\n│                   Shared Component Layer                    │\n├─────────────────────────────────────────────────────────────┤\n│  👤 User       🏢 Business    🏛️ Institution  👑 Admin      │\n│  Dashboard     Dashboard     Dashboard      Dashboard       │\n│                                                             │\n│  🧑‍💻 Developer  📱 Mobile      🌐 Marketing   🔧 Support     │\n│  Portal        App           Site          Dashboard       │\n└─────────────────────────────────────────────────────────────┘\n```\n\n### **Benefits of Shared Architecture**\n- **Consistency**: Uniform user experience across platforms\n- **Maintainability**: Single source of truth for common components\n- **Performance**: Reduced bundle size through code reuse\n- **Development Speed**: Faster feature development and bug fixes\n- **Quality**: Centralized testing and quality assurance\n\n---\n\n## 🏗️ **Shared Component Architecture**\n\n### **Package Structure**\n\n```\n@sunny/shared/\n├── 📦 packages/\n│   ├── ui/                    # Shared UI components\n│   ├── auth/                  # Authentication logic\n│   ├── api-client/           # API communication\n│   ├── shared-types/         # TypeScript definitions\n│   ├── utils/                # Utility functions\n│   ├── security/             # Security utilities\n│   └── database/             # Database abstractions\n├── 🎨 design-system/\n│   ├── tokens/               # Design tokens\n│   ├── themes/               # Theme definitions\n│   ├── icons/                # Icon library\n│   └── assets/               # Shared assets\n└── 🧪 testing/\n    ├── fixtures/             # Test data\n    ├── mocks/                # Mock implementations\n    └── utilities/            # Testing utilities\n```\n\n### **Cross-Dashboard Component Categories**\n\n#### **1. Navigation & Layout Components**\n```typescript\n// Shared across all dashboards with customization\ninterface NavigationComponent {\n  // Common navigation patterns\n  Sidebar: React.FC<SidebarProps>;\n  TopNavigation: React.FC<TopNavProps>;\n  Breadcrumbs: React.FC<BreadcrumbProps>;\n  UserMenu: React.FC<UserMenuProps>;\n  \n  // Dashboard-specific variations\n  UserSidebar: React.FC<UserSidebarProps>;\n  BusinessSidebar: React.FC<BusinessSidebarProps>;\n  InstitutionSidebar: React.FC<InstitutionSidebarProps>;\n  AdminSidebar: React.FC<AdminSidebarProps>;\n}\n```\n\n#### **2. Authentication & User Management**\n```typescript\n// Universal authentication components\ninterface AuthComponents {\n  LoginForm: React.FC<LoginFormProps>;\n  MFAVerification: React.FC<MFAProps>;\n  PasswordReset: React.FC<PasswordResetProps>;\n  UserProfile: React.FC<UserProfileProps>;\n  SecuritySettings: React.FC<SecuritySettingsProps>;\n  SessionManager: React.FC<SessionManagerProps>;\n}\n```\n\n#### **3. Data Visualization & Analytics**\n```typescript\n// Reusable chart and visualization components\ninterface AnalyticsComponents {\n  // Chart Components\n  LineChart: React.FC<LineChartProps>;\n  BarChart: React.FC<BarChartProps>;\n  PieChart: React.FC<PieChartProps>;\n  AreaChart: React.FC<AreaChartProps>;\n  HeatMap: React.FC<HeatMapProps>;\n  \n  // Metric Components\n  KPICard: React.FC<KPICardProps>;\n  MetricGrid: React.FC<MetricGridProps>;\n  TrendIndicator: React.FC<TrendProps>;\n  ProgressRing: React.FC<ProgressRingProps>;\n  \n  // Dashboard Widgets\n  RevenueWidget: React.FC<RevenueWidgetProps>;\n  TransactionWidget: React.FC<TransactionWidgetProps>;\n  CustomerWidget: React.FC<CustomerWidgetProps>;\n  GrowthWidget: React.FC<GrowthWidgetProps>;\n}\n```\n\n#### **4. Transaction Management**\n```typescript\n// Universal transaction components\ninterface TransactionComponents {\n  TransactionTable: React.FC<TransactionTableProps>;\n  TransactionDetails: React.FC<TransactionDetailsProps>;\n  TransactionFilter: React.FC<TransactionFilterProps>;\n  TransactionSearch: React.FC<TransactionSearchProps>;\n  TransactionStatus: React.FC<TransactionStatusProps>;\n  PaymentMethodSelector: React.FC<PaymentMethodProps>;\n  CurrencyConverter: React.FC<CurrencyConverterProps>;\n}\n```\n\n#### **5. Forms & Input Components**\n```typescript\n// Standardized form components\ninterface FormComponents {\n  // Basic Inputs\n  TextInput: React.FC<TextInputProps>;\n  NumberInput: React.FC<NumberInputProps>;\n  SelectInput: React.FC<SelectInputProps>;\n  DatePicker: React.FC<DatePickerProps>;\n  FileUpload: React.FC<FileUploadProps>;\n  \n  // Specialized Inputs\n  CurrencyInput: React.FC<CurrencyInputProps>;\n  PhoneInput: React.FC<PhoneInputProps>;\n  AddressInput: React.FC<AddressInputProps>;\n  BankAccountInput: React.FC<BankAccountProps>;\n  \n  // Form Utilities\n  FormValidation: React.FC<ValidationProps>;\n  FormProgress: React.FC<ProgressProps>;\n  FormStepper: React.FC<StepperProps>;\n}\n```\n\n---\n\n## 📊 **Cross-Dashboard Data Models**\n\n### **Universal User Model**\n```typescript\n// Base user interface used across all dashboards\ninterface BaseUser {\n  id: string;\n  email: string;\n  firstName: string;\n  lastName: string;\n  phone?: string;\n  avatar?: string;\n  \n  // Account Information\n  accountType: UserAccountType;\n  status: 'active' | 'inactive' | 'suspended' | 'pending';\n  emailVerified: boolean;\n  phoneVerified: boolean;\n  \n  // Security\n  mfaEnabled: boolean;\n  lastLogin?: Date;\n  passwordLastChanged?: Date;\n  \n  // Preferences\n  language: string;\n  timezone: string;\n  currency: string;\n  theme: 'light' | 'dark' | 'auto';\n  \n  // Metadata\n  createdAt: Date;\n  updatedAt: Date;\n  lastSeenAt?: Date;\n}\n\n// Extended user types for specific dashboards\ntype UserDashboardUser = BaseUser & {\n  accountType: 'individual';\n  personalInfo: PersonalInfo;\n  preferences: UserPreferences;\n};\n\ntype BusinessDashboardUser = BaseUser & {\n  accountType: 'business';\n  businessInfo: BusinessInfo;\n  businessSettings: BusinessSettings;\n};\n\ntype InstitutionDashboardUser = BaseUser & {\n  accountType: 'institution';\n  institutionInfo: InstitutionInfo;\n  institutionRole: InstitutionRole;\n};\n```\n\n### **Universal Transaction Model**\n```typescript\n// Core transaction structure used across all dashboards\ninterface BaseTransaction {\n  id: string;\n  reference: string;\n  externalReference?: string;\n  \n  // Transaction Details\n  amount: number;\n  currency: string;\n  description: string;\n  type: 'payment' | 'transfer' | 'withdrawal' | 'deposit';\n  category: TransactionCategory;\n  \n  // Parties\n  sender: TransactionParty;\n  receiver: TransactionParty;\n  \n  // Status & Timing\n  status: TransactionStatus;\n  createdAt: Date;\n  processedAt?: Date;\n  completedAt?: Date;\n  \n  // Payment Method\n  paymentMethod: PaymentMethod;\n  \n  // Financial Details\n  fees: Fee[];\n  taxes: Tax[];\n  netAmount: number;\n  \n  // Metadata\n  channel: 'web' | 'mobile' | 'api' | 'batch';\n  ipAddress?: string;\n  userAgent?: string;\n  location?: GeoLocation;\n}\n\n// Dashboard-specific transaction views\ntype UserTransaction = BaseTransaction & {\n  userRole: 'sender' | 'receiver';\n  merchantInfo?: MerchantInfo;\n  loyaltyPoints?: number;\n};\n\ntype BusinessTransaction = BaseTransaction & {\n  businessRole: 'merchant' | 'customer';\n  customerInfo?: CustomerInfo;\n  productInfo?: ProductInfo;\n  reconciliationStatus: ReconciliationStatus;\n};\n\ntype InstitutionTransaction = BaseTransaction & {\n  institutionRole: 'issuing' | 'acquiring' | 'intermediary';\n  complianceChecks: ComplianceCheck[];\n  riskScore: number;\n  settlementInfo: SettlementInfo;\n};\n```\n\n### **Shared Analytics Model**\n```typescript\n// Common analytics data structure\ninterface AnalyticsData {\n  // Time Series Data\n  timeSeries: {\n    period: 'hour' | 'day' | 'week' | 'month' | 'year';\n    data: {\n      timestamp: Date;\n      value: number;\n      metadata?: Record<string, any>;\n    }[];\n  };\n  \n  // Aggregated Metrics\n  aggregations: {\n    total: number;\n    average: number;\n    median: number;\n    percentiles: Record<string, number>;\n    growth: {\n      absolute: number;\n      percentage: number;\n      period: string;\n    };\n  };\n  \n  // Segmentation\n  segments: {\n    dimension: string;\n    values: {\n      label: string;\n      value: number;\n      percentage: number;\n    }[];\n  }[];\n  \n  // Trends & Patterns\n  trends: {\n    direction: 'up' | 'down' | 'stable';\n    strength: 'weak' | 'moderate' | 'strong';\n    confidence: number;\n    forecast?: number[];\n  };\n}\n```\n\n---\n\n## 🎨 **Common UI Components**\n\n### **Core Component Library (@sunny/ui)**\n\n#### **1. Layout Components**\n```typescript\n// Layout.tsx - Universal layout wrapper\ninterface LayoutProps {\n  children: React.ReactNode;\n  variant: 'user' | 'business' | 'institution' | 'admin';\n  showHeader?: boolean;\n  showFooter?: boolean;\n  showSidebar?: boolean;\n  sidebarCollapsed?: boolean;\n  className?: string;\n}\n\n// Sidebar.tsx - Configurable sidebar\ninterface SidebarProps {\n  variant: DashboardVariant;\n  navigation: NavigationItem[];\n  user: BaseUser;\n  collapsed?: boolean;\n  onToggle?: () => void;\n  onNavigate?: (path: string) => void;\n}\n\n// Header.tsx - Universal header\ninterface HeaderProps {\n  variant: DashboardVariant;\n  user: BaseUser;\n  showSearch?: boolean;\n  showNotifications?: boolean;\n  showUserMenu?: boolean;\n  customActions?: React.ReactNode;\n}\n```\n\n#### **2. Data Display Components**\n```typescript\n// DataTable.tsx - Universal data table\ninterface DataTableProps<T> {\n  data: T[];\n  columns: Column<T>[];\n  loading?: boolean;\n  error?: string;\n  \n  // Pagination\n  pagination?: {\n    page: number;\n    pageSize: number;\n    total: number;\n    onPageChange: (page: number) => void;\n  };\n  \n  // Sorting\n  sorting?: {\n    column: string;\n    direction: 'asc' | 'desc';\n    onSort: (column: string) => void;\n  };\n  \n  // Filtering\n  filters?: {\n    [key: string]: any;\n  };\n  \n  // Selection\n  selection?: {\n    selectedIds: string[];\n    onSelectionChange: (ids: string[]) => void;\n  };\n  \n  // Actions\n  actions?: {\n    onView?: (item: T) => void;\n    onEdit?: (item: T) => void;\n    onDelete?: (item: T) => void;\n    customActions?: ActionItem<T>[];\n  };\n}\n\n// MetricCard.tsx - Universal metric display\ninterface MetricCardProps {\n  title: string;\n  value: string | number;\n  unit?: string;\n  trend?: TrendData;\n  icon?: React.ComponentType;\n  color?: 'blue' | 'green' | 'yellow' | 'red' | 'purple';\n  size?: 'sm' | 'md' | 'lg';\n  onClick?: () => void;\n  loading?: boolean;\n}\n```\n\n#### **3. Form Components**\n```typescript\n// FormBuilder.tsx - Dynamic form builder\ninterface FormBuilderProps {\n  schema: FormSchema;\n  data?: Record<string, any>;\n  onSubmit: (data: Record<string, any>) => void;\n  onCancel?: () => void;\n  loading?: boolean;\n  disabled?: boolean;\n  validation?: ValidationRules;\n}\n\n// SearchInput.tsx - Universal search\ninterface SearchInputProps {\n  placeholder?: string;\n  value?: string;\n  onChange: (value: string) => void;\n  onSearch?: (value: string) => void;\n  suggestions?: SearchSuggestion[];\n  loading?: boolean;\n  debounceMs?: number;\n}\n```\n\n#### **4. Notification Components**\n```typescript\n// NotificationCenter.tsx - Universal notifications\ninterface NotificationCenterProps {\n  variant: DashboardVariant;\n  maxVisible?: number;\n  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';\n  autoHide?: boolean;\n  autoHideDelay?: number;\n}\n\n// AlertBanner.tsx - System alerts\ninterface AlertBannerProps {\n  type: 'info' | 'success' | 'warning' | 'error';\n  title: string;\n  description?: string;\n  actions?: AlertAction[];\n  dismissible?: boolean;\n  onDismiss?: () => void;\n}\n```\n\n---\n\n## 🔧 **Shared Services & Utilities**\n\n### **Authentication Service (@sunny/auth)**\n```typescript\n// AuthService.ts - Universal authentication\nclass AuthService {\n  // Core authentication methods\n  async signIn(credentials: SignInCredentials): Promise<AuthResult>;\n  async signUp(userData: SignUpData): Promise<AuthResult>;\n  async signOut(): Promise<void>;\n  async refreshToken(): Promise<string>;\n  \n  // MFA methods\n  async setupMFA(method: MFAType): Promise<MFASetupResult>;\n  async verifyMFA(code: string): Promise<boolean>;\n  \n  // Session management\n  async getCurrentUser(): Promise<BaseUser | null>;\n  async updateProfile(updates: Partial<BaseUser>): Promise<BaseUser>;\n  \n  // Security\n  async changePassword(currentPassword: string, newPassword: string): Promise<void>;\n  async resetPassword(email: string): Promise<void>;\n  \n  // Dashboard routing\n  getDefaultDashboard(user: BaseUser): string;\n  hasPermission(user: BaseUser, permission: string): boolean;\n}\n```\n\n### **API Client (@sunny/api-client)**\n```typescript\n// ApiClient.ts - Universal API communication\nclass ApiClient {\n  // Configuration\n  constructor(baseUrl: string, options?: ApiClientOptions);\n  \n  // HTTP methods\n  async get<T>(endpoint: string, params?: Record<string, any>): Promise<T>;\n  async post<T>(endpoint: string, data?: any): Promise<T>;\n  async put<T>(endpoint: string, data?: any): Promise<T>;\n  async delete<T>(endpoint: string): Promise<T>;\n  \n  // Authentication\n  setAuthToken(token: string): void;\n  clearAuthToken(): void;\n  \n  // Request interceptors\n  addRequestInterceptor(interceptor: RequestInterceptor): void;\n  addResponseInterceptor(interceptor: ResponseInterceptor): void;\n  \n  // Error handling\n  onError(handler: ErrorHandler): void;\n}\n```\n\n### **Utility Functions (@sunny/utils)**\n```typescript\n// DateUtils.ts\nexport const DateUtils = {\n  formatDate: (date: Date, format: string) => string;\n  parseDate: (dateString: string) => Date;\n  getRelativeTime: (date: Date) => string;\n  addDays: (date: Date, days: number) => Date;\n  isSameDay: (date1: Date, date2: Date) => boolean;\n};\n\n// CurrencyUtils.ts\nexport const CurrencyUtils = {\n  formatCurrency: (amount: number, currency: string) => string;\n  convertCurrency: (amount: number, from: string, to: string) => Promise<number>;\n  getCurrencySymbol: (currency: string) => string;\n  validateAmount: (amount: string) => boolean;\n};\n\n// ValidationUtils.ts\nexport const ValidationUtils = {\n  email: (email: string) => boolean;\n  phone: (phone: string, country?: string) => boolean;\n  password: (password: string) => ValidationResult;\n  bankAccount: (accountNumber: string, bankCode?: string) => boolean;\n  nationalId: (id: string, country: string) => boolean;\n};\n```\n\n---\n\n## 📊 **Dashboard Comparison Matrix**\n\n### **Feature Comparison Across Dashboards**\n\n| Feature Category | User Dashboard | Business Dashboard | Institution Dashboard | Admin Dashboard | Developer Portal |\n|------------------|----------------|--------------------|-----------------------|-----------------|------------------|\n| **Authentication** | ✅ Basic | ✅ Business | ✅ Institution | ✅ Admin | ✅ Developer |\n| **Transaction View** | Personal | Business | Institution | Platform-wide | API Usage |\n| **Analytics** | Personal Metrics | Business KPIs | Institution Analytics | Platform Analytics | API Analytics |\n| **Customer Mgmt** | ❌ | ✅ Limited | ✅ Full | ✅ Platform-wide | ❌ |\n| **Compliance** | Basic KYC | Business Compliance | Full Regulatory | Platform Compliance | ❌ |\n| **Settings** | Personal | Business Config | Institution Config | Platform Config | API Config |\n| **Reporting** | Personal Reports | Business Reports | Regulatory Reports | Admin Reports | API Reports |\n| **White-labeling** | ❌ | Limited | ✅ Full | ✅ Platform | ❌ |\n| **API Access** | Limited | Business APIs | Institution APIs | Full Access | Full Access |\n| **Support** | Self-service | Business Support | Dedicated Support | Internal Tools | Developer Support |\n\n### **Shared Components Usage Matrix**\n\n| Component | User | Business | Institution | Admin | Developer |\n|-----------|------|----------|-------------|--------|----------|\n| **Layout** | ✅ | ✅ | ✅ | ✅ | ✅ |\n| **Navigation** | Simple | Business | Institution | Advanced | Developer |\n| **DataTable** | ✅ | ✅ | ✅ | ✅ | ✅ |\n| **Charts** | Basic | Business | Advanced | Full | API Metrics |\n| **Forms** | Simple | Business | Complex | Admin | API |\n| **Search** | Personal | Business | Institution | Platform | API Docs |\n| **Notifications** | ✅ | ✅ | ✅ | ✅ | ✅ |\n| **Export** | Limited | Business | Full | Full | API Data |\n\n---\n\n## 🎯 **Component Reusability Guidelines**\n\n### **Design Principles**\n\n#### **1. Configuration Over Customization**\n```typescript\n// Good: Configurable component\ninterface MetricCardProps {\n  variant: 'user' | 'business' | 'institution' | 'admin';\n  data: MetricData;\n  showTrend?: boolean;\n  showActions?: boolean;\n  size?: 'sm' | 'md' | 'lg';\n}\n\n// Avoid: Dashboard-specific components\ninterface UserMetricCardProps { /* user-specific */ }\ninterface BusinessMetricCardProps { /* business-specific */ }\n```\n\n#### **2. Composition Over Inheritance**\n```typescript\n// Good: Composable components\nconst UserDashboard = () => (\n  <Layout variant=\"user\">\n    <Header variant=\"user\" />\n    <Sidebar variant=\"user\" navigation={userNavigation} />\n    <MetricGrid variant=\"user\" metrics={userMetrics} />\n  </Layout>\n);\n\n// Good: Slot-based composition\nconst DashboardLayout = ({ children, sidebar, header }) => (\n  <div className=\"dashboard\">\n    {header}\n    <div className=\"dashboard-body\">\n      {sidebar}\n      <main>{children}</main>\n    </div>\n  </div>\n);\n```\n\n#### **3. Prop-based Theming**\n```typescript\n// Theme-aware components\ninterface ThemeProps {\n  variant: DashboardVariant;\n  color?: ColorScheme;\n  size?: SizeVariant;\n}\n\nconst Button: React.FC<ButtonProps & ThemeProps> = ({\n  variant,\n  color = 'primary',\n  size = 'md',\n  ...props\n}) => {\n  const themeClass = getThemeClass(variant, color, size);\n  return <button className={themeClass} {...props} />;\n};\n```\n\n### **Abstraction Levels**\n\n#### **Level 1: Base Components**\n- Primitive UI elements (buttons, inputs, cards)\n- No business logic\n- Highly reusable\n- Theme-aware\n\n#### **Level 2: Composite Components**\n- Combinations of base components\n- Some business logic\n- Dashboard-configurable\n- Data-aware\n\n#### **Level 3: Feature Components**\n- Complete features\n- Business logic included\n- Dashboard-specific variations\n- API-integrated\n\n#### **Level 4: Page Components**\n- Complete pages\n- Dashboard-specific\n- Route-aware\n- Context-dependent\n\n---\n\n## 🔄 **Shared State Management**\n\n### **Global State Architecture**\n\n```typescript\n// GlobalState.ts - Shared state across dashboards\ninterface GlobalState {\n  // Authentication\n  auth: {\n    user: BaseUser | null;\n    token: string | null;\n    permissions: string[];\n    isAuthenticated: boolean;\n  };\n  \n  // UI State\n  ui: {\n    theme: 'light' | 'dark' | 'auto';\n    sidebarCollapsed: boolean;\n    notifications: Notification[];\n    loading: boolean;\n    errors: Error[];\n  };\n  \n  // Application Data\n  data: {\n    transactions: Transaction[];\n    customers: Customer[];\n    analytics: AnalyticsData;\n    settings: UserSettings;\n  };\n  \n  // Real-time Data\n  realtime: {\n    connected: boolean;\n    lastUpdate: Date;\n    liveData: Record<string, any>;\n  };\n}\n```\n\n### **State Management Patterns**\n\n#### **1. Redux Toolkit (Recommended)**\n```typescript\n// authSlice.ts - Shared authentication state\nimport { createSlice, PayloadAction } from '@reduxjs/toolkit';\n\ninterface AuthState {\n  user: BaseUser | null;\n  token: string | null;\n  loading: boolean;\n  error: string | null;\n}\n\nconst authSlice = createSlice({\n  name: 'auth',\n  initialState,\n  reducers: {\n    signInStart: (state) => {\n      state.loading = true;\n      state.error = null;\n    },\n    signInSuccess: (state, action: PayloadAction<{ user: BaseUser; token: string }>) => {\n      state.user = action.payload.user;\n      state.token = action.payload.token;\n      state.loading = false;\n    },\n    signInFailure: (state, action: PayloadAction<string>) => {\n      state.error = action.payload;\n      state.loading = false;\n    },\n    signOut: (state) => {\n      state.user = null;\n      state.token = null;\n    }\n  }\n});\n```\n\n#### **2. React Context (For UI State)**\n```typescript\n// ThemeContext.tsx - Shared theme management\ninterface ThemeContextType {\n  theme: 'light' | 'dark' | 'auto';\n  setTheme: (theme: 'light' | 'dark' | 'auto') => void;\n  dashboardVariant: DashboardVariant;\n}\n\nconst ThemeContext = React.createContext<ThemeContextType | null>(null);\n\nexport const ThemeProvider: React.FC<{ children: React.ReactNode; variant: DashboardVariant }> = ({\n  children,\n  variant\n}) => {\n  const [theme, setTheme] = useState<'light' | 'dark' | 'auto'>('auto');\n  \n  return (\n    <ThemeContext.Provider value={{ theme, setTheme, dashboardVariant: variant }}>\n      {children}\n    </ThemeContext.Provider>\n  );\n};\n```\n\n### **Real-time State Synchronization**\n\n```typescript\n// RealtimeProvider.tsx - WebSocket state management\ninterface RealtimeProviderProps {\n  dashboardType: DashboardVariant;\n  userId: string;\n  children: React.ReactNode;\n}\n\nexport const RealtimeProvider: React.FC<RealtimeProviderProps> = ({\n  dashboardType,\n  userId,\n  children\n}) => {\n  const [socket, setSocket] = useState<WebSocket | null>(null);\n  const [connected, setConnected] = useState(false);\n  \n  useEffect(() => {\n    const ws = new WebSocket(`wss://api.sunnypayments.com/v2/${dashboardType}/live`);\n    \n    ws.onopen = () => {\n      setConnected(true);\n      ws.send(JSON.stringify({ type: 'authenticate', userId }));\n    };\n    \n    ws.onmessage = (event) => {\n      const data = JSON.parse(event.data);\n      // Dispatch real-time updates to Redux store\n      dispatch(updateRealtimeData(data));\n    };\n    \n    setSocket(ws);\n    \n    return () => {\n      ws.close();\n    };\n  }, [dashboardType, userId]);\n  \n  return (\n    <RealtimeContext.Provider value={{ socket, connected }}>\n      {children}\n    </RealtimeContext.Provider>\n  );\n};\n```\n\n---\n\n## 📦 **Package Dependencies**\n\n### **Shared Dependencies**\n```json\n{\n  \"dependencies\": {\n    // Core React\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"react-router-dom\": \"^6.8.0\",\n    \n    // State Management\n    \"@reduxjs/toolkit\": \"^1.9.0\",\n    \"react-redux\": \"^8.0.0\",\n    \n    // UI Framework\n    \"@headlessui/react\": \"^1.7.0\",\n    \"@heroicons/react\": \"^2.0.0\",\n    \"tailwindcss\": \"^3.2.0\",\n    \n    // Forms & Validation\n    \"react-hook-form\": \"^7.43.0\",\n    \"zod\": \"^3.20.0\",\n    \"@hookform/resolvers\": \"^2.9.0\",\n    \n    // Charts & Visualization\n    \"recharts\": \"^2.5.0\",\n    \"d3\": \"^7.8.0\",\n    \n    // Utilities\n    \"date-fns\": \"^2.29.0\",\n    \"lodash\": \"^4.17.0\",\n    \"axios\": \"^1.3.0\",\n    \n    // Animation\n    \"framer-motion\": \"^10.0.0\",\n    \n    // Real-time\n    \"socket.io-client\": \"^4.6.0\"\n  }\n}\n```\n\n### **Development Dependencies**\n```json\n{\n  \"devDependencies\": {\n    // Build Tools\n    \"@vitejs/plugin-react\": \"^3.1.0\",\n    \"vite\": \"^4.1.0\",\n    \"turbo\": \"^1.8.0\",\n    \n    // TypeScript\n    \"typescript\": \"^4.9.0\",\n    \"@types/react\": \"^18.0.0\",\n    \"@types/react-dom\": \"^18.0.0\",\n    \n    // Testing\n    \"vitest\": \"^0.28.0\",\n    \"@testing-library/react\": \"^14.0.0\",\n    \"@testing-library/jest-dom\": \"^5.16.0\",\n    \n    // Linting & Formatting\n    \"eslint\": \"^8.35.0\",\n    \"prettier\": \"^2.8.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^5.54.0\"\n  }\n}\n```\n\n---\n\n## 🚀 **Implementation Strategy**\n\n### **Phase 1: Foundation (Weeks 1-2)**\n1. Set up shared package structure\n2. Implement core authentication system\n3. Create base UI component library\n4. Establish design system and theming\n\n### **Phase 2: Core Components (Weeks 3-4)**\n1. Build shared navigation components\n2. Implement data table and chart components\n3. Create form building system\n4. Develop notification system\n\n### **Phase 3: Business Logic (Weeks 5-6)**\n1. Implement transaction management components\n2. Build analytics and reporting components\n3. Create customer management components\n4. Develop real-time state management\n\n### **Phase 4: Integration (Weeks 7-8)**\n1. Integrate components across all dashboards\n2. Implement shared state management\n3. Add real-time synchronization\n4. Performance optimization\n\n### **Phase 5: Testing & Documentation (Weeks 9-10)**\n1. Comprehensive testing of shared components\n2. Performance testing and optimization\n3. Documentation and examples\n4. Training and knowledge transfer\n\n---\n\nThis shared component architecture ensures consistency, maintainability, and efficiency across the entire Sunny platform while allowing each dashboard to maintain its unique functionality and user experience."}
-<result>Successfully wrote to Sunny/SHARED_DASHBOARD_COMPONENTS.md.
+# 🔄 Sunny Platform - Shared Dashboard Components & Architecture
 
-When you're done with your current set of changes to this file, you should call the read_lints tool with the specific file path and fix any newly introduced errors.</result>
+## 📋 **Table of Contents**
+
+- [Overview](#overview)
+- [Shared Component Architecture](#shared-component-architecture)
+- [Cross-Dashboard Data Models](#cross-dashboard-data-models)
+- [Common UI Components](#common-ui-components)
+- [Shared Services & Utilities](#shared-services--utilities)
+- [Dashboard Comparison Matrix](#dashboard-comparison-matrix)
+- [Component Reusability Guidelines](#component-reusability-guidelines)
+- [Shared State Management](#shared-state-management)
+
+---
+
+## 🎯 **Overview**
+
+### **Shared Component Philosophy**
+The Sunny platform consists of multiple dashboards (User, Business, Institution, Admin, Developer) that share common functionality while maintaining distinct user experiences. This document outlines the shared components, data structures, and architectural patterns used across all dashboards.
+
+### **Dashboard Ecosystem**
+```
+🌟 Sunny Platform Ecosystem
+┌─────────────────────────────────────────────────────────────┐
+│                   Shared Component Layer                    │
+├─────────────────────────────────────────────────────────────┤
+│  👤 User       🏢 Business    🏛️ Institution  👑 Admin      │
+│  Dashboard     Dashboard     Dashboard      Dashboard       │
+│                                                             │
+│  🧑‍💻 Developer  📱 Mobile      🌐 Marketing   🔧 Support     │
+│  Portal        App           Site          Dashboard       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### **Benefits of Shared Architecture**
+- **Consistency**: Uniform user experience across platforms
+- **Maintainability**: Single source of truth for common components
+- **Performance**: Reduced bundle size through code reuse
+- **Development Speed**: Faster feature development and bug fixes
+- **Quality**: Centralized testing and quality assurance
+
+---
+
+## 🏗️ **Shared Component Architecture**
+
+### **Package Structure**
+
+```
+@sunny/shared/
+├── 📦 packages/
+│   ├── ui/                    # Shared UI components
+│   ├── auth/                  # Authentication logic
+│   ├── api-client/           # API communication
+│   ├── shared-types/         # TypeScript definitions
+│   ├── utils/                # Utility functions
+│   ├── security/             # Security utilities
+│   └── database/             # Database abstractions
+├── 🎨 design-system/
+│   ├── tokens/               # Design tokens
+│   ├── themes/               # Theme definitions
+│   ├── icons/                # Icon library
+│   └── assets/               # Shared assets
+└── 🧪 testing/
+    ├── fixtures/             # Test data
+    ├── mocks/                # Mock implementations
+    └── utilities/            # Testing utilities
+```
+
+### **Cross-Dashboard Component Categories**
+
+#### **1. Navigation & Layout Components**
+```typescript
+// Shared across all dashboards with customization
+interface NavigationComponent {
+  // Common navigation patterns
+  Sidebar: React.FC<SidebarProps>;
+  TopNavigation: React.FC<TopNavProps>;
+  Breadcrumbs: React.FC<BreadcrumbProps>;
+  UserMenu: React.FC<UserMenuProps>;
+  
+  // Dashboard-specific variations
+  UserSidebar: React.FC<UserSidebarProps>;
+  BusinessSidebar: React.FC<BusinessSidebarProps>;
+  InstitutionSidebar: React.FC<InstitutionSidebarProps>;
+  AdminSidebar: React.FC<AdminSidebarProps>;
+}
+```
+
+#### **2. Authentication & User Management**
+```typescript
+// Universal authentication components
+interface AuthComponents {
+  LoginForm: React.FC<LoginFormProps>;
+  MFAVerification: React.FC<MFAProps>;
+  PasswordReset: React.FC<PasswordResetProps>;
+  UserProfile: React.FC<UserProfileProps>;
+  SecuritySettings: React.FC<SecuritySettingsProps>;
+  SessionManager: React.FC<SessionManagerProps>;
+}
+```
+
+#### **3. Data Visualization & Analytics**
+```typescript
+// Reusable chart and visualization components
+interface AnalyticsComponents {
+  // Chart Components
+  LineChart: React.FC<LineChartProps>;
+  BarChart: React.FC<BarChartProps>;
+  PieChart: React.FC<PieChartProps>;
+  AreaChart: React.FC<AreaChartProps>;
+  HeatMap: React.FC<HeatMapProps>;
+  
+  // Metric Components
+  KPICard: React.FC<KPICardProps>;
+  MetricGrid: React.FC<MetricGridProps>;
+  TrendIndicator: React.FC<TrendProps>;
+  ProgressRing: React.FC<ProgressRingProps>;
+  
+  // Dashboard Widgets
+  RevenueWidget: React.FC<RevenueWidgetProps>;
+  TransactionWidget: React.FC<TransactionWidgetProps>;
+  CustomerWidget: React.FC<CustomerWidgetProps>;
+  GrowthWidget: React.FC<GrowthWidgetProps>;
+}
+```
+
+---
+
+## 📊 **Cross-Dashboard Data Models**
+
+### **Universal User Model**
+```typescript
+// Base user interface used across all dashboards
+interface BaseUser {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  phone?: string;
+  avatar?: string;
+  
+  // Account Information
+  accountType: UserAccountType;
+  status: 'active' | 'inactive' | 'suspended' | 'pending';
+  emailVerified: boolean;
+  phoneVerified: boolean;
+  
+  // Security
+  mfaEnabled: boolean;
+  lastLogin?: Date;
+  passwordLastChanged?: Date;
+  
+  // Preferences
+  language: string;
+  timezone: string;
+  currency: string;
+  theme: 'light' | 'dark' | 'auto';
+  
+  // Metadata
+  createdAt: Date;
+  updatedAt: Date;
+  lastSeenAt?: Date;
+}
+```
+
+### **Universal Transaction Model**
+```typescript
+// Core transaction structure used across all dashboards
+interface BaseTransaction {
+  id: string;
+  reference: string;
+  externalReference?: string;
+  
+  // Transaction Details
+  amount: number;
+  currency: string;
+  description: string;
+  type: 'payment' | 'transfer' | 'withdrawal' | 'deposit';
+  category: TransactionCategory;
+  
+  // Parties
+  sender: TransactionParty;
+  receiver: TransactionParty;
+  
+  // Status & Timing
+  status: TransactionStatus;
+  createdAt: Date;
+  processedAt?: Date;
+  completedAt?: Date;
+  
+  // Payment Method
+  paymentMethod: PaymentMethod;
+  
+  // Financial Details
+  fees: Fee[];
+  taxes: Tax[];
+  netAmount: number;
+  
+  // Metadata
+  channel: 'web' | 'mobile' | 'api' | 'batch';
+  ipAddress?: string;
+  userAgent?: string;
+  location?: GeoLocation;
+}
+```
+
+---
+
+## 🎨 **Common UI Components**
+
+### **Core Component Library (@sunny/ui)**
+
+#### **1. Layout Components**
+```typescript
+// Layout.tsx - Universal layout wrapper
+interface LayoutProps {
+  children: React.ReactNode;
+  variant: 'user' | 'business' | 'institution' | 'admin';
+  showHeader?: boolean;
+  showFooter?: boolean;
+  showSidebar?: boolean;
+  sidebarCollapsed?: boolean;
+  className?: string;
+}
+```
+
+#### **2. Data Display Components**
+```typescript
+// DataTable.tsx - Universal data table
+interface DataTableProps<T> {
+  data: T[];
+  columns: Column<T>[];
+  loading?: boolean;
+  error?: string;
+  
+  // Pagination
+  pagination?: {
+    page: number;
+    pageSize: number;
+    total: number;
+    onPageChange: (page: number) => void;
+  };
+  
+  // Sorting
+  sorting?: {
+    column: string;
+    direction: 'asc' | 'desc';
+    onSort: (column: string) => void;
+  };
+  
+  // Actions
+  actions?: {
+    onView?: (item: T) => void;
+    onEdit?: (item: T) => void;
+    onDelete?: (item: T) => void;
+  };
+}
+```
+
+---
+
+## 📊 **Dashboard Comparison Matrix**
+
+### **Feature Comparison Across Dashboards**
+
+| Feature Category | User Dashboard | Business Dashboard | Institution Dashboard | Admin Dashboard | Developer Portal |
+|------------------|----------------|--------------------|-----------------------|-----------------|------------------|
+| **Authentication** | ✅ Basic | ✅ Business | ✅ Institution | ✅ Admin | ✅ Developer |
+| **Transaction View** | Personal | Business | Institution | Platform-wide | API Usage |
+| **Analytics** | Personal Metrics | Business KPIs | Institution Analytics | Platform Analytics | API Analytics |
+| **Customer Mgmt** | ❌ | ✅ Limited | ✅ Full | ✅ Platform-wide | ❌ |
+| **Compliance** | Basic KYC | Business Compliance | Full Regulatory | Platform Compliance | ❌ |
+| **Settings** | Personal | Business Config | Institution Config | Platform Config | API Config |
+| **Reporting** | Personal Reports | Business Reports | Regulatory Reports | Admin Reports | API Reports |
+| **White-labeling** | ❌ | Limited | ✅ Full | ✅ Platform | ❌ |
+| **API Access** | Limited | Business APIs | Institution APIs | Full Access | Full Access |
+| **Support** | Self-service | Business Support | Dedicated Support | Internal Tools | Developer Support |
+
+---
+
+## 🎯 **Component Reusability Guidelines**
+
+### **Design Principles**
+
+#### **1. Configuration Over Customization**
+```typescript
+// Good: Configurable component
+interface MetricCardProps {
+  variant: 'user' | 'business' | 'institution' | 'admin';
+  data: MetricData;
+  showTrend?: boolean;
+  showActions?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+}
+```
+
+#### **2. Composition Over Inheritance**
+```typescript
+// Good: Composable components
+const UserDashboard = () => (
+  <Layout variant="user">
+    <Header variant="user" />
+    <Sidebar variant="user" navigation={userNavigation} />
+    <MetricGrid variant="user" metrics={userMetrics} />
+  </Layout>
+);
+```
+
+---
+
+## 🔄 **Shared State Management**
+
+### **Global State Architecture**
+
+```typescript
+// GlobalState.ts - Shared state across dashboards
+interface GlobalState {
+  // Authentication
+  auth: {
+    user: BaseUser | null;
+    token: string | null;
+    permissions: string[];
+    isAuthenticated: boolean;
+  };
+  
+  // UI State
+  ui: {
+    theme: 'light' | 'dark' | 'auto';
+    sidebarCollapsed: boolean;
+    notifications: Notification[];
+    loading: boolean;
+    errors: Error[];
+  };
+  
+  // Application Data
+  data: {
+    transactions: Transaction[];
+    customers: Customer[];
+    analytics: AnalyticsData;
+    settings: UserSettings;
+  };
+}
+```
+
+---
+
+This shared component architecture ensures consistency, maintainability, and efficiency across the entire Sunny platform while allowing each dashboard to maintain its unique functionality and user experience.
+
+*Note: This is a condensed version. The complete documentation includes detailed implementation strategies, package dependencies, testing approaches, and real-time synchronization patterns.*
