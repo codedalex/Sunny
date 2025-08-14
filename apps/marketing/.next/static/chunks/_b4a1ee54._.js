@@ -3606,13 +3606,13 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
-"[project]/apps/marketing/src/app/sign-in/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/apps/marketing/src/app/sign-up/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": ()=>SignInPage
+    "default": ()=>SignUpPage
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.4.6_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.4.6_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -3626,13 +3626,14 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function SignInPageContent() {
+function SignUpPageContent() {
     _s();
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"])();
-    const { signIn } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$auth$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useAuth"])();
+    const { signUp } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$auth$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useAuth"])();
     const redirectUrl = (searchParams === null || searchParams === void 0 ? void 0 : searchParams.get('redirect')) || undefined;
-    const handleSignIn = async (data)=>{
-        const response = await signIn(data);
+    const accountType = (searchParams === null || searchParams === void 0 ? void 0 : searchParams.get('type')) || undefined;
+    const handleSignUp = async (data)=>{
+        const response = await signUp(data);
         if (response.success && response.user) {
             // Use auto-detection for account type and smart routing
             __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$auth$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["AuthRouter"].handleAuthSuccessWithAutoDetection(response.user, redirectUrl);
@@ -3640,64 +3641,65 @@ function SignInPageContent() {
         return response;
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$ui$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AuthPageLayout"], {
-        title: "Welcome Back",
-        subtitle: "Sign in to your Sunny Payments account",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$ui$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SimpleSignInForm"], {
-            onSubmit: handleSignIn,
+        title: "Join Sunny Payments",
+        subtitle: "Create your account and start accepting payments globally",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$ui$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SignUpForm"], {
+            onSubmit: handleSignUp,
+            defaultAccountType: accountType,
             redirectUrl: redirectUrl
         }, void 0, false, {
-            fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-            lineNumber: 31,
+            fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+            lineNumber: 32,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-        lineNumber: 27,
+        fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+        lineNumber: 28,
         columnNumber: 5
     }, this);
 }
-_s(SignInPageContent, "O0Ytjw2cvQd5rdxo3oe5hdnsxGY=", false, function() {
+_s(SignUpPageContent, "eeAat6oAbUVmcpFz8gi4ToT3z40=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"],
         __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$auth$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["useAuth"]
     ];
 });
-_c = SignInPageContent;
-function SignInPage() {
+_c = SignUpPageContent;
+function SignUpPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Suspense"], {
         fallback: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-900 dark:to-green-900/20 flex items-center justify-center",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"
             }, void 0, false, {
-                fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-                lineNumber: 43,
+                fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+                lineNumber: 45,
                 columnNumber: 9
             }, void 0)
         }, void 0, false, {
-            fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-            lineNumber: 42,
+            fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+            lineNumber: 44,
             columnNumber: 7
         }, void 0),
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignInPageContent, {}, void 0, false, {
-            fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-            lineNumber: 46,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SignUpPageContent, {}, void 0, false, {
+            fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+            lineNumber: 48,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/apps/marketing/src/app/sign-in/page.tsx",
-        lineNumber: 41,
+        fileName: "[project]/apps/marketing/src/app/sign-up/page.tsx",
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }
-_c1 = SignInPage;
+_c1 = SignUpPage;
 var _c, _c1;
-__turbopack_context__.k.register(_c, "SignInPageContent");
-__turbopack_context__.k.register(_c1, "SignInPage");
+__turbopack_context__.k.register(_c, "SignUpPageContent");
+__turbopack_context__.k.register(_c1, "SignUpPage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
 }]);
 
-//# sourceMappingURL=_301c1a0e._.js.map
+//# sourceMappingURL=_b4a1ee54._.js.map

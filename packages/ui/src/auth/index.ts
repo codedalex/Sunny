@@ -1,5 +1,7 @@
 export { default as AuthLayout } from './AuthLayout';
+export { default as AuthPageLayout } from './AuthPageLayout';
 export { default as SignInForm } from './SignInForm';
+export { default as SimpleSignInForm } from './SimpleSignInForm';
 export { default as SignUpForm } from './SignUpForm';
 export { default as SocialAuthButtons } from './SocialAuthButtons';
 

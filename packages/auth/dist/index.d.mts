@@ -12,6 +12,14 @@ declare class AuthRouter {
      */
     static getDestinationUrl(accountType: UserAccountType, customRedirect?: string): string;
     /**
+     * Auto-detect account type from user data
+     */
+    static detectAccountType(user: User): UserAccountType;
+    /**
+     * Handle successful authentication with automatic routing
+     */
+    static handleAuthSuccessWithAutoDetection(user: User, customRedirect?: string): void;
+    /**
      * Constructs the authentication URL with proper parameters
      */
     static buildAuthUrl(mode: 'signin' | 'signup', accountType?: UserAccountType, redirectUrl?: string, authDomain?: string): string;
@@ -22,7 +30,7 @@ declare class AuthRouter {
     /**
      * Extracts account type from URL parameters or referrer
      */
-    static detectAccountType(searchParams?: URLSearchParams): UserAccountType | undefined;
+    static detectAccountTypeFromParams(searchParams?: URLSearchParams): UserAccountType | undefined;
     /**
      * Validates if a user can access a specific dashboard
      */

@@ -964,18 +964,6 @@
     visibility: visible;
   }
 
-  .sr-only {
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-  }
-
   .absolute {
     position: absolute;
   }
@@ -3910,10 +3898,6 @@
     padding-right: calc(var(--spacing) * 10);
   }
 
-  .pr-12 {
-    padding-right: calc(var(--spacing) * 12);
-  }
-
   .pr-16 {
     padding-right: calc(var(--spacing) * 16);
   }
@@ -5079,18 +5063,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-white\/50:hover {
-      background-color: rgba(255, 255, 255, .5);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-white\/50:hover {
-        background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
-      }
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-yellow-50:hover {
       background-color: var(--color-yellow-50);
     }
@@ -5533,12 +5505,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:inline {
-      display: inline;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -5553,14 +5519,6 @@
   @media (min-width: 40rem) {
     .sm\:flex-row {
       flex-direction: row;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    :where(.sm\:space-y-0 > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(calc(var(--spacing) * 0) * var(--tw-space-y-reverse));
-      margin-bottom: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
 
@@ -7618,18 +7576,6 @@
   }
 
   @media (hover: hover) {
-    .dark\:hover\:bg-gray-800\/50:is(.dark *):hover {
-      background-color: rgba(30, 41, 57, .5);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .dark\:hover\:bg-gray-800\/50:is(.dark *):hover {
-        background-color: color-mix(in oklab, var(--color-gray-800) 50%, transparent);
-      }
-    }
-  }
-
-  @media (hover: hover) {
     .dark\:hover\:bg-green-900\/20:is(.dark *):hover {
       background-color: rgba(13, 84, 43, .2);
     }
@@ -7740,12 +7686,6 @@
   @media (hover: hover) {
     .dark\:hover\:text-gray-300:is(.dark *):hover {
       color: var(--color-gray-300);
-    }
-  }
-
-  @media (hover: hover) {
-    .dark\:hover\:text-green-300:is(.dark *):hover {
-      color: var(--color-green-300);
     }
   }
 

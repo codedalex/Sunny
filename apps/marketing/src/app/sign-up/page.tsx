@@ -2,13 +2,12 @@
 
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { AuthLayout, SignUpForm } from '@sunny/ui';
-import { useAuthRouter, useAuth } from '@sunny/auth';
+import { AuthPageLayout, SignUpForm } from '@sunny/ui';
+import { AuthRouter, useAuth } from '@sunny/auth';
 import { UserAccountType, type SignUpRequest } from '@sunny/shared-types';
 
 function SignUpPageContent() {
   const searchParams = useSearchParams();
-  const { handleAuthSuccess } = useAuthRouter();
   const { signUp } = useAuth();
 
   const redirectUrl = searchParams?.get('redirect') || undefined;
@@ -18,25 +17,24 @@ function SignUpPageContent() {
     const response = await signUp(data);
     
     if (response.success && response.user) {
-      handleAuthSuccess(response.user, redirectUrl);
+      // Use auto-detection for account type and smart routing
+      AuthRouter.handleAuthSuccessWithAutoDetection(response.user, redirectUrl);
     }
     
     return response;
   };
 
   return (
-    <AuthLayout
+    <AuthPageLayout
       title="Join Sunny Payments"
       subtitle="Create your account and start accepting payments globally"
-      showSocialAuth={true}
-      socialAuthUserType={accountType}
     >
       <SignUpForm
         onSubmit={handleSignUp}
         defaultAccountType={accountType}
         redirectUrl={redirectUrl}
       />
-    </AuthLayout>
+    </AuthPageLayout>
   );
 }
 

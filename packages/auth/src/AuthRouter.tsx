@@ -49,6 +49,44 @@ export class AuthRouter {
   }
 
   /**
+   * Auto-detect account type from user data
+   */
+  static detectAccountType(user: User): UserAccountType {
+    // Return the user's actual account type - this is determined during registration
+    // or by the backend based on user's profile and verification status
+    return user.accountType;
+  }
+
+  /**
+   * Handle successful authentication with automatic routing
+   */
+  static handleAuthSuccessWithAutoDetection(user: User, customRedirect?: string): void {
+    const accountType = AuthRouter.detectAccountType(user);
+    const destination = AuthRouter.getDestinationUrl(accountType, customRedirect);
+    
+    // Check if we're already on the correct domain
+    if (typeof window !== 'undefined') {
+      const currentDomain = window.location.hostname;
+      
+      try {
+        const targetDomain = new URL(destination).hostname;
+        
+        // Only redirect if we're not already on the target domain
+        if (currentDomain !== targetDomain) {
+          window.location.href = destination;
+        } else {
+          // If we're already on the correct domain, just navigate to the dashboard
+          const dashboardPath = customRedirect ? new URL(customRedirect).pathname : '/dashboard';
+          window.location.pathname = dashboardPath;
+        }
+      } catch {
+        // Fallback to full redirect if URL parsing fails
+        window.location.href = destination;
+      }
+    }
+  }
+
+  /**
    * Constructs the authentication URL with proper parameters
    */
   static buildAuthUrl(
@@ -97,7 +135,7 @@ export class AuthRouter {
   /**
    * Extracts account type from URL parameters or referrer
    */
-  static detectAccountType(searchParams?: URLSearchParams): UserAccountType | undefined {
+  static detectAccountTypeFromParams(searchParams?: URLSearchParams): UserAccountType | undefined {
     // Check URL parameters first
     if (searchParams?.has('type')) {
       const type = searchParams.get('type') as UserAccountType;
@@ -186,7 +224,7 @@ export function useAuthRouter(options?: AuthRouterProps) {
   };
 
   const getDetectedAccountType = () => {
-    return AuthRouter.detectAccountType(searchParams);
+    return AuthRouter.detectAccountTypeFromParams(searchParams);
   };
 
   // Auto-redirect authenticated users

@@ -6,7 +6,7 @@ import {
   ACCOUNT_TYPE_DESTINATIONS
 } from "@sunny/shared-types";
 import { jsx } from "react/jsx-runtime";
-var AuthRouter = class {
+var AuthRouter = class _AuthRouter {
   /**
    * Determines the correct destination URL based on user account type
    */
@@ -30,6 +30,33 @@ var AuthRouter = class {
       }
     }
     return ACCOUNT_TYPE_DESTINATIONS[accountType];
+  }
+  /**
+   * Auto-detect account type from user data
+   */
+  static detectAccountType(user) {
+    return user.accountType;
+  }
+  /**
+   * Handle successful authentication with automatic routing
+   */
+  static handleAuthSuccessWithAutoDetection(user, customRedirect) {
+    const accountType = _AuthRouter.detectAccountType(user);
+    const destination = _AuthRouter.getDestinationUrl(accountType, customRedirect);
+    if (typeof window !== "undefined") {
+      const currentDomain = window.location.hostname;
+      try {
+        const targetDomain = new URL(destination).hostname;
+        if (currentDomain !== targetDomain) {
+          window.location.href = destination;
+        } else {
+          const dashboardPath = customRedirect ? new URL(customRedirect).pathname : "/dashboard";
+          window.location.pathname = dashboardPath;
+        }
+      } catch {
+        window.location.href = destination;
+      }
+    }
   }
   /**
    * Constructs the authentication URL with proper parameters
@@ -62,7 +89,7 @@ var AuthRouter = class {
   /**
    * Extracts account type from URL parameters or referrer
    */
-  static detectAccountType(searchParams) {
+  static detectAccountTypeFromParams(searchParams) {
     if (searchParams?.has("type")) {
       const type = searchParams.get("type");
       if (Object.values(UserAccountType).includes(type)) {
@@ -123,7 +150,7 @@ function useAuthRouter(options) {
     AuthRouter.handleAuthSuccess(user, customRedirect, options?.onAuthSuccess);
   };
   const getDetectedAccountType = () => {
-    return AuthRouter.detectAccountType(searchParams);
+    return AuthRouter.detectAccountTypeFromParams(searchParams);
   };
   useEffect(() => {
     if (options?.user) {
