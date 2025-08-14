@@ -156,7 +156,7 @@ export const SignInSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
   accountType: z.nativeEnum(UserAccountType).optional(), // For routing
-  rememberMe: z.boolean().default(false),
+  rememberMe: z.boolean().optional().default(false),
   mfaCode: z.string().optional()
 });
 

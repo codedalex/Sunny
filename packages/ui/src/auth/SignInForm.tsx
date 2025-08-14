@@ -55,6 +55,8 @@ export default function SignInForm({
   } = useForm<SignInRequest>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
+      email: '',
+      password: '',
       accountType: defaultAccountType,
       rememberMe: false
     }
@@ -189,7 +191,7 @@ export default function SignInForm({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            onSubmit={handleSubmit(handleFormSubmit)}
+            onSubmit={handleSubmit((data) => handleFormSubmit(data as SignInRequest))}
             className="space-y-6"
           >
             {/* Account Type Selection */}

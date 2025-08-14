@@ -192,7 +192,7 @@ export function useAuthRouter(options?: AuthRouterProps) {
   // Auto-redirect authenticated users
   useEffect(() => {
     if (options?.user) {
-      const redirectUrl = searchParams?.get('redirect');
+      const redirectUrl = searchParams?.get('redirect') || undefined;
       const destination = AuthRouter.getDestinationUrl(options.user.accountType, redirectUrl);
       
       // Only redirect if we're not already on the correct domain
