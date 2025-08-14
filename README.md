@@ -127,7 +127,15 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 ## License
 MIT License. See [LICENSE](LICENSE).
 
-## Support
-- Check the [documentation](./docs/)
-- Open an issue on GitHub
-- Contact support at support@sunnypayments.com
+This project is proprietary software. All rights reserved.
+
+## 📞 Contact
+
+- **Website**: [sunnypayments.com](https://sunnypayments.com)
+- **Email**: hello@sunnypayments.com
+- **Phone**: +254 (0) 700 000 000
+- **Address**: Nairobi, Kenya
+
+---
+
+**Built with ❤️ in Kenya 🇰🇪 for the world 🌍**
