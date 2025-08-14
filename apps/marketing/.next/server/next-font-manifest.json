@@ -3,40 +3,10 @@
     "[project]/apps/marketing/src/app/_not-found/page": [
       "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
     ],
-    "[project]/apps/marketing/src/app/about/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/careers/jobs/[id]/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/careers/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/contact/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/news/articles/[id]/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/news/articles/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/news/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
     "[project]/apps/marketing/src/app/page": [
       "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
     ],
-    "[project]/apps/marketing/src/app/solutions/ecommerce/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/solutions/financial-services/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/solutions/marketplaces/page": [
-      "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
-    ],
-    "[project]/apps/marketing/src/app/solutions/saas/page": [
+    "[project]/apps/marketing/src/app/sign-in/page": [
       "static/media/06ba6ef833b337bc-s.p.0faac26c.woff2"
     ]
   },
