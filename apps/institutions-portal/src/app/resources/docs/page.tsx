@@ -1,6 +1,5 @@
 import React from 'react';
-import InstitutionalHeader from '../../../components/layout/InstitutionalHeader';
-import InstitutionalFooter from '../../../components/layout/InstitutionalFooter';
+import DocsLayout from '../../../components/resources/docs/DocsLayout';
 import DocsHero from '../../../components/resources/docs/DocsHero';
 import DocsSearch from '../../../components/resources/docs/DocsSearch';
 import InstitutionTypeSelector from '../../../components/resources/docs/InstitutionTypeSelector';
@@ -12,9 +11,7 @@ import SectionDivider from '../../../components/global/SectionDivider';
 
 export default function DocsHomePage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <InstitutionalHeader />
-
+    <DocsLayout showSidebar={false} showBreadcrumbs={false} maxWidth="full" className="bg-white dark:bg-gray-900">
       {/* Documentation Hero Section */}
       <DocsHero />
 
@@ -47,8 +44,6 @@ export default function DocsHomePage() {
 
       {/* Call to Action */}
       <DocsCallToAction />
-
-      <InstitutionalFooter />
-    </div>
+    </DocsLayout>
   );
 }
