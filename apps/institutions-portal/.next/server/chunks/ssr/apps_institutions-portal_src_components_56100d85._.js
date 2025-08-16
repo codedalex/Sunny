@@ -96,39 +96,35 @@ const navigationItems = [
         dropdown: [
             {
                 name: 'Documentation',
-                href: '/docs',
+                href: '/resources/docs',
                 icon: '📚'
             },
             {
                 name: 'API Reference',
-                href: '/api-docs',
+                href: '/resources/api-docs',
                 icon: '🔧'
             },
             {
                 name: 'Case Studies',
-                href: '/case-studies',
+                href: '/resources/case-studies',
                 icon: '📈'
             },
             {
                 name: 'Webinars',
-                href: '/webinars',
+                href: '/resources/webinars',
                 icon: '🎥'
             },
             {
                 name: 'Regulatory Updates',
-                href: '/regulatory',
+                href: '/resources/regulatory',
                 icon: '📋'
             },
             {
                 name: 'Download Center',
-                href: '/downloads',
+                href: '/resources/downloads',
                 icon: '⬇️'
             }
         ]
-    },
-    {
-        name: 'Pricing',
-        href: '/pricing'
     },
     {
         name: 'Support',
@@ -181,7 +177,7 @@ const MobileMenu = ({ isOpen, onClose })=>{
                     onClick: onClose
                 }, void 0, false, {
                     fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                    lineNumber: 68,
+                    lineNumber: 65,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_$40$emotion$2b$is$2d$prop$2d$valid$40$1$2e$3$2e$1_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -211,7 +207,7 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                         children: "Menu"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 81,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -230,23 +226,23 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                                 d: "M6 18L18 6M6 6l12 12"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 91,
+                                                lineNumber: 88,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 87,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 83,
+                                lineNumber: 80,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,7 +266,7 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                                 children: item.name
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 101,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             item.dropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -284,30 +280,30 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                                                 children: subItem.icon
                                                             }, void 0, false, {
                                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                                lineNumber: 118,
+                                                                lineNumber: 115,
                                                                 columnNumber: 29
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             subItem.name
                                                         ]
                                                     }, subItem.name, true, {
                                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 110,
                                                         columnNumber: 27
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 108,
                                                 columnNumber: 23
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, item.name, true, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 95,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 96,
+                                lineNumber: 93,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -320,7 +316,7 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                             children: "Sign In"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 127,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -328,36 +324,36 @@ const MobileMenu = ({ isOpen, onClose })=>{
                                             children: "Get Started"
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 130,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 126,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 128,
+                                lineNumber: 125,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                        lineNumber: 82,
+                        lineNumber: 79,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                    lineNumber: 75,
+                    lineNumber: 72,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true)
     }, void 0, false, {
         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-        lineNumber: 65,
+        lineNumber: 62,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -409,7 +405,7 @@ const DropdownMenu = ({ items, isOpen })=>{
                                 children: item.icon
                             }, void 0, false, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 169,
+                                lineNumber: 166,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -417,28 +413,28 @@ const DropdownMenu = ({ items, isOpen })=>{
                                 children: item.name
                             }, void 0, false, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 172,
+                                lineNumber: 169,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, item.name, true, {
                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                        lineNumber: 160,
+                        lineNumber: 157,
                         columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                lineNumber: 158,
+                lineNumber: 155,
                 columnNumber: 11
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-            lineNumber: 151,
+            lineNumber: 148,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-        lineNumber: 149,
+        lineNumber: 146,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -503,7 +499,7 @@ function InstitutionalHeader() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 219,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -511,13 +507,13 @@ function InstitutionalHeader() {
                                                         children: "S"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                        lineNumber: 232,
+                                                        lineNumber: 229,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 220,
+                                                lineNumber: 217,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_$40$emotion$2b$is$2d$prop$2d$valid$40$1$2e$3$2e$1_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -545,13 +541,13 @@ function InstitutionalHeader() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 235,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 215,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -562,7 +558,7 @@ function InstitutionalHeader() {
                                                 children: "Sunny"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 244,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -570,19 +566,19 @@ function InstitutionalHeader() {
                                                 children: "Institutions"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 249,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 243,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 213,
+                                lineNumber: 210,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -621,18 +617,18 @@ function InstitutionalHeader() {
                                                             d: "M19 9l-7 7-7-7"
                                                         }, void 0, false, {
                                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                            lineNumber: 289,
+                                                            lineNumber: 286,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 278,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 269,
+                                                lineNumber: 266,
                                                 columnNumber: 19
                                             }, this),
                                             item.dropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(DropdownMenu, {
@@ -640,18 +636,18 @@ function InstitutionalHeader() {
                                                 isOpen: activeDropdown === item.name
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 295,
+                                                lineNumber: 292,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, item.name, true, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 260,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 261,
+                                lineNumber: 258,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -671,7 +667,7 @@ function InstitutionalHeader() {
                                                 children: "Sign In"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 308,
+                                                lineNumber: 305,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_$40$emotion$2b$is$2d$prop$2d$valid$40$1$2e$3$2e$1_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -686,13 +682,13 @@ function InstitutionalHeader() {
                                                 children: "Get Started"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 319,
+                                                lineNumber: 316,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 307,
+                                        lineNumber: 304,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_$40$emotion$2b$is$2d$prop$2d$valid$40$1$2e$3$2e$1_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -717,12 +713,12 @@ function InstitutionalHeader() {
                                                 d: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 342,
+                                                lineNumber: 339,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 341,
+                                            lineNumber: 338,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                             className: "w-5 h-5",
@@ -736,17 +732,17 @@ function InstitutionalHeader() {
                                                 d: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 346,
+                                                lineNumber: 343,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 345,
+                                            lineNumber: 342,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 329,
+                                        lineNumber: 326,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$12_$40$emotion$2b$is$2d$prop$2d$valid$40$1$2e$3$2e$1_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -770,39 +766,39 @@ function InstitutionalHeader() {
                                                 d: "M4 6h16M4 12h16M4 18h16"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                                lineNumber: 363,
+                                                lineNumber: 360,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                            lineNumber: 362,
+                                            lineNumber: 359,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 349,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                                lineNumber: 305,
+                                lineNumber: 302,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                        lineNumber: 211,
+                        lineNumber: 208,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                    lineNumber: 210,
+                    lineNumber: 207,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                lineNumber: 200,
+                lineNumber: 197,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$6_$40$babel$2b$core$40$7$2e$28$2e$0_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MobileMenu, {
@@ -810,7 +806,7 @@ function InstitutionalHeader() {
                 onClose: ()=>setIsMobileMenuOpen(false)
             }, void 0, false, {
                 fileName: "[project]/apps/institutions-portal/src/components/layout/InstitutionalHeader.tsx",
-                lineNumber: 372,
+                lineNumber: 369,
                 columnNumber: 7
             }, this)
         ]
@@ -892,7 +888,7 @@ const footerSections = [
         links: [
             {
                 name: 'Documentation',
-                href: '/docs'
+                href: '/resources/docs'
             },
             {
                 name: 'API Reference',
